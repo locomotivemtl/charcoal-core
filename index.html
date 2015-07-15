@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Charcoal-core by locomotivemtl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Charcoal-core</h1>
+      <h2 class="project-tagline">The Charcoal PHP framework</h2>
+      <a href="https://github.com/locomotivemtl/charcoal-core" class="btn">View on GitHub</a>
+      <a href="https://github.com/locomotivemtl/charcoal-core/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/locomotivemtl/charcoal-core/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="charcoal-core" class="anchor" href="#charcoal-core" aria-hidden="true"><span class="octicon octicon-link"></span></a>Charcoal Core</h1>
+
+<p><a href="https://travis-ci.org/locomotivemtl/charcoal-core"><img src="https://travis-ci.org/locomotivemtl/charcoal-core.svg?branch=master" alt="Build Status"></a></p>
+
+<p>The <code>charcoal-core</code> module contains abstract classes and interfaces as well as basic functionalities to create a Charcoal Project.
+It is typically used with <a href="https://github.com/locomotivemtl/charcoal-base"><code>charcoal-base</code></a>, which contains more concrete classes (Action, Asset, Email, Module Objet, Property<sup>[1]</sup>, Template and Widget)</p>
+
+<ol>
+<li>Although the core Property concepts are defined in this module, most <em>useful</em> property types can be found in <code>charcoal-base</code>.</li>
+</ol>
+
+<h2>
+<a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Install</h2>
+
+<p>Except for development purposes, this module should never be run by itself or as a standalone. Therefore, the preferred way to install this module is to require it as a <code>composer</code> dependency in a project.</p>
+
+<div class="highlight highlight-shell"><pre>$ composer require locomotivemtl/charcoal-core</pre></div>
+
+<h2>
+<a id="dependencies-and-requirements" class="anchor" href="#dependencies-and-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies and Requirements</h2>
+
+<p>Charcoal depends on:</p>
+
+<ul>
+<li>
+<strong>PHP</strong> 5.5+
+
+<ul>
+<li>with <a href="http://php.net/generators"><em>PHP Generators</em></a>.</li>
+<li>
+<a href="http://www.slimframework.com/"><code>slim</code></a>, <a href="https://github.com/bobthecow/mustache.php"><code>mustache</code></a>, <a href="https://github.com/Seldaek/monologm/"><code>monolog</code></a> (see <a href="composer.json"><code>composer.json</code></a> for details)</li>
+</ul>
+</li>
+<li>
+<strong>MySQL</strong>
+
+<ul>
+<li>with <a href="http://php.net/pdo"><em>PDO</em></a>
+</li>
+<li>Other databases are currently not supported</li>
+</ul>
+</li>
+<li>
+<strong>Apache</strong>
+
+<ul>
+<li>with <em>mod_rewrite</em>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="build-systems" class="anchor" href="#build-systems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build System(s)</h2>
+
+<p>Charcoal uses:</p>
+
+<ul>
+<li>
+<a href="http://getcomposer.org/"><strong>Composer</strong></a> is the preferred way of installing Charcoal modules and projects.</li>
+<li>
+<a href="http://gruntjs.com/"><strong>Grunt</strong></a> is used to build the assets from source and also to run various scripts (linters, unit tests) automatically.</li>
+<li>
+<a href="https://npmjs.com/"><strong>NPM</strong></a> is needed for Bower and Grunt.</li>
+</ul>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<p>The core concepts (namespaces) defined in Charcoal Core are:</p>
+
+<ul>
+<li>
+<code>Cache</code>, for the cache interfaces as well as a few drivers.
+
+<ul>
+<li>Available cache types: <code>apc</code>, <code>memcache</code> and <code>noop</code>.</li>
+<li>Extra interface: <code>CacheableInterface</code> / <code>CacheableTrait</code> for objects that can be stored in the cache.</li>
+<li>Default cache should typically be <em>memcache</em>.</li>
+</ul>
+</li>
+<li>
+<code>Config</code>, for the configuration objects.
+
+<ul>
+<li>Extra interface: <code>ConfigurableInterface</code> / <code>ConfigurableTrait</code> for objects that can be defined with a <code>*Config</code> object.</li>
+</ul>
+</li>
+<li>
+<code>Core</code>, for core patterns, classes and traits.
+
+<ul>
+<li>
+<code>AbstractFactory</code> / <code>FactoryInterface</code>: a base class for all Factories in Charcoal.</li>
+<li>
+<code>IndexableInterface</code> / <code>IndexableTrait</code>:
+
+<ul>
+<li> Defines <code>set_id()</code>, <code>id()</code>, <code>set_key()</code> and <code>key()</code>.</li>
+</ul>
+</li>
+<li>
+<code>StringFormat</code>: a helper class to format strings, mostly for final output within templates &amp; widgets:
+
+<ul>
+<li>
+<code>unicode()</code>, <code>strip_tags()</code>, <code>unaccents()</code> and <code>alphanumeric()</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<code>Encoder</code>, for the encoder interfaces as well as a few drivers:
+
+<ul>
+<li>Available encoder types: <code>base64</code>.</li>
+<li>Note that this is a simple encoding library,<strong>not</strong> a cryptographic lib.</li>
+</ul>
+</li>
+<li>
+<code>Loader</code>, for everything that can be loaded.
+
+<ul>
+<li>Base loaders: <code>AbstractLoader</code>, <code>FileLoader</code>
+</li>
+<li>Extra interface: <code>LoadableInterface</code> / <code>LoadableTrait</code>
+</li>
+</ul>
+</li>
+<li>
+<code>Metadata</code>, for object definition through standardized metadata.
+
+<ul>
+<li>Extra interfaces: <code>DescribableInterface</code> / <code>DescribableTrait</code> for objects</li>
+</ul>
+</li>
+<li>
+<code>Model</code>, for base domain model objects.
+
+<ul>
+<li>Extra interface: <code>CategorizableInterface</code> / <code>CategorizableTrait</code>
+</li>
+<li>Extra interface: <code>CategoryInterface</code> / <code>CategoryTrait</code>
+</li>
+<li>Extra interface: <code>IndexableInterface</code> / <code>IndexableTrait</code> for models that can be loaded with <code>id()</code> (and <code>key()</code>)</li>
+<li>Extra interface: <code>RoutableInterface</code> / <code>RoutableTrait</code>
+</li>
+</ul>
+</li>
+<li>
+<code>Property</code>, the building blocks of models (through metadata)
+
+<ul>
+<li>Only the core property concepts are defined in the <code>charcoal-core</code> module. Extra property types can be found in <code>charcoal-base</code>
+</li>
+</ul>
+</li>
+<li>
+<code>Source</code>, for storage (typically accessed with a Loader)
+
+<ul>
+<li>Extra interface:</li>
+</ul>
+</li>
+<li>
+<code>Validator</code>, to validate objects / models.
+
+<ul>
+<li>Extra interface: <code>ValidatableInterface</code> / <code>ValidatableTrait</code> for objects that can be validated with a validator.</li>
+</ul>
+</li>
+<li>
+<code>View</code> for rendering objects with templates.
+
+<ul>
+<li>4 core concepts: <code>View</code> and <code>ViewController</code>, <code>ViewEngine</code> and <code>ViewTemplate</code>
+</li>
+<li>Available view engines: <code>php_mustache</code> and <code>mustache</code>
+</li>
+<li>Extra interface: <code>ViewableInterface</code> / <code>ViewableTrait</code> for objects that can be rendered</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<h3>
+<a id="coding-style" class="anchor" href="#coding-style" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coding Style</h3>
+
+<p>All Charcoal modules follow the same coding style and <code>charcoal-core</code> is no exception. For PHP:</p>
+
+<ul>
+<li>
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md"><em>PSR-1</em></a>, except for
+
+<ul>
+<li>Method names MUST be declared in <code>snake_case</code>.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md"><em>PSR-2</em></a>, except for
+
+<ul>
+<li>Property names MAY be prefixed with a single, or double, underscore to indicate protected or private visibility;</li>
+<li>Method names MAY be prefixed with a single, or double, underscore to indicate protected or private visibility.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md"><em>PSR-4</em></a>, autoloading is therefore provided by <em>Composer</em>
+</li>
+<li>
+<a href="http://phpdoc.org/"><em>phpDocumentor</em></a>
+
+<ul>
+<li>Add DocBlocks for all classes, methods, and functions;</li>
+<li>For type-hinting, use <code>boolean</code> (instead of <code>bool</code>), <code>integer</code> (instead of <code>int</code>), <code>float</code> (instead of <code>double</code> or <code>real</code>);</li>
+<li>Omit the <code>@return</code> tag if the method does not return anything.</li>
+</ul>
+</li>
+<li>Naming conventions
+
+<ul>
+<li>Use <code>snake_case</code>, not <code>camelCase</code>, for variable, option, parameter, argument, function, and method names;</li>
+<li>Prefix abstract classes with <code>Abstract</code>;</li>
+<li>Suffix interfaces with <code>Interface</code>;</li>
+<li>Suffix traits with <code>Trait</code>;</li>
+<li>Suffix exceptions with <code>Exception</code>;</li>
+<li>For type-hinting, use <code>int</code> (instead of <code>integer</code>) and <code>bool</code> (instead of <code>boolean</code>);</li>
+<li>For casting, use <code>int</code> (instead of <code>integer</code>) and <code>!!</code> (instead of <code>bool</code> or <code>boolean</code>);</li>
+<li>For arrays, use <code>[]</code> (instead of <code>array()</code>).</li>
+</ul>
+</li>
+</ul>
+
+<p>Coding styles are  enforced with <code>grunt phpcs</code> (<a href="https://github.com/squizlabs/PHP_CodeSniffer"><em>PHP Code Sniffer</em></a>). The actual ruleset can be found in <code>phpcs.xml</code>.</p>
+
+<blockquote>
+<p><g-emoji alias="point_right" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> To fix minor coding style problems, run <code>grunt phpcbf</code> (<a href="https://github.com/squizlabs/PHP_CodeSniffer"><em>PHP Code Beautifier and Fixer</em></a>). This tool uses the same ruleset as <em>phpcs</em> to automatically correct coding standard violations.</p>
+</blockquote>
+
+<p>The main PHP structure follow the <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md"><em>PSR-4</em></a> standard. Autoloading is therefore provided by <em>Composer</em>.</p>
+
+<p>For JavaScript, the following coding style is enforced:</p>
+
+<ul>
+<li><strong>TBD</strong></li>
+</ul>
+
+<h3>
+<a id="automated-checks" class="anchor" href="#automated-checks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automated Checks</h3>
+
+<p>Most quality checker tools can be run with <em>Grunt</em>. They are:</p>
+
+<ul>
+<li>
+<code>grunt phpunit</code>, to run the Test Suite.</li>
+<li>
+<code>grunt phpcs</code>, to ensure coding style compliance.</li>
+<li>
+<code>grunt jsonlint</code>, to validate JSON files.</li>
+</ul>
+
+<p>All three tools can also be run from <code>grunt watch</code>.</p>
+
+<p>To ensure a clean code base, pre-commit git hooks should be installed on all development environments.</p>
+
+<h3>
+<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuous Integration</h3>
+
+<ul>
+<li><a href="https://travis-ci.org/">Travis</a></li>
+<li><a href="https://scrutinizer-ci.com/">Scrutinizer</a></li>
+<li><a href="https://codeclimate.com/">Code Climate</a></li>
+</ul>
+
+<h3>
+<a id="unit-tests" class="anchor" href="#unit-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit Tests</h3>
+
+<p>Every class, method, and function should be covered by unit tests. PHP code can be tested with <a href="https://phpunit.de/"><em>PHPUnit</em></a> and JavaScript code with <a href="https://qunitjs.com/"><em>QUnit</em></a>.</p>
+
+<h2>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h2>
+
+<ul>
+<li>Mathieu Ducharme <a href="mailto:mat@locomotive.ca">mat@locomotive.ca</a>
+</li>
+</ul>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<ul>
+<li>Unreleased.</li>
+</ul>
+
+<h2>
+<a id="todos" class="anchor" href="#todos" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODOs</h2>
+
+<ul>
+<li>Add <code>SingletonInterface</code> / <code>SingletonTrait</code>
+</li>
+<li>Translation (l10n) module</li>
+<li>The main <code>Charcoal\Charcoal</code> class should be moved to <code>charcoal-base</code> and not used anywhere directly, if possible</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/locomotivemtl/charcoal-core">Charcoal-core</a> is maintained by <a href="https://github.com/locomotivemtl">locomotivemtl</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
