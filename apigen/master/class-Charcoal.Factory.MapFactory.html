@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Factory\MapFactory</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Factory.html">
+						Factory					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Factory.AbstractFactory.html">AbstractFactory</a></li>
+				<li><a href="class-Charcoal.Factory.GenericFactory.html">GenericFactory</a></li>
+				<li class="active"><a href="class-Charcoal.Factory.MapFactory.html">MapFactory</a></li>
+				<li><a href="class-Charcoal.Factory.ResolverFactory.html">ResolverFactory</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Factory.FactoryInterface.html">FactoryInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Factory.html" title="Summary of Charcoal\Factory"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MapFactory</h1>
+
+
+	<div class="description">
+	<p>The map Factory resolves the <strong>class name</strong> from an associative array with the <strong>type</strong> key.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Charcoal.Factory.AbstractFactory.html"><span>Charcoal\Factory\AbstractFactory</span></a>
+			
+			 implements 
+				<a href="class-Charcoal.Factory.FactoryInterface.html"><span>Charcoal\Factory\FactoryInterface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Factory\MapFactory</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Factory.html">Factory</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Factory.MapFactory.html#11-125" title="Go to source code">Charcoal/Factory/MapFactory.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="addClass" id="_addClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Factory.FactoryInterface.html">Charcoal\Factory\FactoryInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addClass">#</a>
+		<code><a href="source-class-Charcoal.Factory.MapFactory.html#23-46" title="Go to source code">addClass</a>( <span>string <var>$type</var></span>, <span>string <var>$className</var></span> )</code>
+
+		<div class="description short">
+			<p>Add a class name to the available types <em>map</em>.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a class name to the available types <em>map</em>.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>The type (class ident).</dd>
+					<dt><var>$className</var></dt>
+					<dd>The FQN of the class.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Factory.FactoryInterface.html">Charcoal\Factory\FactoryInterface</a></code><br>Chainable
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the $type parameter is not a striing or the $className class does not exist.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setMap" id="_setMap">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Factory.FactoryInterface.html">Charcoal\Factory\FactoryInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setMap">#</a>
+		<code><a href="source-class-Charcoal.Factory.MapFactory.html#48-62" title="Go to source code">setMap</a>( <span>array <var>$map</var></span> )</code>
+
+		<div class="description short">
+			<p>Add multiple types, in a an array of <code>type</code> => <code>className</code>.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add multiple types, in a an array of <code>type</code> => <code>className</code>.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$map</var></dt>
+					<dd>The map (key=>classname) to use.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Factory.FactoryInterface.html">Charcoal\Factory\FactoryInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="map" id="_map">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_map">#</a>
+		<code><a href="source-class-Charcoal.Factory.MapFactory.html#64-72" title="Go to source code">map</a>( )</code>
+
+		<div class="description short">
+			<p>Get the map of all types in <code>[$type =&gt; $class]</code> format.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the map of all types in <code>[$type =&gt; $class]</code> format.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resolve" id="_resolve">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resolve">#</a>
+		<code><a href="source-class-Charcoal.Factory.MapFactory.html#74-99" title="Go to source code">resolve</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>The "Map Factory" implements <code>AbstractFactory</code>'s <code>resolve()</code> abstract method
+by fetching the class ident from the <code>map</code> member array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>The "Map Factory" implements <code>AbstractFactory</code>'s <code>resolve()</code> abstract method
+by fetching the class ident from the <code>map</code> member array.</p>
+
+<p>If the object's <code>type</code> is not defined in the class map, an exception will be thrown.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>The "type" of object to resolve (the object ident).</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the type parameter is not a string.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isResolvable" id="_isResolvable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isResolvable">#</a>
+		<code><a href="source-class-Charcoal.Factory.MapFactory.html#101-124" title="Go to source code">isResolvable</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>The "Map Factory" implements <code>AbstractFactory</code>'s <code>is_resolvable()</code> abstract method
+by ensuring the class ident is defined in the class map and is a validd class.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>The "Map Factory" implements <code>AbstractFactory</code>'s <code>is_resolvable()</code> abstract method
+by ensuring the class ident is defined in the class map and is a validd class.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>The "type" of object to resolve (the object ident).</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the type parameter is not a string.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Factory.AbstractFactory.html#methods">Charcoal\Factory\AbstractFactory</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_arguments">arguments()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_baseClass">baseClass()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_callback">callback()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_create">create()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_defaultClass">defaultClass()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_get">get()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_setArguments">setArguments()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_setBaseClass">setBaseClass()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_setCallback">setCallback()</a>, 
+			<a href="class-Charcoal.Factory.AbstractFactory.html#_setDefaultClass">setDefaultClass()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Charcoal.Factory.AbstractFactory.html#properties">Charcoal\Factory\AbstractFactory</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Factory.AbstractFactory.html#$resolved"><var>$resolved</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
