@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Model\AbstractModel</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Core.html">
+						Core					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Source.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
+				<li class="active"><a href="class-Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
+				<li><a href="class-Charcoal.Model.Collection.html">Collection</a></li>
+				<li><a href="class-Charcoal.Model.MetadataLoader.html">MetadataLoader</a></li>
+				<li><a href="class-Charcoal.Model.Model.html">Model</a></li>
+				<li><a href="class-Charcoal.Model.ModelBuilder.html">ModelBuilder</a></li>
+				<li><a href="class-Charcoal.Model.ModelFactory.html">ModelFactory</a></li>
+				<li><a href="class-Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
+				<li><a href="class-Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
+				<li><a href="class-Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
+				<li><a href="class-Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
+				<li><a href="class-Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.html" title="Summary of Charcoal\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class AbstractModel</h1>
+
+
+	<div class="description">
+	<p>An abstract class that implements most of <code>ModelInterface</code>.</p>
+
+<p>In addition to <code>ModelInterface</code>, the abstract model implements the following interfaces:</p>
+
+<ul>
+<li><code>DescribableInterface</code></li>
+<li>`StorableInterface</li>
+<li><code>ValidatableInterface</code></li>
+<li><code>ViewableInterface</code>.</li>
+</ul>
+
+<p>Those interfaces
+are implemented (in parts, at least) with the <code>DescribableTrait</code>, <code>StorableTrait</code>,
+<code>ValidatableTrait</code> and the <code>ViewableTrait</code>.</p>
+
+<p>The <code>JsonSerializable</code> interface is fully provided by the <code>DescribableTrait</code>.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Charcoal\Config\AbstractEntity
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Model\AbstractModel</span></b>			
+			 implements 
+				<a href="class-Charcoal.Model.ModelInterface.html"><span>Charcoal\Model\ModelInterface</span></a>, 
+			
+				<a href="class-Charcoal.Model.DescribableInterface.html"><span>Charcoal\Model\DescribableInterface</span></a>, 
+			
+<span>Charcoal\Property\DescribablePropertyInterface</span>, 
+			
+<span>Psr\Log\LoggerAwareInterface</span>, 
+			
+				<a href="class-Charcoal.Source.StorableInterface.html"><span>Charcoal\Source\StorableInterface</span></a>, 
+			
+				<a href="class-Charcoal.Validator.ValidatableInterface.html"><span>Charcoal\Validator\ValidatableInterface</span></a>, 
+			
+<span>Charcoal\View\ViewableInterface</span>
+			
+			 uses 
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+					<a href="class-Charcoal.Model.DescribableTrait.html"><span>Charcoal\Model\DescribableTrait</span></a>, 
+			
+					Charcoal\Property\DescribablePropertyTrait (not available)
+
+			
+					<a href="class-Charcoal.Source.StorableTrait.html"><span>Charcoal\Source\StorableTrait</span></a>, 
+			
+					<a href="class-Charcoal.Validator.ValidatableTrait.html"><span>Charcoal\Validator\ValidatableTrait</span></a>, 
+			
+					Charcoal\View\ViewableTrait (not available)
+
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Charcoal.Model.Model.html">Charcoal\Model\Model</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.AbstractModel.html#43-530" title="Go to source code">Charcoal/Model/AbstractModel.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#77-110" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Dependencies.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDependencies" id="_setDependencies">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDependencies">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#112-122" title="Go to source code">setDependencies</a>( <span>Pimple\Container <var>$container</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$container</var></dt>
+					<dd>Pimple DI Container.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="data" id="_data">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_data">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#124-139" title="Go to source code">data</a>( <span>array <var>$propertyFilters</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Return the object data as an array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return the object data as an array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$propertyFilters</var></dt>
+					<dd>Optional. Property filter.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Model.ModelInterface.html#_data">Charcoal\Model\ModelInterface::data()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mergeData" id="_mergeData">
+
+		<td class="attributes"><code>
+			 public 
+
+			EntityInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mergeData">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#141-172" title="Go to source code">mergeData</a>( <span>array|Traversable <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Override's <code>\Charcoal\Config\AbstractEntity</code>'s <code>setData</code> method to take properties into consideration.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Override's <code>\Charcoal\Config\AbstractEntity</code>'s <code>setData</code> method to take properties into consideration.</p>
+
+<p>Also add a special case, to merge values for l10n properties.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The data to merge.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					EntityInterface<br>Chainable
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						\Charcoal\Config\AbstractEntity::offsetSet()<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFlatData" id="_setFlatData">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.AbstractModel.html">Charcoal\Model\AbstractModel</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFlatData">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#174-211" title="Go to source code">setFlatData</a>( <span>array <var>$flatData</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the data</p>
+
+<p>This function takes a 1-dimensional array and fill the object with its value.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$flatData</var></dt>
+					<dd>The data, as a flat (1-dimension) array.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.AbstractModel.html">Charcoal\Model\AbstractModel</a></code><br>Chainable
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Model.ModelInterface.html#_setFlatData">Charcoal\Model\ModelInterface::setFlatData()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="flatData" id="_flatData">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_flatData">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#213-220" title="Go to source code">flatData</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Model.ModelInterface.html#_flatData">Charcoal\Model\ModelInterface::flatData()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="propertyValue" id="_propertyValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_propertyValue">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#222-238" title="Go to source code">propertyValue</a>( <span>string <var>$propertyIdent</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$propertyIdent</var></dt>
+					<dd>The property ident to get the value from.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveProperties" id="_saveProperties">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveProperties">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#240-264" title="Go to source code">saveProperties</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$properties</var></dt>
+					<dd>Optional array of properties to save. If null, use all object's properties.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadFromL10n" id="_loadFromL10n">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadFromL10n">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#266-317" title="Go to source code">loadFromL10n</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span>, <span>array <var>$langs</var></span> )</code>
+
+		<div class="description short">
+			<p>Load an object from the database from its l10n key $key.
+Also retrieve and return the actual language that matched.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load an object from the database from its l10n key $key.
+Also retrieve and return the actual language that matched.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>Key pointing a column's l10n base ident.</dd>
+					<dt><var>$value</var></dt>
+					<dd>Value to search in all languages.</dd>
+					<dt><var>$langs</var></dt>
+					<dd>List of languages (code, ex: "en") to check into.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The matching language.
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the PDO query fails.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save" id="_save">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#319-347" title="Go to source code">save</a>( )</code>
+
+		<div class="description short">
+			<p>StorableTrait > save(). Save an object current state to storage</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > save(). Save an object current state to storage</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.StorableInterface.html#_save">Charcoal\Source\StorableInterface::save()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#349-374" title="Go to source code">update</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$properties</var></dt>
+					<dd>Optional. Properties to update. If null use all of object's.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.StorableInterface.html#_update">Charcoal\Source\StorableInterface::update()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="preSave" id="_preSave">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_preSave">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#376-384" title="Go to source code">preSave</a>( )</code>
+
+		<div class="description short">
+			<p>StorableTrait > preSave(). Save hook called before saving the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > preSave(). Save hook called before saving the model.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="postSave" id="_postSave">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_postSave">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#386-394" title="Go to source code">postSave</a>( )</code>
+
+		<div class="description short">
+			<p>StorableTrait > postSave(). Save hook called after saving the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > postSave(). Save hook called after saving the model.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="preUpdate" id="_preUpdate">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_preUpdate">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#396-405" title="Go to source code">preUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>StorableTrait > preUpdate(). Update hook called before updating the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > preUpdate(). Update hook called before updating the model.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$properties</var></dt>
+					<dd>Optional. The properties to update.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="postUpdate" id="_postUpdate">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_postUpdate">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#407-416" title="Go to source code">postUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>StorableTrait > postUpdate(). Update hook called after updating the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > postUpdate(). Update hook called after updating the model.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$properties</var></dt>
+					<dd>Optional. The properties to update.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="preDelete" id="_preDelete">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_preDelete">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#418-426" title="Go to source code">preDelete</a>( )</code>
+
+		<div class="description short">
+			<p>StorableTrait > preDelete(). Delete hook called before deleting the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > preDelete(). Delete hook called before deleting the model.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="postDelete" id="_postDelete">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_postDelete">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#428-436" title="Go to source code">postDelete</a>( )</code>
+
+		<div class="description short">
+			<p>StorableTrait > postDelete(). Delete hook called after deleting the model.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableTrait > postDelete(). Delete hook called after deleting the model.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createMetadata" id="_createMetadata">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-Charcoal.Model.MetadataInterface.html">Charcoal\Model\MetadataInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createMetadata">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#438-451" title="Go to source code">createMetadata</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>DescribableTrait > create_metadata().</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>DescribableTrait > create_metadata().</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Optional data to intialize the Metadata object with.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.MetadataInterface.html">Charcoal\Model\MetadataInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createSource" id="_createSource">
+
+		<td class="attributes"><code>
+			 protected 
+
+			SourceInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createSource">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#453-486" title="Go to source code">createSource</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>StorableInterface > createSource()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>StorableInterface > createSource()</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Optional source data.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					SourceInterface
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the metadata source can not be found.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createValidator" id="_createValidator">
+
+		<td class="attributes"><code>
+			 protected 
+
+			ValidatorInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createValidator">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#488-501" title="Go to source code">createValidator</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>ValidatableInterface > create_validator().</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ValidatableInterface > create_validator().</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Optional.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					ValidatorInterface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createView" id="_createView">
+
+		<td class="attributes"><code>
+			 public 
+
+			ViewInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createView">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#503-517" title="Go to source code">createView</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Optional. View data.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					ViewInterface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="objType" id="_objType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_objType">#</a>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#519-529" title="Go to source code">objType</a>( )</code>
+
+		<div class="description short">
+			<p>Convert the current class name in "type-ident" format.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Convert the current class name in "type-ident" format.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Model.ModelInterface.html#methods">Charcoal\Model\ModelInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.ModelInterface.html#_p">p()</a>, 
+			<a href="class-Charcoal.Model.ModelInterface.html#_properties">properties()</a>, 
+			<a href="class-Charcoal.Model.ModelInterface.html#_property">property()</a>, 
+			<a href="class-Charcoal.Model.ModelInterface.html#_setData">setData()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Model.DescribableInterface.html#methods">Charcoal\Model\DescribableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableInterface.html#_loadMetadata">loadMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_metadata">metadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_metadataIdent">metadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadata">setMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadataIdent">setMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadataLoader">setMetadataLoader()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Source.StorableInterface.html#methods">Charcoal\Source\StorableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableInterface.html#_delete">delete()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_id">id()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_key">key()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_load">load()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_loadFrom">loadFrom()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_loadFromQuery">loadFromQuery()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setId">setId()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setKey">setKey()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setSource">setSource()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setSourceFactory">setSourceFactory()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_source">source()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Validator.ValidatableInterface.html#methods">Charcoal\Validator\ValidatableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_setValidator">setValidator()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_validate">validate()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_validator">validator()</a>
+		</code></td>
+	</tr>
+	</table>
+
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Model.DescribableTrait.html#methods">Charcoal\Model\DescribableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableTrait.html#_generateMetadataIdent">generateMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_loadMetadata">loadMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadata">metadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadataIdent">metadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadataLoader">metadataLoader()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setData">setData()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadata">setMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadataIdent">setMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadataLoader">setMetadataLoader()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Source.StorableTrait.html#methods">Charcoal\Source\StorableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableTrait.html#_delete">delete()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_id">id()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_key">key()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_load">load()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_loadFrom">loadFrom()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_loadFromQuery">loadFromQuery()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setId">setId()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setKey">setKey()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setSource">setSource()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setSourceFactory">setSourceFactory()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_source">source()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_sourceFactory">sourceFactory()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Validator.ValidatableTrait.html#methods">Charcoal\Validator\ValidatableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_setValidator">setValidator()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_validate">validate()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_validator">validator()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="DEFAULT_SOURCE_TYPE" id="DEFAULT_SOURCE_TYPE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Model.AbstractModel.html#75" title="Go to source code"><b>DEFAULT_SOURCE_TYPE</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#DEFAULT_SOURCE_TYPE" class="anchor">#</a>
+				<code><span class="php-quote">'database'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Model.DescribableTrait.html#properties">Charcoal\Model\DescribableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadata"><var>$metadata</var></a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadataIdent"><var>$metadataIdent</var></a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadataLoader"><var>$metadataLoader</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Source.StorableTrait.html#properties">Charcoal\Source\StorableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableTrait.html#$id"><var>$id</var></a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#$key"><var>$key</var></a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#$sourceFactory"><var>$sourceFactory</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Validator.ValidatableTrait.html#properties">Charcoal\Validator\ValidatableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#$validator"><var>$validator</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

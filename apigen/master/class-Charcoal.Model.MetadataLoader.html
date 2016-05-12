@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Model\MetadataLoader</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Core.html">
+						Core					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Source.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
+				<li><a href="class-Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
+				<li><a href="class-Charcoal.Model.Collection.html">Collection</a></li>
+				<li class="active"><a href="class-Charcoal.Model.MetadataLoader.html">MetadataLoader</a></li>
+				<li><a href="class-Charcoal.Model.Model.html">Model</a></li>
+				<li><a href="class-Charcoal.Model.ModelBuilder.html">ModelBuilder</a></li>
+				<li><a href="class-Charcoal.Model.ModelFactory.html">ModelFactory</a></li>
+				<li><a href="class-Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
+				<li><a href="class-Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
+				<li><a href="class-Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
+				<li><a href="class-Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
+				<li><a href="class-Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.html" title="Summary of Charcoal\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MetadataLoader</h1>
+
+
+	<div class="description">
+	<p>Load metadata from JSON file(s).</p>
+
+<p>The Metadata Loader is different than the <code>FileLoader</code> class it extends mainly because
+it tries to find all files matching  the "ident" in all search path and merge them together
+in an array, to be filled in a <code>Metadata</code> object.</p>
+
+<p>If <code>ident</code> is an actual class name, then it will also try to load all the JSON matching
+the class' parents and interfaces.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Charcoal.Loader.FileLoader.html"><span>Charcoal\Loader\FileLoader</span></a>
+			
+			 implements 
+<span>Psr\Log\LoggerAwareInterface</span>
+			
+			 uses 
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Model\MetadataLoader</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.MetadataLoader.html#14-328" title="Go to source code">Charcoal/Model/MetadataLoader.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#31-69" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Return new MetadataLoader object.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return new MetadataLoader object.</p>
+
+<p>The application's metadata paths, if any, are merged with
+the loader's search paths.</p>
+
+<h1>Required dependencie</h1>
+
+<ul>
+<li><code>config</code></li>
+<li><code>cache</code></li>
+</ul>
+
+<h1>Optional dependencies</h1>
+
+<ul>
+<li><code>paths</code></li>
+<li><code>base_path</code></li>
+</ul>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The loader's dependencies.</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Loader.FileLoader.html#___construct">Charcoal\Loader\FileLoader::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setCachePool" id="_setCachePool">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.MetadataLoader.html">Charcoal\Model\MetadataLoader</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setCachePool">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#71-79" title="Go to source code">setCachePool</a>( <span>Psr\Cache\CacheItemPoolInterface <var>$cache</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cache</var></dt>
+					<dd>A PSR-6 compliant cache pool instance.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.MetadataLoader.html">Charcoal\Model\MetadataLoader</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="cachePool" id="_cachePool">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Stash\Pool
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cachePool">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#81-89" title="Go to source code">cachePool</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the cache service provider.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the cache service provider.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					Stash\Pool
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validatePath" id="_validatePath">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validatePath">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#91-100" title="Go to source code">validatePath</a>( <span>string <var>$path</var></span> )</code>
+
+		<div class="description short">
+			<p>Validate a resolved path.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Validate a resolved path.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>The path to validate.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Loader.FileLoader.html#_validatePath">Charcoal\Loader\FileLoader::validatePath()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#102-133" title="Go to source code">load</a>( <span>string <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Load the metadata from JSON files.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load the metadata from JSON files.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>Optional, set the ident to load.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Loader.FileLoader.html#_load">Charcoal\Loader\FileLoader::load()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadData" id="_loadData">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadData">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#135-159" title="Go to source code">loadData</a>( <span>string <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Load the metadata from JSON files.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load the metadata from JSON files.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>Optional, set the ident to load.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="identToClassname" id="_identToClassname">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_identToClassname">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#232-263" title="Go to source code">identToClassname</a>( <span>string <var>$ident</var></span> )</code>
+
+		<div class="description short">
+			<p>Convert an identifier to a FQN.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Convert an identifier to a FQN.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>The identifier to convert.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="classnameToIdent" id="_classnameToIdent">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_classnameToIdent">#</a>
+		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#265-277" title="Go to source code">classnameToIdent</a>( <span>string <var>$classname</var></span> )</code>
+
+		<div class="description short">
+			<p>Convert a FQN to an identifier.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Convert a FQN to an identifier.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$classname</var></dt>
+					<dd>The FQN to convert.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Loader.FileLoader.html#methods">Charcoal\Loader\FileLoader</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Loader.FileLoader.html#_addPath">addPath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_addPaths">addPaths()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_allMatchingFilenames">allMatchingFilenames()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_basePath">basePath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_firstMatchingFilename">firstMatchingFilename()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_ident">ident()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_loadFirstFromSearchPath">loadFirstFromSearchPath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_loadJsonFile">loadJsonFile()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_paths">paths()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_prependPath">prependPath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_resolvePath">resolvePath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_setBasePath">setBasePath()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_setIdent">setIdent()</a>, 
+			<a href="class-Charcoal.Loader.FileLoader.html#_setPaths">setPaths()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
