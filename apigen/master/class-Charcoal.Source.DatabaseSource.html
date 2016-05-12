@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Source\DatabaseSource</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Core.html">
+						Core					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li class="active">
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Source.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.AbstractSource.html">AbstractSource</a></li>
+				<li class="active"><a href="class-Charcoal.Source.DatabaseSource.html">DatabaseSource</a></li>
+				<li><a href="class-Charcoal.Source.DatabaseSourceConfig.html">DatabaseSourceConfig</a></li>
+				<li><a href="class-Charcoal.Source.Filter.html">Filter</a></li>
+				<li><a href="class-Charcoal.Source.Order.html">Order</a></li>
+				<li><a href="class-Charcoal.Source.Pagination.html">Pagination</a></li>
+				<li><a href="class-Charcoal.Source.SourceConfig.html">SourceConfig</a></li>
+				<li><a href="class-Charcoal.Source.SourceFactory.html">SourceFactory</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.DatabaseSourceInterface.html">DatabaseSourceInterface</a></li>
+				<li><a href="class-Charcoal.Source.FilterInterface.html">FilterInterface</a></li>
+				<li><a href="class-Charcoal.Source.OrderInterface.html">OrderInterface</a></li>
+				<li><a href="class-Charcoal.Source.PaginationInterface.html">PaginationInterface</a></li>
+				<li><a href="class-Charcoal.Source.SourceInterface.html">SourceInterface</a></li>
+				<li><a href="class-Charcoal.Source.StorableInterface.html">StorableInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.StorableTrait.html">StorableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Source.html" title="Summary of Charcoal\Source"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class DatabaseSource</h1>
+
+
+	<div class="description">
+	<p>Database Source, through PDO.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Charcoal.Source.AbstractSource.html"><span>Charcoal\Source\AbstractSource</span></a>
+			
+			 implements 
+				<a href="class-Charcoal.Source.SourceInterface.html"><span>Charcoal\Source\SourceInterface</span></a>, 
+			
+<span>Charcoal\Config\ConfigurableInterface</span>, 
+			
+<span>Psr\Log\LoggerAwareInterface</span>
+			
+			 uses 
+					Charcoal\Config\ConfigurableTrait (not available)
+
+			
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Source\DatabaseSource</span></b>			
+			 implements 
+				<a href="class-Charcoal.Source.DatabaseSourceInterface.html"><span>Charcoal\Source\DatabaseSourceInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Source.DatabaseSource.html#27-898" title="Go to source code">Charcoal/Source/DatabaseSource.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setDatabaseIdent" id="_setDatabaseIdent">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDatabaseIdent">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#65-79" title="Go to source code">setDatabaseIdent</a>( <span>string <var>$databaseIdent</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$databaseIdent</var></dt>
+					<dd>The database identifier.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code><br>Chainable
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the ident argument is not a string.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_setDatabaseIdent">Charcoal\Source\DatabaseSourceInterface::setDatabaseIdent()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="databaseIdent" id="_databaseIdent">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_databaseIdent">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#81-94" title="Go to source code">databaseIdent</a>( )</code>
+
+		<div class="description short">
+			<p>Get the current database ident.
+If null, then the project's default (from <code>Charcoal::config()</code> will be used.)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the current database ident.
+If null, then the project's default (from <code>Charcoal::config()</code> will be used.)</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_databaseIdent">Charcoal\Source\DatabaseSourceInterface::databaseIdent()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDatabaseConfig" id="_setDatabaseConfig">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDatabaseConfig">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#96-104" title="Go to source code">setDatabaseConfig</a>( <span>array <var>$databaseConfig</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$databaseConfig</var></dt>
+					<dd>The database configuration.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code><br>Chainable
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_setDatabaseConfig">Charcoal\Source\DatabaseSourceInterface::setDatabaseConfig()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="databaseConfig" id="_databaseConfig">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_databaseConfig">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#106-117" title="Go to source code">databaseConfig</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_databaseConfig">Charcoal\Source\DatabaseSourceInterface::databaseConfig()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTable" id="_setTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTable">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#119-147" title="Go to source code">setTable</a>( <span>string <var>$table</var></span> )</code>
+
+		<div class="description short">
+			<p>Set the database's table to use.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set the database's table to use.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd>The source table.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.DatabaseSource.html">Charcoal\Source\DatabaseSource</a></code><br>Chainable
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If argument is not a string or alphanumeric/underscore.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_setTable">Charcoal\Source\DatabaseSourceInterface::setTable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="table" id="_table">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_table">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#149-163" title="Go to source code">table</a>( )</code>
+
+		<div class="description short">
+			<p>Get the database's current table.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the database's current table.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the table was not set.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_table">Charcoal\Source\DatabaseSourceInterface::table()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createTable" id="_createTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createTable">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#165-199" title="Go to source code">createTable</a>( )</code>
+
+		<div class="description short">
+			<p>Create a table from a model's metadata.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Create a table from a model's metadata.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Success / Failure
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_createTable">Charcoal\Source\DatabaseSourceInterface::createTable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="alterTable" id="_alterTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_alterTable">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#201-250" title="Go to source code">alterTable</a>( )</code>
+
+		<div class="description short">
+			<p>Alter an existing table to match the model's metadata.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alter an existing table to match the model's metadata.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Success / Failure
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_alterTable">Charcoal\Source\DatabaseSourceInterface::alterTable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="tableExists" id="_tableExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_tableExists">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#252-264" title="Go to source code">tableExists</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_tableExists">Charcoal\Source\DatabaseSourceInterface::tableExists()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="tableStructure" id="_tableStructure">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_tableStructure">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#266-278" title="Go to source code">tableStructure</a>( )</code>
+
+		<div class="description short">
+			<p>Get the table columns information.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the table columns information.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_tableStructure">Charcoal\Source\DatabaseSourceInterface::tableStructure()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="tableIsEmpty" id="_tableIsEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_tableIsEmpty">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#280-291" title="Go to source code">tableIsEmpty</a>( )</code>
+
+		<div class="description short">
+			<p>Check wether the source table is empty (<code>true</code>) or not (<code>false</code>)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Check wether the source table is empty (<code>true</code>) or not (<code>false</code>)</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_tableIsEmpty">Charcoal\Source\DatabaseSourceInterface::tableIsEmpty()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="db" id="_db">
+
+		<td class="attributes"><code>
+			 public 
+
+			PDO
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_db">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#293-343" title="Go to source code">db</a>( <span>string <var>$databaseIdent</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$databaseIdent</var></dt>
+					<dd>The database identifier. If null, use default.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					PDO
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the database is not set.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.DatabaseSourceInterface.html#_db">Charcoal\Source\DatabaseSourceInterface::db()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItem" id="_loadItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItem">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#377-387" title="Go to source code">loadItem</a>( <span>mixed <var>$ident</var></span>, <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>Ident can be any scalar value.</dd>
+					<dt><var>$item</var></dt>
+					<dd>Optional item to load into.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItemFromKey" id="_loadItemFromKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItemFromKey">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#389-427" title="Go to source code">loadItemFromKey</a>( <span>string <var>$key</var></span>, <span>mixed <var>$ident</var></span>, <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Load item from a custom column's name ($key)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load item from a custom column's name ($key)</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>Column name.</dd>
+					<dt><var>$ident</var></dt>
+					<dd>Value of said column.</dd>
+					<dt><var>$item</var></dt>
+					<dd>Optional. Item (storable object) to load into.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code><br>Item
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the query fails.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItemFromQuery" id="_loadItemFromQuery">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItemFromQuery">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#429-461" title="Go to source code">loadItemFromQuery</a>( <span>string <var>$query</var></span>, <span>array <var>$binds</var> = []</span>, <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd>The SQL query.</dd>
+					<dt><var>$binds</var></dt>
+					<dd>Optional. The query parameters.</dd>
+					<dt><var>$item</var></dt>
+					<dd>Optional. Item (storable object) to load into.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code><br>Item.
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If there is a query error.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItems" id="_loadItems">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItems">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#463-476" title="Go to source code">loadItems</a>( <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd>Optional item to use as model.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						this->loadItemsFromQuery()<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItemsFromQuery" id="_loadItemsFromQuery">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItemsFromQuery">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#478-519" title="Go to source code">loadItemsFromQuery</a>( <span>string <var>$q</var></span>, <span>array <var>$binds</var> = []</span>, <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Loads items to a list from a query
+Allows external use.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Loads items to a list from a query
+Allows external use.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$q</var></dt>
+					<dd>The actual query.</dd>
+					<dt><var>$binds</var></dt>
+					<dd>This has to be done.</dd>
+					<dt><var>$item</var></dt>
+					<dd>Model Item.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>Collection of Items | Model
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveItem" id="_saveItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveItem">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#521-579" title="Go to source code">saveItem</a>( <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var></span> )</code>
+
+		<div class="description short">
+			<p>Save an item (create a new row) in storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Save an item (create a new row) in storage.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd>The object to save.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br>The created item ID, or false in case of an error.
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If a database error occurs.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateItem" id="_updateItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateItem">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#581-643" title="Go to source code">updateItem</a>( <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var></span>, <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Update an item in storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Update an item in storage.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd>The object to update.</dd>
+					<dt><var>$properties</var></dt>
+					<dd>The list of properties to update, if not all.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Success / Failure
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteItem" id="_deleteItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteItem">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#645-684" title="Go to source code">deleteItem</a>( <span><code><a href="class-Charcoal.Source.StorableInterface.html">Charcoal\Source\StorableInterface</a></code> <var>$item</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Delete an item from storage</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete an item from storage</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd>Optional item to delete. If none, the current model object will be used.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Success / Failure
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the item does not have an ID.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dbQuery" id="_dbQuery">
+
+		<td class="attributes"><code>
+			 public 
+
+			PDOStatement|false
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dbQuery">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#686-718" title="Go to source code">dbQuery</a>( <span>string <var>$q</var></span>, <span>array <var>$binds</var> = []</span>, <span>array <var>$binds_types</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Execute a SQL query, with PDO, and returns the PDOStatement.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Execute a SQL query, with PDO, and returns the PDOStatement.</p>
+
+<p>If the query fails, this method will return false.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$q</var></dt>
+					<dd>The SQL query to executed.</dd>
+					<dt><var>$binds</var></dt>
+					<dd>Optional. Query parameter binds.</dd>
+					<dt><var>$binds_types</var></dt>
+					<dd>Optional. Types of parameter bindings.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					PDOStatement|false<br>The PDOStatement, or false in case of error
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlLoad" id="_sqlLoad">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlLoad">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#720-741" title="Go to source code">sqlLoad</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the source does not have a table defined.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlLoadCount" id="_sqlLoadCount">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlLoadCount">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#743-762" title="Go to source code">sqlLoadCount</a>( )</code>
+
+		<div class="description short">
+			<p>Get a special SQL query for loading the count.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get a special SQL query for loading the count.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Exception<br>If the source does not have a table defined.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlSelect" id="_sqlSelect">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlSelect">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#764-784" title="Go to source code">sqlSelect</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlFilters" id="_sqlFilters">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlFilters">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#786-825" title="Go to source code">sqlFilters</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlOrders" id="_sqlOrders">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlOrders">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#827-845" title="Go to source code">sqlOrders</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlPagination" id="_sqlPagination">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlPagination">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#847-853" title="Go to source code">sqlPagination</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createFilter" id="_createFilter">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-Charcoal.Source.FilterInterface.html">Charcoal\Source\FilterInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createFilter">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#855-862" title="Go to source code">createFilter</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.FilterInterface.html">Charcoal\Source\FilterInterface</a></code>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.AbstractSource.html#_createFilter">Charcoal\Source\AbstractSource::createFilter()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createOrder" id="_createOrder">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-Charcoal.Source.OrderInterface.html">Charcoal\Source\OrderInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createOrder">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#864-871" title="Go to source code">createOrder</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.OrderInterface.html">Charcoal\Source\OrderInterface</a></code>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.AbstractSource.html#_createOrder">Charcoal\Source\AbstractSource::createOrder()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createPagination" id="_createPagination">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-Charcoal.Source.PaginationInterface.html">Charcoal\Source\PaginationInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createPagination">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#873-880" title="Go to source code">createPagination</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.PaginationInterface.html">Charcoal\Source\PaginationInterface</a></code>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.AbstractSource.html#_createPagination">Charcoal\Source\AbstractSource::createPagination()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createConfig" id="_createConfig">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.DatabaseSourceConfig.html">Charcoal\Source\DatabaseSourceConfig</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createConfig">#</a>
+		<code><a href="source-class-Charcoal.Source.DatabaseSource.html#882-897" title="Go to source code">createConfig</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>ConfigurableTrait > createConfig()</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ConfigurableTrait > createConfig()</p>
+
+<p>Overrides the method defined in AbstractSource to returns a <code>DatabaseSourceConfig</code> object.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Optional.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.DatabaseSourceConfig.html">Charcoal\Source\DatabaseSourceConfig</a></code>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.AbstractSource.html#_createConfig">Charcoal\Source\AbstractSource::createConfig()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Source.AbstractSource.html#methods">Charcoal\Source\AbstractSource</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.AbstractSource.html#___construct">__construct()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_addFilter">addFilter()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_addOrder">addOrder()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_addProperty">addProperty()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_filters">filters()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_getter">getter()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_hasModel">hasModel()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_model">model()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_numPerPage">numPerPage()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_orders">orders()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_page">page()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_pagination">pagination()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_properties">properties()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_reset">reset()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setData">setData()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setFilters">setFilters()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setModel">setModel()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setNumPerPage">setNumPerPage()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setOrders">setOrders()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setPage">setPage()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setPagination">setPagination()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setProperties">setProperties()</a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#_setter">setter()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="DEFAULT_DB_HOSTNAME" id="DEFAULT_DB_HOSTNAME">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.DatabaseSource.html#32" title="Go to source code"><b>DEFAULT_DB_HOSTNAME</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#DEFAULT_DB_HOSTNAME" class="anchor">#</a>
+				<code><span class="php-quote">'localhost'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="DEFAULT_DB_TYPE" id="DEFAULT_DB_TYPE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.DatabaseSource.html#33" title="Go to source code"><b>DEFAULT_DB_TYPE</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#DEFAULT_DB_TYPE" class="anchor">#</a>
+				<code><span class="php-quote">'mysql'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Charcoal.Source.AbstractSource.html#properties">Charcoal\Source\AbstractSource</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.AbstractSource.html#$filters"><var>$filters</var></a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#$orders"><var>$orders</var></a>, 
+			<a href="class-Charcoal.Source.AbstractSource.html#$pagination"><var>$pagination</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
