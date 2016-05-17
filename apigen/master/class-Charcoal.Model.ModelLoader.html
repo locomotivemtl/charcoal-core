@@ -140,6 +140,10 @@
 
 <p>Use the magic methods to load automatically from __call and __get; this allows
 for easy integration in templating engines like Mustache.</p>
+
+<blockquote>
+  <p>This object is immutable.</p>
+</blockquote>
 	</div>
 
 	<dl class="tree">
@@ -160,12 +164,12 @@ for easy integration in templating engines like Mustache.</p>
 
 
 	<div class="info">
-		
+		<b>Final</b><br>
 		
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Model.ModelLoader.html#12-244" title="Go to source code">Charcoal/Model/ModelLoader.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Model.ModelLoader.html#13-248" title="Go to source code">Charcoal/Model/ModelLoader.php</a>
 		<br>
 	</div>
 
@@ -185,7 +189,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#40-63" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#43-66" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			<p>Construct a Model Loader with the dependencies</p>
@@ -234,7 +238,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#65-74" title="Go to source code">__call</a>( <span>string <var>$ident</var></span>, <span>mixed <var>$args</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#68-77" title="Go to source code">__call</a>( <span>string <var>$ident</var></span>, <span>mixed <var>$args</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -275,7 +279,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#76-83" title="Go to source code">__get</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#79-86" title="Go to source code">__get</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -314,7 +318,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___isset">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#86-94" title="Go to source code">__isset</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#89-97" title="Go to source code">__isset</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -353,7 +357,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___unset">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#96-106" title="Go to source code">__unset</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#99-109" title="Go to source code">__unset</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -392,7 +396,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetExists">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#108-116" title="Go to source code">offsetExists</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#111-119" title="Go to source code">offsetExists</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -433,7 +437,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetGet">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#118-125" title="Go to source code">offsetGet</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#121-128" title="Go to source code">offsetGet</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -474,7 +478,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetSet">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#127-138" title="Go to source code">offsetSet</a>( <span>string <var>$ident</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#130-141" title="Go to source code">offsetSet</a>( <span>string <var>$ident</var></span>, <span>mixed <var>$val</var></span> )</code>
 
 		<div class="description short">
 			
@@ -517,7 +521,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetUnset">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#140-150" title="Go to source code">offsetUnset</a>( <span>string <var>$ident</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#143-153" title="Go to source code">offsetUnset</a>( <span>string <var>$ident</var></span> )</code>
 
 		<div class="description short">
 			
@@ -558,7 +562,7 @@ for easy integration in templating engines like Mustache.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Charcoal.Model.ModelLoader.html#152-174" title="Go to source code">load</a>( <span>string <var>$ident</var></span>, <span>boolean <var>$useCache</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.ModelLoader.html#155-178" title="Go to source code">load</a>( <span>string <var>$ident</var></span>, <span>boolean <var>$useCache</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			
