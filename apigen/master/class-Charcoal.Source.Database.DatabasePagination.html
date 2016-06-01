@@ -52,11 +52,6 @@
 						Database					</a>
 
 						</li>
-				<li>
-					<a href="namespace-Charcoal.Source.ServiceProvider.html">
-						ServiceProvider					</a>
-
-						</li>
 							</ul></li>
 				<li>
 					<a href="namespace-Charcoal.Validator.html">
@@ -151,7 +146,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a>\<a href="namespace-Charcoal.Source.Database.html">Database</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Source.Database.DatabasePagination.html#8-30" title="Go to source code">Charcoal/Source/Database/DatabasePagination.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Source.Database.DatabasePagination.html#8-33" title="Go to source code">Charcoal/Source/Database/DatabasePagination.php</a>
 		<br>
 	</div>
 
@@ -171,7 +166,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sql">#</a>
-		<code><a href="source-class-Charcoal.Source.Database.DatabasePagination.html#13-29" title="Go to source code">sql</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Database.DatabasePagination.html#13-32" title="Go to source code">sql</a>( )</code>
 
 		<div class="description short">
 			<p>Get the pagination's SQL string (Full "LIMIT" subquery)</p>
@@ -179,6 +174,9 @@
 
 		<div class="description detailed hidden">
 			<p>Get the pagination's SQL string (Full "LIMIT" subquery)</p>
+
+<p>For example, for the pagination <code>{page:3,num_per_page:50}</code> the result
+would be: <code>' LIMIT 100, 50'</code>.</p>
 
 
 

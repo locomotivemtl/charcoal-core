@@ -52,11 +52,6 @@
 						Database					</a>
 
 						</li>
-				<li>
-					<a href="namespace-Charcoal.Source.ServiceProvider.html">
-						ServiceProvider					</a>
-
-						</li>
 							</ul></li>
 				<li>
 					<a href="namespace-Charcoal.Validator.html">
@@ -80,7 +75,6 @@
 				<li><a href="class-Charcoal.Source.Order.html">Order</a></li>
 				<li><a href="class-Charcoal.Source.Pagination.html">Pagination</a></li>
 				<li><a href="class-Charcoal.Source.SourceConfig.html">SourceConfig</a></li>
-				<li><a href="class-Charcoal.Source.SourceFactory.html">SourceFactory</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -161,7 +155,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Source.StorableTrait.html#12-299" title="Go to source code">Charcoal/Source/StorableTrait.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Source.StorableTrait.html#14-301" title="Go to source code">Charcoal/Source/StorableTrait.php</a>
 		<br>
 	</div>
 
@@ -181,7 +175,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setId">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#37-63" title="Go to source code">setId</a>( <span>mixed <var>$id</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#39-65" title="Go to source code">setId</a>( <span>mixed <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the object's ID. The actual property set depends on <code>key()</code></p>
@@ -224,7 +218,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_id">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#65-79" title="Go to source code">id</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#67-81" title="Go to source code">id</a>( )</code>
 
 		<div class="description short">
 			<p>Get the object's (unique) ID. The actualy property get depends on <code>key()</code></p>
@@ -262,7 +256,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setKey">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#81-108" title="Go to source code">setKey</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#83-110" title="Go to source code">setKey</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the key property.</p>
@@ -305,7 +299,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_key">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#110-118" title="Go to source code">key</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#112-120" title="Go to source code">key</a>( )</code>
 
 		<div class="description short">
 			<p>Get the key property.</p>
@@ -339,7 +333,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSourceFactory">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#120-128" title="Go to source code">setSourceFactory</a>( <span><code><a href="class-Charcoal.Source.SourceFactory.html">Charcoal\Source\SourceFactory</a></code> <var>$factory</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#122-130" title="Go to source code">setSourceFactory</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span> )</code>
 
 		<div class="description short">
 			
@@ -371,14 +365,14 @@
 		<td class="attributes"><code>
 			 protected 
 
-			<code><a href="class-Charcoal.Source.SourceFactory.html">Charcoal\Source\SourceFactory</a></code>
+			Charcoal\Factory\FactoryInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sourceFactory">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#130-142" title="Go to source code">sourceFactory</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#132-144" title="Go to source code">sourceFactory</a>( )</code>
 
 		<div class="description short">
 			
@@ -391,7 +385,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Charcoal.Source.SourceFactory.html">Charcoal\Source\SourceFactory</a></code>
+					Charcoal\Factory\FactoryInterface
 				</div>
 
 				<h4>Throws</h4>
@@ -416,7 +410,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSource">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#144-154" title="Go to source code">setSource</a>( <span><code><a href="class-Charcoal.Source.SourceInterface.html">Charcoal\Source\SourceInterface</a></code> <var>$source</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#146-156" title="Go to source code">setSource</a>( <span><code><a href="class-Charcoal.Source.SourceInterface.html">Charcoal\Source\SourceInterface</a></code> <var>$source</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the object's source.</p>
@@ -455,7 +449,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_source">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#156-167" title="Go to source code">source</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#158-169" title="Go to source code">source</a>( )</code>
 
 		<div class="description short">
 			<p>Get the object's source.</p>
@@ -489,7 +483,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createSource">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#169-175" title="Go to source code">createSource</a>( <span>mixed <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#171-177" title="Go to source code">createSource</a>( <span>mixed <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create the model's source, with the Source Factory.</p>
@@ -528,7 +522,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#177-190" title="Go to source code">load</a>( <span>mixed <var>$id</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#179-192" title="Go to source code">load</a>( <span>mixed <var>$id</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Load an object from the database from its ID.</p>
@@ -567,7 +561,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadFrom">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#192-203" title="Go to source code">loadFrom</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#194-205" title="Go to source code">loadFrom</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Load an object from the database from its key $key.</p>
@@ -608,7 +602,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadFromQuery">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#205-216" title="Go to source code">loadFromQuery</a>( <span>string <var>$query</var></span>, <span>array <var>$binds</var> = []</span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#207-218" title="Go to source code">loadFromQuery</a>( <span>string <var>$query</var></span>, <span>array <var>$binds</var> = []</span> )</code>
 
 		<div class="description short">
 			<p>Load an object from the database from a custom SQL query.</p>
@@ -649,7 +643,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#218-232" title="Go to source code">save</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#220-234" title="Go to source code">save</a>( )</code>
 
 		<div class="description short">
 			<p>Save an object current state to storage</p>
@@ -683,7 +677,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#234-250" title="Go to source code">update</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#236-252" title="Go to source code">update</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update the object in storage to the current object state.</p>
@@ -722,7 +716,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#252-266" title="Go to source code">delete</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#254-268" title="Go to source code">delete</a>( )</code>
 
 		<div class="description short">
 			<p>Delete an object from storage.</p>
@@ -756,7 +750,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preSave">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#268-271" title="Go to source code">preSave</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#270-273" title="Go to source code">preSave</a>( )</code>
 
 		<div class="description short">
 			
@@ -790,7 +784,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postSave">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#273-276" title="Go to source code">postSave</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#275-278" title="Go to source code">postSave</a>( )</code>
 
 		<div class="description short">
 			
@@ -824,7 +818,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preUpdate">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#278-282" title="Go to source code">preUpdate</a>( <span>array <var>$keys</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#280-284" title="Go to source code">preUpdate</a>( <span>array <var>$keys</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -863,7 +857,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postUpdate">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#284-288" title="Go to source code">postUpdate</a>( <span>array <var>$keys</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#286-290" title="Go to source code">postUpdate</a>( <span>array <var>$keys</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -902,7 +896,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preDelete">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#290-293" title="Go to source code">preDelete</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#292-295" title="Go to source code">preDelete</a>( )</code>
 
 		<div class="description short">
 			
@@ -936,7 +930,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postDelete">#</a>
-		<code><a href="source-class-Charcoal.Source.StorableTrait.html#295-298" title="Go to source code">postDelete</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.StorableTrait.html#297-300" title="Go to source code">postDelete</a>( )</code>
 
 		<div class="description short">
 			
@@ -980,7 +974,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.StorableTrait.html#17-20" title="Go to source code"><var>$id</var></a>
+				<a href="source-class-Charcoal.Source.StorableTrait.html#19-22" title="Go to source code"><var>$id</var></a>
 
 			<div class="description short">
 				<p>$id The object (unique) identifier</p>
@@ -1005,7 +999,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.StorableTrait.html#22-25" title="Go to source code"><var>$key</var></a>
+				<a href="source-class-Charcoal.Source.StorableTrait.html#24-27" title="Go to source code"><var>$key</var></a>
 
 			<div class="description short">
 				<p>$key The object key</p>
@@ -1026,11 +1020,11 @@
 	<tr data-order="sourceFactory" id="$sourceFactory">
 		<td class="attributes"><code>
 			protected  
-			<code><a href="class-Charcoal.Source.SourceFactory.html">Charcoal\Source\SourceFactory</a></code>
+			Charcoal\Factory\FactoryInterface
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.StorableTrait.html#27-30" title="Go to source code"><var>$sourceFactory</var></a>
+				<a href="source-class-Charcoal.Source.StorableTrait.html#29-32" title="Go to source code"><var>$sourceFactory</var></a>
 
 			<div class="description short">
 				<p>$sourceFactory</p>
