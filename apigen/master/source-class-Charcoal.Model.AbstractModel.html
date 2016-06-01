@@ -338,8 +338,8 @@
 </span><span id="186" class="l"><a href="#186">186: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$propertyIdent</span> =&gt; <span class="php-var">$property</span>) {
 </span><span id="187" class="l"><a href="#187">187: </a>            <span class="php-var">$fields</span> = <span class="php-var">$property</span>-&gt;fields();
 </span><span id="188" class="l"><a href="#188">188: </a>
-</span><span id="189" class="l"><a href="#189">189: </a>            <span class="php-keyword1">foreach</span>(<span class="php-var">$fields</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span>=&gt;<span class="php-var">$f</span>) {
-</span><span id="190" class="l"><a href="#190">190: </a>                <span class="php-keyword1">if</span>(<span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>)) {
+</span><span id="189" class="l"><a href="#189">189: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$fields</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$f</span>) {
+</span><span id="190" class="l"><a href="#190">190: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>)) {
 </span><span id="191" class="l"><a href="#191">191: </a>                    <span class="php-var">$f_id</span> = <span class="php-var">$f</span>-&gt;ident();
 </span><span id="192" class="l"><a href="#192">192: </a>                    <span class="php-var">$key</span> = <span class="php-keyword2">str_replace</span>(<span class="php-var">$propertyIdent</span>.<span class="php-quote">'_'</span>, <span class="php-quote">''</span>, <span class="php-var">$f_id</span>);
 </span><span id="193" class="l"><a href="#193">193: </a>                    <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$flatData</span>[<span class="php-var">$f_id</span>])) {
