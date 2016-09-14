@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Validator\AbstractValidator</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li class="active">
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Charcoal.Validator.AbstractValidator.html">AbstractValidator</a></li>
+				<li><a href="class-Charcoal.Validator.ValidatorResult.html">ValidatorResult</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Validator.ValidatableInterface.html">ValidatableInterface</a></li>
+				<li><a href="class-Charcoal.Validator.ValidatorInterface.html">ValidatorInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Validator.ValidatableTrait.html">ValidatableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Validator.html" title="Summary of Charcoal\Validator"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class AbstractValidator</h1>
+
+
+	<div class="description">
+	<p>An abstract class that implements most of ValidatorInterface.</p>
+
+<p>The only abstract method in the class is <code>validate()</code></p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Charcoal\Validator\AbstractValidator</span></b>			
+			 implements 
+				<a href="class-Charcoal.Validator.ValidatorInterface.html"><span>Charcoal\Validator\ValidatorInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Charcoal.Model.ModelValidator.html">Charcoal\Model\ModelValidator</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Validator.html">Validator</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Validator.AbstractValidator.html#12-175" title="Go to source code">Charcoal/Validator/AbstractValidator.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#33-39" title="Go to source code">__construct</a>( <span><code><a href="class-Charcoal.Validator.ValidatableInterface.html">Charcoal\Validator\ValidatableInterface</a></code> <var>$model</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$model</var></dt>
+					<dd>The object to validate.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="error" id="_error">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_error">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#41-49" title="Go to source code">error</a>( <span>string <var>$msg</var></span>, <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msg</var></dt>
+					<dd>The error message.</dd>
+					<dt><var>$ident</var></dt>
+					<dd>Optional result ident.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_error">Charcoal\Validator\ValidatorInterface::error()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="warning" id="_warning">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_warning">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#51-59" title="Go to source code">warning</a>( <span>string <var>$msg</var></span>, <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msg</var></dt>
+					<dd>The warning message.</dd>
+					<dt><var>$ident</var></dt>
+					<dd>Optional result ident.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_warning">Charcoal\Validator\ValidatorInterface::warning()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="notice" id="_notice">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_notice">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#61-69" title="Go to source code">notice</a>( <span>string <var>$msg</var></span>, <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$msg</var></dt>
+					<dd>The notice message.</dd>
+					<dt><var>$ident</var></dt>
+					<dd>Optional result ident.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_notice">Charcoal\Validator\ValidatorInterface::notice()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="log" id="_log">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_log">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#71-87" title="Go to source code">log</a>( <span>string <var>$level</var></span>, <span>string <var>$msg</var></span>, <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$level</var></dt>
+					<dd>The validation level.</dd>
+					<dt><var>$msg</var></dt>
+					<dd>The validation message.</dd>
+					<dt><var>$ident</var></dt>
+					<dd>Optional result ident.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_log">Charcoal\Validator\ValidatorInterface::log()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addResult" id="_addResult">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.AbstractValidator.html">Charcoal\Validator\AbstractValidator</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addResult">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#89-109" title="Go to source code">addResult</a>( <span>array|<code><a href="class-Charcoal.Validator.ValidatorResult.html">Charcoal\Validator\ValidatorResult</a></code> <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd>The result object or array.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.AbstractValidator.html">Charcoal\Validator\AbstractValidator</a></code><br>Chainable
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If result is not an array or object.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="results" id="_results">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_results">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#111-117" title="Go to source code">results</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_results">Charcoal\Validator\ValidatorInterface::results()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="errorResults" id="_errorResults">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_errorResults">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#119-128" title="Go to source code">errorResults</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="warningResults" id="_warningResults">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_warningResults">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#130-139" title="Go to source code">warningResults</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="noticeResults" id="_noticeResults">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_noticeResults">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#141-150" title="Go to source code">noticeResults</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="merge" id="_merge">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#152-169" title="Go to source code">merge</a>( <span><code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code> <var>$v</var></span>, <span>string <var>$ident_prefix</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$v</var></dt>
+					<dd>The validator to merge.</dd>
+					<dt><var>$ident_prefix</var></dt>
+					<dd>Optional identigfier prefix.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Validator.ValidatorInterface.html">Charcoal\Validator\ValidatorInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate" id="_validate">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate">#</a>
+		<code><a href="source-class-Charcoal.Validator.AbstractValidator.html#171-174" title="Go to source code">validate</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Validator.ValidatorInterface.html#_validate">Charcoal\Validator\ValidatorInterface::validate()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="ERROR" id="ERROR">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Validator.AbstractValidator.html#19" title="Go to source code"><b>ERROR</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#ERROR" class="anchor">#</a>
+				<code><span class="php-quote">'error'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="WARNING" id="WARNING">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Validator.AbstractValidator.html#20" title="Go to source code"><b>WARNING</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#WARNING" class="anchor">#</a>
+				<code><span class="php-quote">'warning'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="NOTICE" id="NOTICE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Validator.AbstractValidator.html#21" title="Go to source code"><b>NOTICE</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#NOTICE" class="anchor">#</a>
+				<code><span class="php-quote">'notice'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="model" id="$model">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Charcoal.Validator.ValidatableInterface.html">Charcoal\Validator\ValidatableInterface</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Validator.AbstractValidator.html#23-26" title="Go to source code"><var>$model</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$model" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

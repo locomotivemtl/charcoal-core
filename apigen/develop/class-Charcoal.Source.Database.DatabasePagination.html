@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Source\Database\DatabasePagination</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li class="active">
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.Database.DatabaseFilter.html">DatabaseFilter</a></li>
+				<li><a href="class-Charcoal.Source.Database.DatabaseOrder.html">DatabaseOrder</a></li>
+				<li class="active"><a href="class-Charcoal.Source.Database.DatabasePagination.html">DatabasePagination</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Source.Database.html" title="Summary of Charcoal\Source\Database"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class DatabasePagination</h1>
+
+
+	<div class="description">
+	<p>The DatabasePagination makes a Pagination SQL-aware</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Charcoal.Source.Pagination.html"><span>Charcoal\Source\Pagination</span></a>
+			
+			 implements 
+				<a href="class-Charcoal.Source.PaginationInterface.html"><span>Charcoal\Source\PaginationInterface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Source\Database\DatabasePagination</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a>\<a href="namespace-Charcoal.Source.Database.html">Database</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Source.Database.DatabasePagination.html#8-33" title="Go to source code">Charcoal/Source/Database/DatabasePagination.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="sql" id="_sql">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sql">#</a>
+		<code><a href="source-class-Charcoal.Source.Database.DatabasePagination.html#13-32" title="Go to source code">sql</a>( )</code>
+
+		<div class="description short">
+			<p>Get the pagination's SQL string (Full "LIMIT" subquery)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the pagination's SQL string (Full "LIMIT" subquery)</p>
+
+<p>For example, for the pagination <code>{page:3,num_per_page:50}</code> the result
+would be: <code>' LIMIT 100, 50'</code>.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Source.Pagination.html#methods">Charcoal\Source\Pagination</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.Pagination.html#_first">first()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_last">last()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_numPerPage">numPerPage()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_page">page()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_setData">setData()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_setNumPerPage">setNumPerPage()</a>, 
+			<a href="class-Charcoal.Source.Pagination.html#_setPage">setPage()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-Charcoal.Source.Pagination.html#constants">Charcoal\Source\Pagination</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.Pagination.html#DEFAULT_NUM_PER_PAGE"><b>DEFAULT_NUM_PER_PAGE</b></a>, 
+			<a href="class-Charcoal.Source.Pagination.html#DEFAULT_PAGE"><b>DEFAULT_PAGE</b></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Charcoal.Source.Pagination.html#properties">Charcoal\Source\Pagination</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.Pagination.html#$numPerPage"><var>$numPerPage</var></a>, 
+			<a href="class-Charcoal.Source.Pagination.html#$page"><var>$page</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
