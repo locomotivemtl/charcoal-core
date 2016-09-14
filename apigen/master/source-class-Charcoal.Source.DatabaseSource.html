@@ -413,7 +413,7 @@
 </span><span id="261" class="l"><a href="#261">261: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$propertyIdent</span>) {
 </span><span id="262" class="l"><a href="#262">262: </a>            <span class="php-var">$p</span> = <span class="php-var">$model</span>-&gt;p(<span class="php-var">$propertyIdent</span>);
 </span><span id="263" class="l"><a href="#263">263: </a>            <span class="php-var">$v</span> = <span class="php-var">$model</span>-&gt;propertyValue(<span class="php-var">$propertyIdent</span>);
-</span><span id="264" class="l"><a href="#264">264: </a>            <span class="php-comment">//$p-&gt;setVal($v);</span>
+</span><span id="264" class="l"><a href="#264">264: </a>            <span class="php-var">$p</span>-&gt;setVal(<span class="php-var">$v</span>);
 </span><span id="265" class="l"><a href="#265">265: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$p</span> || !<span class="php-var">$p</span>-&gt;active()) {
 </span><span id="266" class="l"><a href="#266">266: </a>                <span class="php-keyword1">continue</span>;
 </span><span id="267" class="l"><a href="#267">267: </a>            }
