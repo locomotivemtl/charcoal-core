@@ -141,7 +141,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Loader.html">Loader</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Loader.CollectionLoader.html#30-672" title="Go to source code">Charcoal/Loader/CollectionLoader.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Loader.CollectionLoader.html#30-700" title="Go to source code">Charcoal/Loader/CollectionLoader.php</a>
 		<br>
 	</div>
 
@@ -161,7 +161,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#81-94" title="Go to source code">__construct</a>( <span>array|ArrayAccess <var>$data</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#81-105" title="Go to source code">__construct</a>( <span>array|ArrayAccess <var>$data</var></span> )</code>
 
 		<div class="description short">
 			<p>Return a new CollectionLoader object.</p>
@@ -196,7 +196,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFactory">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#96-107" title="Go to source code">setFactory</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#107-118" title="Go to source code">setFactory</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span> )</code>
 
 		<div class="description short">
 			<p>Set an object model factory.</p>
@@ -223,6 +223,44 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="factory" id="_factory">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Charcoal\Factory\FactoryInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_factory">#</a>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#120-135" title="Go to source code">factory</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the object model factory.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the object model factory.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					Charcoal\Factory\FactoryInterface
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					RuntimeException<br>If the model factory was not previously set.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="setData" id="_setData">
 
 		<td class="attributes"><code>
@@ -235,7 +273,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setData">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#109-134" title="Go to source code">setData</a>( <span>array|Traversable <var>$data</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#137-162" title="Go to source code">setData</a>( <span>array|Traversable <var>$data</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the loader data.</p>
@@ -276,7 +314,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_source">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#136-149" title="Go to source code">source</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#164-177" title="Go to source code">source</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the source to load objects from.</p>
@@ -314,7 +352,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSource">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#151-164" title="Go to source code">setSource</a>( <span><code><a href="class-Charcoal.Source.SourceInterface.html">Charcoal\Source\SourceInterface</a></code> <var>$source</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#179-192" title="Go to source code">setSource</a>( <span><code><a href="class-Charcoal.Source.SourceInterface.html">Charcoal\Source\SourceInterface</a></code> <var>$source</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the source to load objects from.</p>
@@ -353,7 +391,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_reset">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#166-180" title="Go to source code">reset</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#194-208" title="Go to source code">reset</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="AbstractSource::reset()">AbstractSource::reset()</a></p>
@@ -389,7 +427,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_model">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#182-195" title="Go to source code">model</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#210-223" title="Go to source code">model</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the object model.</p>
@@ -427,7 +465,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setModel">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#197-224" title="Go to source code">setModel</a>( <span>string|<code><a href="class-Charcoal.Model.ModelInterface.html">Charcoal\Model\ModelInterface</a></code> <var>$model</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#225-252" title="Go to source code">setModel</a>( <span>string|<code><a href="class-Charcoal.Model.ModelInterface.html">Charcoal\Model\ModelInterface</a></code> <var>$model</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the model to use for the loaded objects.</p>
@@ -470,7 +508,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDynamicTypeField">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#226-242" title="Go to source code">setDynamicTypeField</a>( <span>string <var>$field</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#254-270" title="Go to source code">setDynamicTypeField</a>( <span>string <var>$field</var></span> )</code>
 
 		<div class="description short">
 			
@@ -513,7 +551,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_properties">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#244-252" title="Go to source code">properties</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#272-280" title="Go to source code">properties</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::properties()">SourceInterface::properties()</a></p>
@@ -547,7 +585,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setProperties">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#254-265" title="Go to source code">setProperties</a>( <span>array <var>$properties</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#282-293" title="Go to source code">setProperties</a>( <span>array <var>$properties</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::setProperties()">SourceInterface::setProperties()</a></p>
@@ -586,7 +624,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addProperty">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#267-278" title="Go to source code">addProperty</a>( <span>string <var>$property</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#295-306" title="Go to source code">addProperty</a>( <span>string <var>$property</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::addProperty()">SourceInterface::addProperty()</a></p>
@@ -625,7 +663,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setKeywords">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#280-295" title="Go to source code">setKeywords</a>( <span>array <var>$keywords</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#308-323" title="Go to source code">setKeywords</a>( <span>array <var>$keywords</var></span> )</code>
 
 		<div class="description short">
 			<p>Set "search" keywords to filter multiple properties.</p>
@@ -664,7 +702,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addKeyword">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#297-321" title="Go to source code">addKeyword</a>( <span>string <var>$keyword</var></span>, <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#325-349" title="Go to source code">addKeyword</a>( <span>string <var>$keyword</var></span>, <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Add a "search" keyword filter to multiple properties.</p>
@@ -705,7 +743,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filters">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#323-331" title="Go to source code">filters</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#351-359" title="Go to source code">filters</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::filters()">SourceInterface::filters()</a></p>
@@ -739,7 +777,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFilters">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#333-344" title="Go to source code">setFilters</a>( <span>array <var>$filters</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#361-372" title="Go to source code">setFilters</a>( <span>array <var>$filters</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::setFilters()">SourceInterface::setFilters()</a></p>
@@ -778,7 +816,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addFilter">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#346-359" title="Go to source code">addFilter</a>( <span>string|array|Filter <var>$param</var></span>, <span>mixed <var>$val</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#374-387" title="Go to source code">addFilter</a>( <span>string|array|Filter <var>$param</var></span>, <span>mixed <var>$val</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::addFilter()">SourceInterface::addFilter()</a></p>
@@ -821,7 +859,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_orders">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#361-369" title="Go to source code">orders</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#389-397" title="Go to source code">orders</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::orders()">SourceInterface::orders()</a></p>
@@ -855,7 +893,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setOrders">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#371-382" title="Go to source code">setOrders</a>( <span>array <var>$orders</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#399-410" title="Go to source code">setOrders</a>( <span>array <var>$orders</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::setOrders()">SourceInterface::setOrders()</a></p>
@@ -894,7 +932,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addOrder">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#384-397" title="Go to source code">addOrder</a>( <span>string|array|Order <var>$param</var></span>, <span>string <var>$mode</var> = <span class="php-quote">'asc'</span></span>, <span>array <var>$orderOptions</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#412-425" title="Go to source code">addOrder</a>( <span>string|array|Order <var>$param</var></span>, <span>string <var>$mode</var> = <span class="php-quote">'asc'</span></span>, <span>array <var>$orderOptions</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::addOrder()">SourceInterface::addOrder()</a></p>
@@ -937,7 +975,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_pagination">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#399-407" title="Go to source code">pagination</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#427-435" title="Go to source code">pagination</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::pagination()">SourceInterface::pagination()</a></p>
@@ -971,7 +1009,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPagination">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#409-420" title="Go to source code">setPagination</a>( <span>mixed <var>$param</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#437-448" title="Go to source code">setPagination</a>( <span>mixed <var>$param</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="SourceInterface::setPagination()">SourceInterface::setPagination()</a></p>
@@ -1010,7 +1048,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_page">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#422-430" title="Go to source code">page</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#450-458" title="Go to source code">page</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="PaginationInterface::page()">PaginationInterface::page()</a></p>
@@ -1044,7 +1082,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setPage">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#432-443" title="Go to source code">setPage</a>( <span>integer <var>$page</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#460-471" title="Go to source code">setPage</a>( <span>integer <var>$page</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="PaginationInterface::pagination()">PaginationInterface::pagination()</a></p>
@@ -1083,7 +1121,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_numPerPage">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#445-453" title="Go to source code">numPerPage</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#473-481" title="Go to source code">numPerPage</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="PaginationInterface::numPerPage()">PaginationInterface::numPerPage()</a></p>
@@ -1117,7 +1155,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setNumPerPage">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#455-466" title="Go to source code">setNumPerPage</a>( <span>integer <var>$num</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#483-494" title="Go to source code">setNumPerPage</a>( <span>integer <var>$num</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="PaginationInterface::setNumPerPage()">PaginationInterface::setNumPerPage()</a></p>
@@ -1156,7 +1194,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCallback">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#468-478" title="Go to source code">setCallback</a>( <span>callable <var>$callback</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#496-506" title="Go to source code">setCallback</a>( <span>callable <var>$callback</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the callback routine applied to every object added to the collection.</p>
@@ -1195,7 +1233,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_callback">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#480-488" title="Go to source code">callback</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#508-516" title="Go to source code">callback</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the callback routine applied to every object added to the collection.</p>
@@ -1229,7 +1267,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#490-507" title="Go to source code">load</a>( <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span>, <span>callable <var>$cb</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#518-535" title="Go to source code">load</a>( <span>string|null <var>$ident</var> = <span class="php-keyword1">null</span></span>, <span>callable <var>$cb</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Load a collection from source.</p>
@@ -1275,7 +1313,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadCount">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#509-531" title="Go to source code">loadCount</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#537-559" title="Go to source code">loadCount</a>( )</code>
 
 		<div class="description short">
 			<p>Get the total number of items for this collection query.</p>
@@ -1313,7 +1351,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadFromQuery">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#533-583" title="Go to source code">loadFromQuery</a>( <span>string <var>$query</var></span>, <span>callable <var>$cb</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#561-611" title="Go to source code">loadFromQuery</a>( <span>string <var>$query</var></span>, <span>callable <var>$cb</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Load list from query.</p>
@@ -1359,7 +1397,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createCollection">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#585-606" title="Go to source code">createCollection</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#613-634" title="Go to source code">createCollection</a>( )</code>
 
 		<div class="description short">
 			<p>Create a collection.</p>
@@ -1388,7 +1426,7 @@
 	<tr data-order="setCollectionClass" id="_setCollectionClass">
 
 		<td class="attributes"><code>
-			 protected 
+			 public 
 
 			AbstractPropertyDisplay
 			
@@ -1397,7 +1435,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCollectionClass">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#608-626" title="Go to source code">setCollectionClass</a>( <span>string <var>$className</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#636-654" title="Go to source code">setCollectionClass</a>( <span>string <var>$className</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the class name of the collection.</p>
@@ -1440,7 +1478,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_collectionClass">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#628-636" title="Go to source code">collectionClass</a>( )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#656-664" title="Go to source code">collectionClass</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the class name of the collection.</p>
@@ -1474,7 +1512,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getter">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#638-648" title="Go to source code">getter</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#666-676" title="Go to source code">getter</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Allow an object to define how the key getter are called.</p>
@@ -1513,7 +1551,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setter">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#650-660" title="Go to source code">setter</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#678-688" title="Go to source code">setter</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Allow an object to define how the key setter are called.</p>
@@ -1552,7 +1590,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_camelize">#</a>
-		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#662-671" title="Go to source code">camelize</a>( <span>string <var>$str</var></span> )</code>
+		<code><a href="source-class-Charcoal.Loader.CollectionLoader.html#690-699" title="Go to source code">camelize</a>( <span>string <var>$str</var></span> )</code>
 
 		<div class="description short">
 			<p>Transform a snake_case string to camelCase.</p>
