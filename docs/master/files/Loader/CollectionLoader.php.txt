@@ -90,7 +90,18 @@ class CollectionLoader implements LoggerAwareInterface
         }
 
         $this->setLogger($data['logger']);
-        $this->setFactory($data['factory']);
+
+        if (isset($data['model'])) {
+            $this->setModel($data['model']);
+        }
+
+        if (isset($data['factory'])) {
+            $this->setFactory($data['factory']);
+        }
+
+        if (isset($data['collection'])) {
+            $this->setCollectionClass($data['collection']);
+        }
     }
 
     /**
@@ -104,6 +115,23 @@ class CollectionLoader implements LoggerAwareInterface
         $this->factory = $factory;
 
         return $this;
+    }
+
+    /**
+     * Retrieve the object model factory.
+     *
+     * @throws RuntimeException If the model factory was not previously set.
+     * @return FactoryInterface
+     */
+    protected function factory()
+    {
+        if (!isset($this->factory)) {
+            throw new RuntimeException(
+                sprintf('Model Factory is not defined for "%s"', get_class($this))
+            );
+        }
+
+        return $this->factory;
     }
 
     /**
@@ -204,7 +232,7 @@ class CollectionLoader implements LoggerAwareInterface
     public function setModel($model)
     {
         if (is_string($model)) {
-            $model = $this->factory->get($model);
+            $model = $this->factory()->get($model);
         }
 
         if (!$model instanceof ModelInterface) {
@@ -569,7 +597,7 @@ class CollectionLoader implements LoggerAwareInterface
                 $objType = $modelObjType;
             }
 
-            $obj = $this->factory->create($objType);
+            $obj = $this->factory()->create($objType);
             $obj->setFlatData($objData);
 
             if (isset($cb)) {
@@ -612,7 +640,7 @@ class CollectionLoader implements LoggerAwareInterface
      * @throws InvalidArgumentException If the class name is not a string.
      * @return AbstractPropertyDisplay Chainable
      */
-    protected function setCollectionClass($className)
+    public function setCollectionClass($className)
     {
         if (!is_string($className)) {
             throw new InvalidArgumentException(
