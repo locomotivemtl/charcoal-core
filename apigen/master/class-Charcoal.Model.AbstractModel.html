@@ -208,7 +208,7 @@ Charcoal\Config\AbstractEntity
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Model.AbstractModel.html#43-590" title="Go to source code">Charcoal/Model/AbstractModel.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Model.AbstractModel.html#43-592" title="Go to source code">Charcoal/Model/AbstractModel.php</a>
 		<br>
 	</div>
 
@@ -708,7 +708,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#368-400" title="Go to source code">save</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#368-402" title="Go to source code">save</a>( )</code>
 
 		<div class="description short">
 			<p>Save the object's current state to storage.</p>
@@ -716,6 +716,8 @@ Also retrieve and return the actual language that matched.</p>
 
 		<div class="description detailed hidden">
 			<p>Save the object's current state to storage.</p>
+
+<p>Overrides default StorableTrait save() method to also save properties.</p>
 
 
 
@@ -748,7 +750,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#402-434" title="Go to source code">update</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#404-436" title="Go to source code">update</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update the object in storage with the current state.</p>
@@ -793,7 +795,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preSave">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#436-444" title="Go to source code">preSave</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#438-446" title="Go to source code">preSave</a>( )</code>
 
 		<div class="description short">
 			<p>StorableTrait > preSave(). Save hook called before saving the model.</p>
@@ -827,7 +829,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postSave">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#446-454" title="Go to source code">postSave</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#448-456" title="Go to source code">postSave</a>( )</code>
 
 		<div class="description short">
 			<p>StorableTrait > postSave(). Save hook called after saving the model.</p>
@@ -861,7 +863,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preUpdate">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#456-465" title="Go to source code">preUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#458-467" title="Go to source code">preUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>StorableTrait > preUpdate(). Update hook called before updating the model.</p>
@@ -900,7 +902,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postUpdate">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#467-476" title="Go to source code">postUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#469-478" title="Go to source code">postUpdate</a>( <span>array <var>$properties</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>StorableTrait > postUpdate(). Update hook called after updating the model.</p>
@@ -939,7 +941,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preDelete">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#478-486" title="Go to source code">preDelete</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#480-488" title="Go to source code">preDelete</a>( )</code>
 
 		<div class="description short">
 			<p>StorableTrait > preDelete(). Delete hook called before deleting the model.</p>
@@ -973,7 +975,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postDelete">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#488-496" title="Go to source code">postDelete</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#490-498" title="Go to source code">postDelete</a>( )</code>
 
 		<div class="description short">
 			<p>StorableTrait > postDelete(). Delete hook called after deleting the model.</p>
@@ -1007,7 +1009,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createMetadata">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#498-511" title="Go to source code">createMetadata</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#500-513" title="Go to source code">createMetadata</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>DescribableTrait > create_metadata().</p>
@@ -1046,7 +1048,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createSource">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#513-546" title="Go to source code">createSource</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#515-548" title="Go to source code">createSource</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>StorableInterface > createSource()</p>
@@ -1089,7 +1091,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createValidator">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#548-561" title="Go to source code">createValidator</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#550-563" title="Go to source code">createValidator</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>ValidatableInterface > create_validator().</p>
@@ -1128,7 +1130,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createView">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#563-577" title="Go to source code">createView</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#565-579" title="Go to source code">createView</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1167,7 +1169,7 @@ Also retrieve and return the actual language that matched.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_objType">#</a>
-		<code><a href="source-class-Charcoal.Model.AbstractModel.html#579-589" title="Go to source code">objType</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.AbstractModel.html#581-591" title="Go to source code">objType</a>( )</code>
 
 		<div class="description short">
 			<p>Convert the current class name in "type-ident" format.</p>
