@@ -383,7 +383,7 @@
 </span><span id="231" class="l"><a href="#231">231: </a>        <span class="php-var">$data</span> = [];
 </span><span id="232" class="l"><a href="#232">232: </a>        <span class="php-var">$properties</span> = <span class="php-var">$this</span>-&gt;properties();
 </span><span id="233" class="l"><a href="#233">233: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$propertyIdent</span> =&gt; <span class="php-var">$property</span>) {
-</span><span id="234" class="l"><a href="#234">234: </a>            <span class="php-var">$fields</span> = <span class="php-var">$property</span>-&gt;fields();
+</span><span id="234" class="l"><a href="#234">234: </a>            <span class="php-var">$fields</span> = <span class="php-var">$property</span>-&gt;fields(<span class="php-keyword1">null</span>);
 </span><span id="235" class="l"><a href="#235">235: </a>
 </span><span id="236" class="l"><a href="#236">236: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$fields</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$f</span>) {
 </span><span id="237" class="l"><a href="#237">237: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>)) {

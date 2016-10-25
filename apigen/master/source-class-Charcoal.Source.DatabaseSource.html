@@ -417,7 +417,7 @@
 </span><span id="265" class="l"><a href="#265">265: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$p</span> || !<span class="php-var">$p</span>-&gt;active()) {
 </span><span id="266" class="l"><a href="#266">266: </a>                <span class="php-keyword1">continue</span>;
 </span><span id="267" class="l"><a href="#267">267: </a>            }
-</span><span id="268" class="l"><a href="#268">268: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$p</span>-&gt;fields() <span class="php-keyword1">as</span> <span class="php-var">$fieldIdent</span> =&gt; <span class="php-var">$field</span>) {
+</span><span id="268" class="l"><a href="#268">268: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$p</span>-&gt;fields(<span class="php-var">$v</span>) <span class="php-keyword1">as</span> <span class="php-var">$fieldIdent</span> =&gt; <span class="php-var">$field</span>) {
 </span><span id="269" class="l"><a href="#269">269: </a>                <span class="php-var">$fields</span>[<span class="php-var">$field</span>-&gt;ident()] = <span class="php-var">$field</span>;
 </span><span id="270" class="l"><a href="#270">270: </a>            }
 </span><span id="271" class="l"><a href="#271">271: </a>        }
