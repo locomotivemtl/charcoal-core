@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Charcoal\Model\MetadataLoader</title>
+	<title>Class Charcoal\Model\Service\MetadataLoader</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -35,6 +35,11 @@
 					</a>
 
 						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
 				<li>
 					<a href="namespace-Charcoal.Model.ServiceProvider.html">
 						ServiceProvider					</a>
@@ -68,29 +73,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
-				<li><a href="class-Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
-				<li><a href="class-Charcoal.Model.Collection.html">Collection</a></li>
-				<li class="active"><a href="class-Charcoal.Model.MetadataLoader.html">MetadataLoader</a></li>
-				<li><a href="class-Charcoal.Model.Model.html">Model</a></li>
-				<li><a href="class-Charcoal.Model.ModelFactory.html">ModelFactory</a></li>
-				<li><a href="class-Charcoal.Model.ModelLoader.html">ModelLoader</a></li>
-				<li><a href="class-Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
-				<li><a href="class-Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+				<li class="active"><a href="class-Charcoal.Model.Service.MetadataLoader.html">MetadataLoader</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelBuilder.html">ModelBuilder</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoader.html">ModelLoader</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoaderBuilder.html">ModelLoaderBuilder</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
-				<li><a href="class-Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
-				<li><a href="class-Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
-				<li><a href="class-Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
-			</ul>
 
-			<h3>Traits</h3>
-			<ul>
-				<li><a href="class-Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
-			</ul>
 
 
 
@@ -114,7 +103,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Charcoal.Model.html" title="Summary of Charcoal\Model"><span>Namespace</span></a>
+				<a href="namespace-Charcoal.Model.Service.html" title="Summary of Charcoal\Model\Service"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -142,7 +131,7 @@ the class' parents and interfaces.</p>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b><span>Charcoal\Model\MetadataLoader</span></b>			
+<b><span>Charcoal\Model\Service\MetadataLoader</span></b>			
 			 implements 
 <span>Psr\Log\LoggerAwareInterface</span>
 			
@@ -161,12 +150,12 @@ the class' parents and interfaces.</p>
 
 
 	<div class="info">
-		<b>Final</b><br>
 		
-		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a>\<a href="namespace-Charcoal.Model.Service.html">Service</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Model.MetadataLoader.html#18-491" title="Go to source code">Charcoal/Model/MetadataLoader.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Model.Service.MetadataLoader.html#18-491" title="Go to source code">Charcoal/Model/Service/MetadataLoader.php</a>
 		<br>
 	</div>
 
@@ -186,7 +175,7 @@ the class' parents and interfaces.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#75-95" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#75-95" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Return new MetadataLoader object.</p>
@@ -233,7 +222,7 @@ the loader's search paths.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#97-119" title="Go to source code">load</a>( <span>string <var>$ident</var></span>, <span><code><a href="class-Charcoal.Model.MetadataInterface.html">Charcoal\Model\MetadataInterface</a></code> <var>$metadata</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#97-119" title="Go to source code">load</a>( <span>string <var>$ident</var></span>, <span><code><a href="class-Charcoal.Model.MetadataInterface.html">Charcoal\Model\MetadataInterface</a></code> <var>$metadata</var></span> )</code>
 
 		<div class="description short">
 			<p>Load the metadata from JSON files.</p>
@@ -274,7 +263,7 @@ the loader's search paths.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadData">#</a>
-		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#121-141" title="Go to source code">loadData</a>( <span>string <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#121-141" title="Go to source code">loadData</a>( <span>string <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Load the metadata from JSON files.</p>
@@ -313,7 +302,7 @@ the loader's search paths.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loadJsonFile">#</a>
-		<code><a href="source-class-Charcoal.Model.MetadataLoader.html#361-409" title="Go to source code">loadJsonFile</a>( <span>mixed <var>$filename</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#361-409" title="Go to source code">loadJsonFile</a>( <span>mixed <var>$filename</var></span> )</code>
 
 		<div class="description short">
 			<p>Load the contents of a JSON file.</p>

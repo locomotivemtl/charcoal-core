@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Model\Service\ModelBuilder</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.Service.MetadataLoader.html">MetadataLoader</a></li>
+				<li class="active"><a href="class-Charcoal.Model.Service.ModelBuilder.html">ModelBuilder</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoader.html">ModelLoader</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoaderBuilder.html">ModelLoaderBuilder</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.Service.html" title="Summary of Charcoal\Model\Service"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ModelBuilder</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a>\<a href="namespace-Charcoal.Model.Service.html">Service</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.Service.ModelBuilder.html#12-151" title="Go to source code">Charcoal/Model/Service/ModelBuilder.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.ModelBuilder.html#34-42" title="Go to source code">__construct</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>Constructor dependencies.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="build" id="_build">
+
+		<td class="attributes"><code>
+			 public 
+
+			ModelInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_build">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.ModelBuilder.html#44-69" title="Go to source code">build</a>( <span>string <var>$objType</var></span>, <span>string|null <var>$metadataIdent</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$sourceIdent</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Build a model, pre-initializing its metadata and its source.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Build a model, pre-initializing its metadata and its source.</p>
+
+<p>By default, the name of the "obj type" (the model class name) is used to determine the metadata ident to load.
+To load a custom metadata for the object, use the <code>$metadataIdent</code> argument.</p>
+
+<p>By default, the object's <em>default</em> source (from its metadata) is used as source.
+To load a custom source for the object, use the <code>$sourceIdent</code> argument.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$objType</var></dt>
+					<dd>The object type of the Model.</dd>
+					<dt><var>$metadataIdent</var></dt>
+					<dd>Optional. The metadata ident of the object.</dd>
+					<dt><var>$sourceIdent</var></dt>
+					<dd>Optional. The custom source ident to load as source.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					ModelInterface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__invoke" id="___invoke">
+
+		<td class="attributes"><code>
+			 public 
+
+			ModelInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___invoke">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.ModelBuilder.html#71-82" title="Go to source code">__invoke</a>( <span>string <var>$objType</var></span>, <span>string|null <var>$metadataIdent</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$sourceIdent</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>The builder can be invoked (used as function).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>The builder can be invoked (used as function).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$objType</var></dt>
+					<dd>The object type of the Model.</dd>
+					<dt><var>$metadataIdent</var></dt>
+					<dd>Optional. The metadata ident of the object.</dd>
+					<dt><var>$sourceIdent</var></dt>
+					<dd>Optional. The custom source ident to load as source.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					ModelInterface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="DEFAULT_SOURCE_TYPE" id="DEFAULT_SOURCE_TYPE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Model.Service.ModelBuilder.html#17" title="Go to source code"><b>DEFAULT_SOURCE_TYPE</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#DEFAULT_SOURCE_TYPE" class="anchor">#</a>
+				<code><span class="php-quote">'database'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
