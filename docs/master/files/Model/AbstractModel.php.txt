@@ -132,7 +132,7 @@ abstract class AbstractModel extends AbstractEntity implements
      * @param array|\Traversable $data The object data.
      * @return array|\Traversable The object data without the pre-set ID.
      */
-    public function setIdFromData($data)
+    protected function setIdFromData($data)
     {
         $key = $this->key();
         if (isset($data[$key])) {
@@ -168,9 +168,26 @@ abstract class AbstractModel extends AbstractEntity implements
         $properties = $this->properties($propertyFilters);
         foreach ($properties as $propertyIdent => $property) {
             // Ensure objects are properly encoded.
-            $data[$propertyIdent] = json_decode(json_encode($property), true);
+            $v = $this->propertyValue($propertyIdent);
+            $v = $this->serializedValue($v);
+            $data[$propertyIdent] = $v;
         }
         return $data;
+    }
+
+    /**
+     * @param mixed $val The value to serialize.
+     * @return mixed
+     */
+    private function serializedValue($val)
+    {
+        if (is_scalar($val)) {
+            return $val;
+        } elseif ($val instanceof DateTimeInterface) {
+            return (string)$val;
+        } else {
+            return json_decode(json_encode($val), true);
+        }
     }
 
     /**
@@ -380,9 +397,7 @@ abstract class AbstractModel extends AbstractEntity implements
             return false;
         }
 
-        $this->saveProperties();
-
-        // Invalid models can not be saved.
+        // Disabled: Invalid models can not be saved.
         if (!!false) {
             $valid = $this->validate();
             if ($valid === false) {
@@ -401,47 +416,13 @@ abstract class AbstractModel extends AbstractEntity implements
     }
 
     /**
-     * Update the object in storage with the current state.
-     *
-     * @see    Charcoal\Source\StorableTrait::update() For the "update" event.
-     * @param  array $properties Optional. The list of properties to update.
-     * @return mixed
-     * @todo   Enable model validation.
-     */
-    public function update(array $properties = null)
-    {
-        $pre = $this->preUpdate($properties);
-        if ($pre === false) {
-            return false;
-        }
-
-        $this->saveProperties();
-
-        // Invalid models can not be saved.
-        if (!!false) {
-            $valid = $this->validate();
-            if ($valid === false) {
-                return false;
-            }
-        }
-
-        $ret = $this->source()->updateItem($this, $properties);
-        if ($ret === false) {
-            return false;
-        }
-
-        $this->postUpdate();
-        return $ret;
-    }
-
-    /**
      * StorableTrait > preSave(). Save hook called before saving the model.
      *
      * @return boolean
      */
     protected function preSave()
     {
-        return true;
+        return $this->saveProperties();
     }
 
     /**
@@ -462,7 +443,7 @@ abstract class AbstractModel extends AbstractEntity implements
      */
     protected function preUpdate(array $properties = null)
     {
-        return true;
+        return $this->saveProperties();
     }
 
     /**
@@ -497,18 +478,13 @@ abstract class AbstractModel extends AbstractEntity implements
     }
 
     /**
-     * DescribableTrait > create_metadata().
+     * DescribableTrait > createMetadata().
      *
-     * @param array $data Optional data to intialize the Metadata object with.
      * @return MetadataInterface
      */
-    protected function createMetadata(array $data = null)
+    protected function createMetadata()
     {
-        $metadata = new ModelMetadata();
-        if ($data !== null) {
-            $metadata->setData($data);
-        }
-        return $metadata;
+        return new ModelMetadata();
     }
 
     /**
@@ -518,7 +494,7 @@ abstract class AbstractModel extends AbstractEntity implements
      * @throws Exception If the metadata source can not be found.
      * @return SourceInterface
      */
-    protected function createSource(array $data = null)
+    protected function createSource()
     {
         $metadata = $this->metadata();
         $defaultSource = $metadata->defaultSource();
@@ -535,13 +511,7 @@ abstract class AbstractModel extends AbstractEntity implements
         $source = $sourceFactory->create($sourceType);
         $source->setModel($this);
 
-        if ($data !== null) {
-            $data = array_merge_recursive($sourceConfig, $data);
-        } else {
-            $data = $sourceConfig;
-        }
-
-        $source->setData($data);
+        $source->setData($sourceConfig);
 
         return $source;
     }

@@ -6,8 +6,10 @@ use \ArrayAccess;
 use \Exception;
 use \InvalidArgumentException;
 
+// Dependencies from PSR-6 (Cache)
 use \Psr\Cache\CacheItemPoolInterface;
 
+// Module `charcoal-factory` dependencies
 use \Charcoal\Factory\FactoryInterface;
 
 /**
@@ -18,7 +20,7 @@ use \Charcoal\Factory\FactoryInterface;
  *
  * > This object is immutable.
  */
-class ModelLoader implements ArrayAccess
+final class ModelLoader implements ArrayAccess
 {
     /**
      * @var string $objType
