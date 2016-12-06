@@ -207,7 +207,7 @@
 </span><span id="49" class="l"><a href="#49"> 49: </a>    <span class="php-comment">/**
 </span></span><span id="50" class="l"><a href="#50"> 50: </a><span class="php-comment">     * Retrieve the first object in the collection.
 </span></span><span id="51" class="l"><a href="#51"> 51: </a><span class="php-comment">     *
-</span></span><span id="52" class="l"><a href="#52"> 52: </a><span class="php-comment">     * @return object|null
+</span></span><span id="52" class="l"><a href="#52"> 52: </a><span class="php-comment">     * @return object|null Returns the first object, or NULL if the collection is empty.
 </span></span><span id="53" class="l"><a href="#53"> 53: </a><span class="php-comment">     */</span>
 </span><span id="54" class="l"><a href="#54"> 54: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> first()
 </span><span id="55" class="l"><a href="#55"> 55: </a>    {
@@ -221,7 +221,7 @@
 </span><span id="63" class="l"><a href="#63"> 63: </a>    <span class="php-comment">/**
 </span></span><span id="64" class="l"><a href="#64"> 64: </a><span class="php-comment">     * Retrieve the last object in the collection.
 </span></span><span id="65" class="l"><a href="#65"> 65: </a><span class="php-comment">     *
-</span></span><span id="66" class="l"><a href="#66"> 66: </a><span class="php-comment">     * @return object|null
+</span></span><span id="66" class="l"><a href="#66"> 66: </a><span class="php-comment">     * @return object|null Returns the last object, or NULL if the collection is empty.
 </span></span><span id="67" class="l"><a href="#67"> 67: </a><span class="php-comment">     */</span>
 </span><span id="68" class="l"><a href="#68"> 68: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> last()
 </span><span id="69" class="l"><a href="#69"> 69: </a>    {
@@ -266,7 +266,7 @@
 </span></span><span id="108" class="l"><a href="#108">108: </a><span class="php-comment">     * Add an object to the collection.
 </span></span><span id="109" class="l"><a href="#109">109: </a><span class="php-comment">     *
 </span></span><span id="110" class="l"><a href="#110">110: </a><span class="php-comment">     * @param  object $obj An acceptable object.
-</span></span><span id="111" class="l"><a href="#111">111: </a><span class="php-comment">     * @throws InvalidArgumentException If the given value is not acceptable.
+</span></span><span id="111" class="l"><a href="#111">111: </a><span class="php-comment">     * @throws InvalidArgumentException If the given object is not acceptable.
 </span></span><span id="112" class="l"><a href="#112">112: </a><span class="php-comment">     * @return self
 </span></span><span id="113" class="l"><a href="#113">113: </a><span class="php-comment">     */</span>
 </span><span id="114" class="l"><a href="#114">114: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> add(<span class="php-var">$obj</span>)
@@ -275,7 +275,7 @@
 </span><span id="117" class="l"><a href="#117">117: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
 </span><span id="118" class="l"><a href="#118">118: </a>                <span class="php-keyword2">sprintf</span>(
 </span><span id="119" class="l"><a href="#119">119: </a>                    <span class="php-quote">'Must be a model, received %s'</span>,
-</span><span id="120" class="l"><a href="#120">120: </a>                    (<span class="php-keyword2">is_object</span>(<span class="php-var">$value</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$value</span>) : <span class="php-keyword2">gettype</span>(<span class="php-var">$value</span>))
+</span><span id="120" class="l"><a href="#120">120: </a>                    (<span class="php-keyword2">is_object</span>(<span class="php-var">$obj</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$obj</span>) : <span class="php-keyword2">gettype</span>(<span class="php-var">$obj</span>))
 </span><span id="121" class="l"><a href="#121">121: </a>                )
 </span><span id="122" class="l"><a href="#122">122: </a>            );
 </span><span id="123" class="l"><a href="#123">123: </a>        }
@@ -289,7 +289,7 @@
 </span></span><span id="131" class="l"><a href="#131">131: </a><span class="php-comment">     * Retrieve the object by primary key.
 </span></span><span id="132" class="l"><a href="#132">132: </a><span class="php-comment">     *
 </span></span><span id="133" class="l"><a href="#133">133: </a><span class="php-comment">     * @param  mixed $key The primary key.
-</span></span><span id="134" class="l"><a href="#134">134: </a><span class="php-comment">     * @return object|null The object or NULL if not in the collection.
+</span></span><span id="134" class="l"><a href="#134">134: </a><span class="php-comment">     * @return object|null Returns the requested object or NULL if not in the collection.
 </span></span><span id="135" class="l"><a href="#135">135: </a><span class="php-comment">     */</span>
 </span><span id="136" class="l"><a href="#136">136: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> get(<span class="php-var">$key</span>)
 </span><span id="137" class="l"><a href="#137">137: </a>    {
@@ -320,9 +320,9 @@
 </span><span id="162" class="l"><a href="#162">162: </a>    }
 </span><span id="163" class="l"><a href="#163">163: </a>
 </span><span id="164" class="l"><a href="#164">164: </a>    <span class="php-comment">/**
-</span></span><span id="165" class="l"><a href="#165">165: </a><span class="php-comment">     * Remove object from collection by primary key or array offset.
+</span></span><span id="165" class="l"><a href="#165">165: </a><span class="php-comment">     * Remove object from collection by primary key.
 </span></span><span id="166" class="l"><a href="#166">166: </a><span class="php-comment">     *
-</span></span><span id="167" class="l"><a href="#167">167: </a><span class="php-comment">     * @param  mixed $key The object primary key or array offset to remove.
+</span></span><span id="167" class="l"><a href="#167">167: </a><span class="php-comment">     * @param  mixed $key The object primary key to remove.
 </span></span><span id="168" class="l"><a href="#168">168: </a><span class="php-comment">     * @throws InvalidArgumentException If the given key is not acceptable.
 </span></span><span id="169" class="l"><a href="#169">169: </a><span class="php-comment">     * @return self
 </span></span><span id="170" class="l"><a href="#170">170: </a><span class="php-comment">     */</span>
@@ -406,7 +406,7 @@
 </span></span><span id="248" class="l"><a href="#248">248: </a><span class="php-comment">     *
 </span></span><span id="249" class="l"><a href="#249">249: </a><span class="php-comment">     * @see    \ArrayAccess
 </span></span><span id="250" class="l"><a href="#250">250: </a><span class="php-comment">     * @param  mixed $offset The object primary key or array offset.
-</span></span><span id="251" class="l"><a href="#251">251: </a><span class="php-comment">     * @return mixed The object or NULL if not in the collection.
+</span></span><span id="251" class="l"><a href="#251">251: </a><span class="php-comment">     * @return mixed Returns the requested object or NULL if not in the collection.
 </span></span><span id="252" class="l"><a href="#252">252: </a><span class="php-comment">     */</span>
 </span><span id="253" class="l"><a href="#253">253: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> offsetGet(<span class="php-var">$offset</span>)
 </span><span id="254" class="l"><a href="#254">254: </a>    {
@@ -468,13 +468,13 @@
 </span></span><span id="310" class="l"><a href="#310">310: </a><span class="php-comment">     * If offset is negative, the sequence will start that far from the end of the collection.
 </span></span><span id="311" class="l"><a href="#311">311: </a><span class="php-comment">     *
 </span></span><span id="312" class="l"><a href="#312">312: </a><span class="php-comment">     * @param  integer $offset The array offset.
-</span></span><span id="313" class="l"><a href="#313">313: </a><span class="php-comment">     * @return integer
+</span></span><span id="313" class="l"><a href="#313">313: </a><span class="php-comment">     * @return integer Returns the resolved array offset.
 </span></span><span id="314" class="l"><a href="#314">314: </a><span class="php-comment">     */</span>
 </span><span id="315" class="l"><a href="#315">315: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> resolveOffset(<span class="php-var">$offset</span>)
 </span><span id="316" class="l"><a href="#316">316: </a>    {
 </span><span id="317" class="l"><a href="#317">317: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_int</span>(<span class="php-var">$offset</span>)) {
 </span><span id="318" class="l"><a href="#318">318: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$offset</span> &lt; <span class="php-num">0</span>) {
-</span><span id="319" class="l"><a href="#319">319: </a>                <span class="php-var">$offset</span> = (<span class="php-var">$this</span>-&gt;<span class="php-keyword2">count</span>() - <span class="php-var">$offset</span>);
+</span><span id="319" class="l"><a href="#319">319: </a>                <span class="php-var">$offset</span> = (<span class="php-var">$this</span>-&gt;<span class="php-keyword2">count</span>() - <span class="php-keyword2">abs</span>(<span class="php-var">$offset</span>));
 </span><span id="320" class="l"><a href="#320">320: </a>            }
 </span><span id="321" class="l"><a href="#321">321: </a>        }
 </span><span id="322" class="l"><a href="#322">322: </a>
@@ -525,86 +525,94 @@
 </span><span id="367" class="l"><a href="#367">367: </a>
 </span><span id="368" class="l"><a href="#368">368: </a>    <span class="php-comment">/**
 </span></span><span id="369" class="l"><a href="#369">369: </a><span class="php-comment">     * Retrieve the array offset from the given key.
-</span></span><span id="370" class="l"><a href="#370">370: </a><span class="php-comment">     * @deprecated
-</span></span><span id="371" class="l"><a href="#371">371: </a><span class="php-comment">     * @param  mixed $key The primary key to retrieve the offset from.
-</span></span><span id="372" class="l"><a href="#372">372: </a><span class="php-comment">     * @return integer Returns an array offset.
-</span></span><span id="373" class="l"><a href="#373">373: </a><span class="php-comment">     */</span>
-</span><span id="374" class="l"><a href="#374">374: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">pos</span>(<span class="php-var">$key</span>)
-</span><span id="375" class="l"><a href="#375">375: </a>    {
-</span><span id="376" class="l"><a href="#376">376: </a>        <span class="php-keyword2">trigger_error</span>(<span class="php-quote">'Collection::pos() is deprecated'</span>, E_USER_DEPRECATED);
-</span><span id="377" class="l"><a href="#377">377: </a>
-</span><span id="378" class="l"><a href="#378">378: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_search</span>(<span class="php-var">$key</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$this</span>-&gt;objects));
-</span><span id="379" class="l"><a href="#379">379: </a>    }
-</span><span id="380" class="l"><a href="#380">380: </a>
-</span><span id="381" class="l"><a href="#381">381: </a>    <span class="php-comment">/**
-</span></span><span id="382" class="l"><a href="#382">382: </a><span class="php-comment">     * Alias of {@see self::values()}
-</span></span><span id="383" class="l"><a href="#383">383: </a><span class="php-comment">     *
-</span></span><span id="384" class="l"><a href="#384">384: </a><span class="php-comment">     * @deprecated
-</span></span><span id="385" class="l"><a href="#385">385: </a><span class="php-comment">     * @return object[]
-</span></span><span id="386" class="l"><a href="#386">386: </a><span class="php-comment">     */</span>
-</span><span id="387" class="l"><a href="#387">387: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> objects()
-</span><span id="388" class="l"><a href="#388">388: </a>    {
-</span><span id="389" class="l"><a href="#389">389: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;values();
-</span><span id="390" class="l"><a href="#390">390: </a>    }
-</span><span id="391" class="l"><a href="#391">391: </a>
-</span><span id="392" class="l"><a href="#392">392: </a>    <span class="php-comment">/**
-</span></span><span id="393" class="l"><a href="#393">393: </a><span class="php-comment">     * Alias of {@see self::all()}.
-</span></span><span id="394" class="l"><a href="#394">394: </a><span class="php-comment">     *
-</span></span><span id="395" class="l"><a href="#395">395: </a><span class="php-comment">     * @deprecated
-</span></span><span id="396" class="l"><a href="#396">396: </a><span class="php-comment">     * @return object[]
-</span></span><span id="397" class="l"><a href="#397">397: </a><span class="php-comment">     */</span>
-</span><span id="398" class="l"><a href="#398">398: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> map()
-</span><span id="399" class="l"><a href="#399">399: </a>    {
-</span><span id="400" class="l"><a href="#400">400: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;all();
-</span><span id="401" class="l"><a href="#401">401: </a>    }
-</span><span id="402" class="l"><a href="#402">402: </a>
-</span><span id="403" class="l"><a href="#403">403: </a>    <span class="php-comment">// =================================================================================================================</span>
-</span><span id="404" class="l"><a href="#404">404: </a>
-</span><span id="405" class="l"><a href="#405">405: </a>    <span class="php-comment">/**
-</span></span><span id="406" class="l"><a href="#406">406: </a><span class="php-comment">     * Determine if the given value is acceptable for the collection.
-</span></span><span id="407" class="l"><a href="#407">407: </a><span class="php-comment">     *
-</span></span><span id="408" class="l"><a href="#408">408: </a><span class="php-comment">     * Note: Practical for specialized collections extending the base collection.
-</span></span><span id="409" class="l"><a href="#409">409: </a><span class="php-comment">     *
-</span></span><span id="410" class="l"><a href="#410">410: </a><span class="php-comment">     * @param  mixed $value The value being vetted.
-</span></span><span id="411" class="l"><a href="#411">411: </a><span class="php-comment">     * @return boolean
-</span></span><span id="412" class="l"><a href="#412">412: </a><span class="php-comment">     */</span>
-</span><span id="413" class="l"><a href="#413">413: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> isAcceptable(<span class="php-var">$value</span>)
-</span><span id="414" class="l"><a href="#414">414: </a>    {
-</span><span id="415" class="l"><a href="#415">415: </a>        <span class="php-keyword1">return</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> ModelInterface);
-</span><span id="416" class="l"><a href="#416">416: </a>    }
-</span><span id="417" class="l"><a href="#417">417: </a>
-</span><span id="418" class="l"><a href="#418">418: </a>    <span class="php-comment">/**
-</span></span><span id="419" class="l"><a href="#419">419: </a><span class="php-comment">     * Get a base collection instance from this collection.
-</span></span><span id="420" class="l"><a href="#420">420: </a><span class="php-comment">     *
-</span></span><span id="421" class="l"><a href="#421">421: </a><span class="php-comment">     * Note: Practical for extended classes.
-</span></span><span id="422" class="l"><a href="#422">422: </a><span class="php-comment">     *
-</span></span><span id="423" class="l"><a href="#423">423: </a><span class="php-comment">     * @return Collection
-</span></span><span id="424" class="l"><a href="#424">424: </a><span class="php-comment">     */</span>
-</span><span id="425" class="l"><a href="#425">425: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> toBase()
-</span><span id="426" class="l"><a href="#426">426: </a>    {
-</span><span id="427" class="l"><a href="#427">427: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> self(<span class="php-var">$this</span>);
-</span><span id="428" class="l"><a href="#428">428: </a>    }
-</span><span id="429" class="l"><a href="#429">429: </a>
-</span><span id="430" class="l"><a href="#430">430: </a>    <span class="php-comment">/**
-</span></span><span id="431" class="l"><a href="#431">431: </a><span class="php-comment">     * Parse the given value into an array.
-</span></span><span id="432" class="l"><a href="#432">432: </a><span class="php-comment">     *
-</span></span><span id="433" class="l"><a href="#433">433: </a><span class="php-comment">     * @param  mixed $value The value being parsed.
-</span></span><span id="434" class="l"><a href="#434">434: </a><span class="php-comment">     * @return array
-</span></span><span id="435" class="l"><a href="#435">435: </a><span class="php-comment">     */</span>
-</span><span id="436" class="l"><a href="#436">436: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> asArray(<span class="php-var">$value</span>)
-</span><span id="437" class="l"><a href="#437">437: </a>    {
-</span><span id="438" class="l"><a href="#438">438: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$value</span>)) {
-</span><span id="439" class="l"><a href="#439">439: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
-</span><span id="440" class="l"><a href="#440">440: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> self) {
-</span><span id="441" class="l"><a href="#441">441: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>-&gt;all();
-</span><span id="442" class="l"><a href="#442">442: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> Traversable) {
-</span><span id="443" class="l"><a href="#443">443: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">iterator_to_array</span>(<span class="php-var">$value</span>);
-</span><span id="444" class="l"><a href="#444">444: </a>        }
-</span><span id="445" class="l"><a href="#445">445: </a>
-</span><span id="446" class="l"><a href="#446">446: </a>        <span class="php-keyword1">return</span> (<span class="php-keyword1">array</span>)<span class="php-var">$value</span>;
-</span><span id="447" class="l"><a href="#447">447: </a>    }
-</span><span id="448" class="l"><a href="#448">448: </a>}
-</span><span id="449" class="l"><a href="#449">449: </a></span></code></pre>
+</span></span><span id="370" class="l"><a href="#370">370: </a><span class="php-comment">     *
+</span></span><span id="371" class="l"><a href="#371">371: </a><span class="php-comment">     * @deprecated
+</span></span><span id="372" class="l"><a href="#372">372: </a><span class="php-comment">     * @param  mixed $key The primary key to retrieve the offset from.
+</span></span><span id="373" class="l"><a href="#373">373: </a><span class="php-comment">     * @return integer Returns an array offset.
+</span></span><span id="374" class="l"><a href="#374">374: </a><span class="php-comment">     */</span>
+</span><span id="375" class="l"><a href="#375">375: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">pos</span>(<span class="php-var">$key</span>)
+</span><span id="376" class="l"><a href="#376">376: </a>    {
+</span><span id="377" class="l"><a href="#377">377: </a>        <span class="php-keyword2">trigger_error</span>(<span class="php-quote">'Collection::pos() is deprecated'</span>, E_USER_DEPRECATED);
+</span><span id="378" class="l"><a href="#378">378: </a>
+</span><span id="379" class="l"><a href="#379">379: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">array_search</span>(<span class="php-var">$key</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$this</span>-&gt;objects));
+</span><span id="380" class="l"><a href="#380">380: </a>    }
+</span><span id="381" class="l"><a href="#381">381: </a>
+</span><span id="382" class="l"><a href="#382">382: </a>    <span class="php-comment">/**
+</span></span><span id="383" class="l"><a href="#383">383: </a><span class="php-comment">     * Alias of {@see self::values()}
+</span></span><span id="384" class="l"><a href="#384">384: </a><span class="php-comment">     *
+</span></span><span id="385" class="l"><a href="#385">385: </a><span class="php-comment">     * @deprecated
+</span></span><span id="386" class="l"><a href="#386">386: </a><span class="php-comment">     * @todo   Trigger deprecation error.
+</span></span><span id="387" class="l"><a href="#387">387: </a><span class="php-comment">     * @return object[]
+</span></span><span id="388" class="l"><a href="#388">388: </a><span class="php-comment">     */</span>
+</span><span id="389" class="l"><a href="#389">389: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> objects()
+</span><span id="390" class="l"><a href="#390">390: </a>    {
+</span><span id="391" class="l"><a href="#391">391: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;values();
+</span><span id="392" class="l"><a href="#392">392: </a>    }
+</span><span id="393" class="l"><a href="#393">393: </a>
+</span><span id="394" class="l"><a href="#394">394: </a>    <span class="php-comment">/**
+</span></span><span id="395" class="l"><a href="#395">395: </a><span class="php-comment">     * Alias of {@see self::all()}.
+</span></span><span id="396" class="l"><a href="#396">396: </a><span class="php-comment">     *
+</span></span><span id="397" class="l"><a href="#397">397: </a><span class="php-comment">     * @deprecated
+</span></span><span id="398" class="l"><a href="#398">398: </a><span class="php-comment">     * @todo   Trigger deprecation error.
+</span></span><span id="399" class="l"><a href="#399">399: </a><span class="php-comment">     * @return object[]
+</span></span><span id="400" class="l"><a href="#400">400: </a><span class="php-comment">     */</span>
+</span><span id="401" class="l"><a href="#401">401: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> map()
+</span><span id="402" class="l"><a href="#402">402: </a>    {
+</span><span id="403" class="l"><a href="#403">403: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;all();
+</span><span id="404" class="l"><a href="#404">404: </a>    }
+</span><span id="405" class="l"><a href="#405">405: </a>
+</span><span id="406" class="l"><a href="#406">406: </a>    <span class="php-comment">// =================================================================================================================</span>
+</span><span id="407" class="l"><a href="#407">407: </a>
+</span><span id="408" class="l"><a href="#408">408: </a>    <span class="php-comment">/**
+</span></span><span id="409" class="l"><a href="#409">409: </a><span class="php-comment">     * Determine if the given value is acceptable for the collection.
+</span></span><span id="410" class="l"><a href="#410">410: </a><span class="php-comment">     *
+</span></span><span id="411" class="l"><a href="#411">411: </a><span class="php-comment">     * Note: Practical for specialized collections extending the base collection.
+</span></span><span id="412" class="l"><a href="#412">412: </a><span class="php-comment">     *
+</span></span><span id="413" class="l"><a href="#413">413: </a><span class="php-comment">     * @param  mixed $value The value being vetted.
+</span></span><span id="414" class="l"><a href="#414">414: </a><span class="php-comment">     * @return boolean
+</span></span><span id="415" class="l"><a href="#415">415: </a><span class="php-comment">     */</span>
+</span><span id="416" class="l"><a href="#416">416: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> isAcceptable(<span class="php-var">$value</span>)
+</span><span id="417" class="l"><a href="#417">417: </a>    {
+</span><span id="418" class="l"><a href="#418">418: </a>        <span class="php-keyword1">return</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> ModelInterface);
+</span><span id="419" class="l"><a href="#419">419: </a>    }
+</span><span id="420" class="l"><a href="#420">420: </a>
+</span><span id="421" class="l"><a href="#421">421: </a>    <span class="php-comment">/**
+</span></span><span id="422" class="l"><a href="#422">422: </a><span class="php-comment">     * Get a base collection instance from this collection.
+</span></span><span id="423" class="l"><a href="#423">423: </a><span class="php-comment">     *
+</span></span><span id="424" class="l"><a href="#424">424: </a><span class="php-comment">     * Note: Practical for extended classes.
+</span></span><span id="425" class="l"><a href="#425">425: </a><span class="php-comment">     *
+</span></span><span id="426" class="l"><a href="#426">426: </a><span class="php-comment">     * @return Collection
+</span></span><span id="427" class="l"><a href="#427">427: </a><span class="php-comment">     */</span>
+</span><span id="428" class="l"><a href="#428">428: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> toBase()
+</span><span id="429" class="l"><a href="#429">429: </a>    {
+</span><span id="430" class="l"><a href="#430">430: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> self(<span class="php-var">$this</span>);
+</span><span id="431" class="l"><a href="#431">431: </a>    }
+</span><span id="432" class="l"><a href="#432">432: </a>
+</span><span id="433" class="l"><a href="#433">433: </a>    <span class="php-comment">/**
+</span></span><span id="434" class="l"><a href="#434">434: </a><span class="php-comment">     * Parse the given value into an array.
+</span></span><span id="435" class="l"><a href="#435">435: </a><span class="php-comment">     *
+</span></span><span id="436" class="l"><a href="#436">436: </a><span class="php-comment">     * @link http://php.net/types.array#language.types.array.casting
+</span></span><span id="437" class="l"><a href="#437">437: </a><span class="php-comment">     *     If an object is converted to an array, the result is an array whose
+</span></span><span id="438" class="l"><a href="#438">438: </a><span class="php-comment">     *     elements are the object's properties.
+</span></span><span id="439" class="l"><a href="#439">439: </a><span class="php-comment">     * @param  mixed $value The value being converted.
+</span></span><span id="440" class="l"><a href="#440">440: </a><span class="php-comment">     * @return array
+</span></span><span id="441" class="l"><a href="#441">441: </a><span class="php-comment">     */</span>
+</span><span id="442" class="l"><a href="#442">442: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> asArray(<span class="php-var">$value</span>)
+</span><span id="443" class="l"><a href="#443">443: </a>    {
+</span><span id="444" class="l"><a href="#444">444: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$value</span>)) {
+</span><span id="445" class="l"><a href="#445">445: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>;
+</span><span id="446" class="l"><a href="#446">446: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> CollectionInterface) {
+</span><span id="447" class="l"><a href="#447">447: </a>            <span class="php-keyword1">return</span> <span class="php-var">$value</span>-&gt;all();
+</span><span id="448" class="l"><a href="#448">448: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> Traversable) {
+</span><span id="449" class="l"><a href="#449">449: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">iterator_to_array</span>(<span class="php-var">$value</span>);
+</span><span id="450" class="l"><a href="#450">450: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> ModelInterface) {
+</span><span id="451" class="l"><a href="#451">451: </a>            <span class="php-keyword1">return</span> [ <span class="php-var">$value</span> ];
+</span><span id="452" class="l"><a href="#452">452: </a>        }
+</span><span id="453" class="l"><a href="#453">453: </a>
+</span><span id="454" class="l"><a href="#454">454: </a>        <span class="php-keyword1">return</span> (<span class="php-keyword1">array</span>)<span class="php-var">$value</span>;
+</span><span id="455" class="l"><a href="#455">455: </a>    }
+</span><span id="456" class="l"><a href="#456">456: </a>}
+</span><span id="457" class="l"><a href="#457">457: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
