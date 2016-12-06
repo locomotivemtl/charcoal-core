@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Model\Service\MetadataLoader</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Charcoal.Model.Service.MetadataLoader.html">MetadataLoader</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelBuilder.html">ModelBuilder</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoader.html">ModelLoader</a></li>
+				<li><a href="class-Charcoal.Model.Service.ModelLoaderBuilder.html">ModelLoaderBuilder</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.Service.html" title="Summary of Charcoal\Model\Service"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MetadataLoader</h1>
+
+
+	<div class="description">
+	<p>Load metadata from JSON file(s).</p>
+
+<p>The Metadata Loader is different than the <code>FileLoader</code> class it extends mainly because
+it tries to find all files matching  the "ident" in all search path and merge them together
+in an array, to be filled in a <code>Metadata</code> object.</p>
+
+<p>If <code>ident</code> is an actual class name, then it will also try to load all the JSON matching
+the class' parents and interfaces.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Charcoal\Model\Service\MetadataLoader</span></b>			
+			 implements 
+<span>Psr\Log\LoggerAwareInterface</span>
+			
+			 uses 
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Final</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a>\<a href="namespace-Charcoal.Model.Service.html">Service</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.Service.MetadataLoader.html#18-490" title="Go to source code">Charcoal/Model/Service/MetadataLoader.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#75-95" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Return new MetadataLoader object.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return new MetadataLoader object.</p>
+
+<p>The application's metadata paths, if any, are merged with
+the loader's search paths.</p>
+
+<h1>Required dependencie</h1>
+
+<ul>
+<li><code>logger</code></li>
+<li><code>cache</code></li>
+<li><code>paths</code></li>
+<li><code>base_path</code></li>
+</ul>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The loader's dependencies.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#97-119" title="Go to source code">load</a>( <span>string <var>$ident</var></span>, <span><code><a href="class-Charcoal.Model.MetadataInterface.html">Charcoal\Model\MetadataInterface</a></code> <var>$metadata</var></span> )</code>
+
+		<div class="description short">
+			<p>Load the metadata from JSON files.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load the metadata from JSON files.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>The metadata ident to load.</dd>
+					<dt><var>$metadata</var></dt>
+					<dd>The metadata object to load into.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadData" id="_loadData">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadData">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#121-141" title="Go to source code">loadData</a>( <span>string <var>$ident</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Load the metadata from JSON files.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load the metadata from JSON files.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ident</var></dt>
+					<dd>Optional, set the ident to load.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadJsonFile" id="_loadJsonFile">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadJsonFile">#</a>
+		<code><a href="source-class-Charcoal.Model.Service.MetadataLoader.html#360-408" title="Go to source code">loadJsonFile</a>( <span>mixed <var>$filename</var></span> )</code>
+
+		<div class="description short">
+			<p>Load the contents of a JSON file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load the contents of a JSON file.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd>The file path to retrieve.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|null
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If a JSON decoding error occurs.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
