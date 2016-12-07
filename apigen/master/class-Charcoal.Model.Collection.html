@@ -137,6 +137,11 @@
 <p>For iterating instances of <code><a href="class-Charcoal.Model.ModelInterface.html">Charcoal\Model\ModelInterface</a></code>.</p>
 
 <p>Used by <code><a href="class-Charcoal.Loader.CollectionLoader.html">Charcoal\Loader\CollectionLoader</a></code> for storing results.</p>
+
+<p>The collection stores models by \Charcoal\Source\StorableInterface their primary key.
+If two objects share the same storable ID but hold disparate data, they are considered
+to be alike. Adding an object that shares the same ID as an object previously stored in
+the collection will replace the latter.</p>
 	</div>
 
 	<dl class="tree">
@@ -162,7 +167,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Model.Collection.html#16-456" title="Go to source code">Charcoal/Model/Collection.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Model.Collection.html#16-471" title="Go to source code">Charcoal/Model/Collection.php</a>
 		<br>
 	</div>
 
@@ -182,7 +187,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#36-47" title="Go to source code">__construct</a>( <span>array|Traversable|null <var>$objs</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#41-52" title="Go to source code">__construct</a>( <span>array|Traversable|null <var>$objs</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create a new collection.</p>
@@ -217,7 +222,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_first">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#49-61" title="Go to source code">first</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#54-66" title="Go to source code">first</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the first object in the collection.</p>
@@ -251,7 +256,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_last">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#63-75" title="Go to source code">last</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#68-80" title="Go to source code">last</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the last object in the collection.</p>
@@ -285,7 +290,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_merge">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#80-105" title="Go to source code">merge</a>( <span>array|Traversable <var>$objs</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#85-110" title="Go to source code">merge</a>( <span>array|Traversable <var>$objs</var></span> )</code>
 
 		<div class="description short">
 			<p>Merge the collection with the given objects.</p>
@@ -330,7 +335,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#107-128" title="Go to source code">add</a>( <span>object <var>$obj</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#112-133" title="Go to source code">add</a>( <span>object <var>$obj</var></span> )</code>
 
 		<div class="description short">
 			<p>Add an object to the collection.</p>
@@ -375,7 +380,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#130-147" title="Go to source code">get</a>( <span>mixed <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#135-152" title="Go to source code">get</a>( <span>mixed <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Retrieve the object by primary key.</p>
@@ -416,7 +421,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#149-162" title="Go to source code">has</a>( <span>mixed <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#154-167" title="Go to source code">has</a>( <span>mixed <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Determine if an object exists in the collection by key.</p>
@@ -457,7 +462,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#164-180" title="Go to source code">remove</a>( <span>mixed <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#169-185" title="Go to source code">remove</a>( <span>mixed <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Remove object from collection by primary key.</p>
@@ -502,7 +507,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#182-192" title="Go to source code">clear</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#187-197" title="Go to source code">clear</a>( )</code>
 
 		<div class="description short">
 			<p>Remove all objects from collection.</p>
@@ -538,7 +543,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#194-202" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#199-207" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve all objects in collection indexed by primary keys.</p>
@@ -574,7 +579,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_values">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#204-212" title="Go to source code">values</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#209-217" title="Go to source code">values</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve all objects in the collection indexed numerically.</p>
@@ -610,7 +615,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_keys">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#214-222" title="Go to source code">keys</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#219-227" title="Go to source code">keys</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the primary keys of the objects in the collection.</p>
@@ -646,7 +651,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetExists">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#227-244" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#232-249" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="CollectionInterface::has()">CollectionInterface::has()</a>.</p>
@@ -689,7 +694,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetGet">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#246-264" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#251-269" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="CollectionInterface::get()">CollectionInterface::get()</a>.</p>
@@ -732,7 +737,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetSet">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#266-284" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#271-289" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="CollectionInterface::set()">CollectionInterface::set()</a>.</p>
@@ -777,7 +782,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetUnset">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#286-304" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#291-309" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="CollectionInterface::remove()">CollectionInterface::remove()</a>.</p>
@@ -816,7 +821,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_resolveOffset">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#306-324" title="Go to source code">resolveOffset</a>( <span>integer <var>$offset</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#311-329" title="Go to source code">resolveOffset</a>( <span>integer <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			<p>Parse the array offset.</p>
@@ -858,7 +863,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_count">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#329-338" title="Go to source code">count</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#334-343" title="Go to source code">count</a>( )</code>
 
 		<div class="description short">
 			<p>Get number of objects in collection</p>
@@ -896,7 +901,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getIterator">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#343-352" title="Go to source code">getIterator</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#348-357" title="Go to source code">getIterator</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve an external iterator.</p>
@@ -934,7 +939,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCachingIterator">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#354-363" title="Go to source code">getCachingIterator</a>( <span>integer <var>$flags</var> = Charcoal\Model\CachingIterator::CALL_TOSTRING</span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#359-368" title="Go to source code">getCachingIterator</a>( <span>integer <var>$flags</var> = Charcoal\Model\CachingIterator::CALL_TOSTRING</span> )</code>
 
 		<div class="description short">
 			<p>Retrieve a cached iterator.</p>
@@ -973,7 +978,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_pos">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#368-380" title="Go to source code">pos</a>( <span>mixed <var>$key</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#373-385" title="Go to source code">pos</a>( <span>mixed <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>Retrieve the array offset from the given key.</p>
@@ -1015,7 +1020,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_objects">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#382-392" title="Go to source code">objects</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#387-397" title="Go to source code">objects</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="self::values()">self::values()</a></p>
@@ -1052,7 +1057,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_map">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#394-404" title="Go to source code">map</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#399-409" title="Go to source code">map</a>( )</code>
 
 		<div class="description short">
 			<p>Alias of <a href="self::all()">self::all()</a>.</p>
@@ -1089,7 +1094,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isAcceptable">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#408-419" title="Go to source code">isAcceptable</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#413-424" title="Go to source code">isAcceptable</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Determine if the given value is acceptable for the collection.</p>
@@ -1118,6 +1123,40 @@ If offset is negative, the sequence will start that far from the end of the coll
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="isEmpty" id="_isEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEmpty">#</a>
+		<code><a href="source-class-Charcoal.Model.Collection.html#426-434" title="Go to source code">isEmpty</a>( )</code>
+
+		<div class="description short">
+			<p>Determine if the collection is empty or not.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Determine if the collection is empty or not.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="toBase" id="_toBase">
 
 		<td class="attributes"><code>
@@ -1130,7 +1169,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toBase">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#421-431" title="Go to source code">toBase</a>( )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#436-446" title="Go to source code">toBase</a>( )</code>
 
 		<div class="description short">
 			<p>Get a base collection instance from this collection.</p>
@@ -1166,7 +1205,7 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 		<td class="name"><div>
 		<a class="anchor" href="#_asArray">#</a>
-		<code><a href="source-class-Charcoal.Model.Collection.html#433-455" title="Go to source code">asArray</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Charcoal.Model.Collection.html#448-470" title="Go to source code">asArray</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Parse the given value into an array.</p>
@@ -1211,6 +1250,38 @@ If offset is negative, the sequence will start that far from the end of the coll
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="objects" id="$objects">
+		<td class="attributes"><code>
+			protected  
+			object[]
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Model.Collection.html#30-39" title="Go to source code"><var>$objects</var></a>
+
+			<div class="description short">
+				<p>The objects contained in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The objects contained in the collection.</p>
+
+<p>Stored as a dictionary indexed by each object's primary key.
+Ensures that each object gets loaded only once by keeping
+every loaded object in an associative array.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$objects" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 
 
