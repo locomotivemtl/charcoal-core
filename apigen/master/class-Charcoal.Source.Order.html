@@ -134,6 +134,16 @@
 	<h1>Class Order</h1>
 
 
+	<div class="description">
+	<p>Order</p>
+
+<p>Available modes:
+- <code>asc</code> to order in ascending (A-Z / 0-9) order.
+- <code>desc</code> to order in descending (Z-A / 9-0) order.
+- <code>rand</code> to order in a random fashion.
+- <code>values</code> to order by a defined array of properties.
+- <code>custom</code> to order by a custom SQL string.</p>
+	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
@@ -162,7 +172,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Source.Order.html#11-205" title="Go to source code">Charcoal/Source/Order.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Source.Order.html#10-263" title="Go to source code">Charcoal/Source/Order.php</a>
 		<br>
 	</div>
 
@@ -182,7 +192,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setData">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#43-63" title="Go to source code">setData</a>( <span>array|ArrayAccess <var>$data</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#63-94" title="Go to source code">setData</a>( <span>array|ArrayAccess <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -223,7 +233,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setProperty">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#65-85" title="Go to source code">setProperty</a>( <span>string <var>$property</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#96-116" title="Go to source code">setProperty</a>( <span>string <var>$property</var></span> )</code>
 
 		<div class="description short">
 			
@@ -268,7 +278,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_property">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#87-93" title="Go to source code">property</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#118-124" title="Go to source code">property</a>( )</code>
 
 		<div class="description short">
 			
@@ -304,7 +314,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setMode">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#95-116" title="Go to source code">setMode</a>( <span>string <var>$mode</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#126-147" title="Go to source code">setMode</a>( <span>string <var>$mode</var></span> )</code>
 
 		<div class="description short">
 			
@@ -349,7 +359,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_mode">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#118-124" title="Go to source code">mode</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#149-155" title="Go to source code">mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -385,7 +395,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setValues">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#126-161" title="Go to source code">setValues</a>( <span>string|array <var>$values</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#157-192" title="Go to source code">setValues</a>( <span>string|array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the values.
@@ -436,7 +446,7 @@ Otherwise, the function will throw an error</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_values">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#163-169" title="Go to source code">values</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#194-200" title="Go to source code">values</a>( )</code>
 
 		<div class="description short">
 			
@@ -460,6 +470,83 @@ Otherwise, the function will throw an error</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="setString" id="_setString">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setString">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#202-218" title="Go to source code">setString</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>The custom order SQL string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>(Chainable)
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the parameter is not a valid operand.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="string" id="_string">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_string">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#220-226" title="Go to source code">string</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="setActive" id="_setActive">
 
 		<td class="attributes"><code>
@@ -472,7 +559,7 @@ Otherwise, the function will throw an error</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setActive">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#171-179" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#228-236" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
 
 		<div class="description short">
 			
@@ -511,7 +598,7 @@ Otherwise, the function will throw an error</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_active">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#181-187" title="Go to source code">active</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#238-244" title="Go to source code">active</a>( )</code>
 
 		<div class="description short">
 			
@@ -545,14 +632,14 @@ Otherwise, the function will throw an error</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_validModes">#</a>
-		<code><a href="source-class-Charcoal.Source.Order.html#189-204" title="Go to source code">validModes</a>( )</code>
+		<code><a href="source-class-Charcoal.Source.Order.html#246-262" title="Go to source code">validModes</a>( )</code>
 
 		<div class="description short">
-			<p>Supported operators</p>
+			<p>Supported modes</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Supported operators</p>
+			<p>Supported modes</p>
 
 
 
@@ -583,7 +670,7 @@ Otherwise, the function will throw an error</p>
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Source.Order.html#16" title="Go to source code"><b>MODE_ASC</b></a>
+				<a href="source-class-Charcoal.Source.Order.html#22" title="Go to source code"><b>MODE_ASC</b></a>
 			</code>
 
 			<div class="description short">
@@ -607,7 +694,7 @@ Otherwise, the function will throw an error</p>
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Source.Order.html#17" title="Go to source code"><b>MODE_DESC</b></a>
+				<a href="source-class-Charcoal.Source.Order.html#23" title="Go to source code"><b>MODE_DESC</b></a>
 			</code>
 
 			<div class="description short">
@@ -631,7 +718,7 @@ Otherwise, the function will throw an error</p>
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Source.Order.html#18" title="Go to source code"><b>MODE_RANDOM</b></a>
+				<a href="source-class-Charcoal.Source.Order.html#24" title="Go to source code"><b>MODE_RANDOM</b></a>
 			</code>
 
 			<div class="description short">
@@ -655,7 +742,7 @@ Otherwise, the function will throw an error</p>
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Source.Order.html#19" title="Go to source code"><b>MODE_VALUES</b></a>
+				<a href="source-class-Charcoal.Source.Order.html#25" title="Go to source code"><b>MODE_VALUES</b></a>
 			</code>
 
 			<div class="description short">
@@ -674,6 +761,30 @@ Otherwise, the function will throw an error</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="MODE_CUSTOM" id="MODE_CUSTOM">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#26" title="Go to source code"><b>MODE_CUSTOM</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_CUSTOM" class="anchor">#</a>
+				<code><span class="php-quote">'custom'</span></code>
+			</div>
+		</td>
+	</tr>
 	</table>
 
 
@@ -688,14 +799,14 @@ Otherwise, the function will throw an error</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.Order.html#21-24" title="Go to source code"><var>$property</var></a>
+				<a href="source-class-Charcoal.Source.Order.html#28-33" title="Go to source code"><var>$property</var></a>
 
 			<div class="description short">
-				
+				<p>The model property (SQL column).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>The model property (SQL column).</p>
 
 			</div>
 		</td>
@@ -713,14 +824,14 @@ Otherwise, the function will throw an error</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.Order.html#26-30" title="Go to source code"><var>$mode</var></a>
+				<a href="source-class-Charcoal.Source.Order.html#35-40" title="Go to source code"><var>$mode</var></a>
 
 			<div class="description short">
-				<p>Can be 'asc', 'desc', 'rand' or 'values'</p>
+				<p>The sort mode.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Can be 'asc', 'desc', 'rand' or 'values'</p>
+				<p>The sort mode.</p>
 
 			</div>
 		</td>
@@ -738,20 +849,45 @@ Otherwise, the function will throw an error</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.Order.html#32-36" title="Go to source code"><var>$values</var></a>
+				<a href="source-class-Charcoal.Source.Order.html#42-47" title="Go to source code"><var>$values</var></a>
 
 			<div class="description short">
-				<p>If $mode is "values"</p>
+				<p>The values when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_VALUES">self::MODE_VALUES</a>.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>If $mode is "values"</p>
+				<p>The values when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_VALUES">self::MODE_VALUES</a>.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
 				<a href="#$values" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="string" id="$string">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#49-54" title="Go to source code"><var>$string</var></a>
+
+			<div class="description short">
+				<p>Raw SQL clause when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_CUSTOM">self::MODE_CUSTOM</a>.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Raw SQL clause when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_CUSTOM">self::MODE_CUSTOM</a>.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$string" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
@@ -763,14 +899,14 @@ Otherwise, the function will throw an error</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Source.Order.html#38-41" title="Go to source code"><var>$active</var></a>
+				<a href="source-class-Charcoal.Source.Order.html#56-61" title="Go to source code"><var>$active</var></a>
 
 			<div class="description short">
-				<p>$active</p>
+				<p>Whether the order is active.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>$active</p>
+				<p>Whether the order is active.</p>
 
 			</div>
 		</td>
