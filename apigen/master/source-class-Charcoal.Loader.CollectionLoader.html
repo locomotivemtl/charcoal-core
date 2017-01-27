@@ -490,10 +490,10 @@
 </span><span id="332" class="l"><a href="#332">332: </a>            <span class="php-var">$properties</span> = [];
 </span><span id="333" class="l"><a href="#333">333: </a>        }
 </span><span id="334" class="l"><a href="#334">334: </a>
-</span><span id="335" class="l"><a href="#335">335: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$property_ident</span>) {
+</span><span id="335" class="l"><a href="#335">335: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$propertyIdent</span>) {
 </span><span id="336" class="l"><a href="#336">336: </a>            <span class="php-var">$val</span> = (<span class="php-quote">'%'</span>.<span class="php-var">$keyword</span>.<span class="php-quote">'%'</span>);
 </span><span id="337" class="l"><a href="#337">337: </a>            <span class="php-var">$this</span>-&gt;addFilter([
-</span><span id="338" class="l"><a href="#338">338: </a>                <span class="php-quote">'property'</span> =&gt; <span class="php-var">$property_ident</span>,
+</span><span id="338" class="l"><a href="#338">338: </a>                <span class="php-quote">'property'</span> =&gt; <span class="php-var">$propertyIdent</span>,
 </span><span id="339" class="l"><a href="#339">339: </a>                <span class="php-quote">'val'</span>      =&gt; <span class="php-var">$val</span>,
 </span><span id="340" class="l"><a href="#340">340: </a>                <span class="php-quote">'operator'</span> =&gt; <span class="php-quote">'LIKE'</span>,
 </span><span id="341" class="l"><a href="#341">341: </a>                <span class="php-quote">'operand'</span>  =&gt; <span class="php-quote">'OR'</span>
