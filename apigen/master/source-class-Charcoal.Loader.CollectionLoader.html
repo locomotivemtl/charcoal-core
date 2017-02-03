@@ -239,9 +239,9 @@
 </span><span id="81" class="l"><a href="#81"> 81: </a>    <span class="php-comment">/**
 </span></span><span id="82" class="l"><a href="#82"> 82: </a><span class="php-comment">     * Return a new CollectionLoader object.
 </span></span><span id="83" class="l"><a href="#83"> 83: </a><span class="php-comment">     *
-</span></span><span id="84" class="l"><a href="#84"> 84: </a><span class="php-comment">     * @param array|\ArrayAccess $data The loader's dependencies.
+</span></span><span id="84" class="l"><a href="#84"> 84: </a><span class="php-comment">     * @param array $data The loader's dependencies.
 </span></span><span id="85" class="l"><a href="#85"> 85: </a><span class="php-comment">     */</span>
-</span><span id="86" class="l"><a href="#86"> 86: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-var">$data</span>)
+</span><span id="86" class="l"><a href="#86"> 86: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-keyword1">array</span> <span class="php-var">$data</span>)
 </span><span id="87" class="l"><a href="#87"> 87: </a>    {
 </span><span id="88" class="l"><a href="#88"> 88: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'logger'</span>])) {
 </span><span id="89" class="l"><a href="#89"> 89: </a>            <span class="php-var">$data</span>[<span class="php-quote">'logger'</span>] = <span class="php-keyword1">new</span> NullLogger();
