@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Source\Order</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li class="active">
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.AbstractSource.html">AbstractSource</a></li>
+				<li><a href="class-Charcoal.Source.DatabaseSource.html">DatabaseSource</a></li>
+				<li><a href="class-Charcoal.Source.DatabaseSourceConfig.html">DatabaseSourceConfig</a></li>
+				<li><a href="class-Charcoal.Source.Filter.html">Filter</a></li>
+				<li class="active"><a href="class-Charcoal.Source.Order.html">Order</a></li>
+				<li><a href="class-Charcoal.Source.Pagination.html">Pagination</a></li>
+				<li><a href="class-Charcoal.Source.SourceConfig.html">SourceConfig</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.DatabaseSourceInterface.html">DatabaseSourceInterface</a></li>
+				<li><a href="class-Charcoal.Source.FilterInterface.html">FilterInterface</a></li>
+				<li><a href="class-Charcoal.Source.OrderInterface.html">OrderInterface</a></li>
+				<li><a href="class-Charcoal.Source.PaginationInterface.html">PaginationInterface</a></li>
+				<li><a href="class-Charcoal.Source.SourceInterface.html">SourceInterface</a></li>
+				<li><a href="class-Charcoal.Source.StorableInterface.html">StorableInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Source.StorableTrait.html">StorableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Source.html" title="Summary of Charcoal\Source"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Order</h1>
+
+
+	<div class="description">
+	<p>Order</p>
+
+<p>Available modes:
+- <code>asc</code> to order in ascending (A-Z / 0-9) order.
+- <code>desc</code> to order in descending (Z-A / 9-0) order.
+- <code>rand</code> to order in a random fashion.
+- <code>values</code> to order by a defined array of properties.
+- <code>custom</code> to order by a custom SQL string.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Charcoal\Source\Order</span></b>			
+			 implements 
+				<a href="class-Charcoal.Source.OrderInterface.html"><span>Charcoal\Source\OrderInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Charcoal.Source.Database.DatabaseOrder.html">Charcoal\Source\Database\DatabaseOrder</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Source.html">Source</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Source.Order.html#10-263" title="Go to source code">Charcoal/Source/Order.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setData" id="_setData">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setData">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#63-94" title="Go to source code">setData</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The order data.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>Chainable
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_setData">Charcoal\Source\OrderInterface::setData()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setProperty" id="_setProperty">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setProperty">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#96-116" title="Go to source code">setProperty</a>( <span>string <var>$property</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$property</var></dt>
+					<dd>The order property.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>(Chainable)
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the property argument is not a string.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_setProperty">Charcoal\Source\OrderInterface::setProperty()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="property" id="_property">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_property">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#118-124" title="Go to source code">property</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_property">Charcoal\Source\OrderInterface::property()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setMode" id="_setMode">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setMode">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#126-147" title="Go to source code">setMode</a>( <span>string <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mode</var></dt>
+					<dd>The order mode.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>Chainable
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the mode is not a string or invalid.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_setMode">Charcoal\Source\OrderInterface::setMode()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mode" id="_mode">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mode">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#149-155" title="Go to source code">mode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_mode">Charcoal\Source\OrderInterface::mode()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setValues" id="_setValues">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setValues">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#157-192" title="Go to source code">setValues</a>( <span>string|array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			<p>Set the values.
+Values are ignored if the mode is not "values"</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set the values.
+Values are ignored if the mode is not "values"</p>
+
+<p>If the <code>$values</code> argument is a string, it will be split by ",".
+If it is an array, the values will be used as is.
+Otherwise, the function will throw an error</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd>The order values.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>(Chainable)
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the parameter is not an array or a string.
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_setValues">Charcoal\Source\OrderInterface::setValues()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="values" id="_values">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_values">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#194-200" title="Go to source code">values</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Charcoal.Source.OrderInterface.html#_values">Charcoal\Source\OrderInterface::values()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setString" id="_setString">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setString">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#202-218" title="Go to source code">setString</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>The custom order SQL string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>(Chainable)
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the parameter is not a valid operand.
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="string" id="_string">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_string">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#220-226" title="Go to source code">string</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setActive" id="_setActive">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setActive">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#228-236" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$active</var></dt>
+					<dd>The active flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Source.Order.html">Charcoal\Source\Order</a></code><br>(Chainable)
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="active" id="_active">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_active">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#238-244" title="Go to source code">active</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validModes" id="_validModes">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validModes">#</a>
+		<code><a href="source-class-Charcoal.Source.Order.html#246-262" title="Go to source code">validModes</a>( )</code>
+
+		<div class="description short">
+			<p>Supported modes</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Supported modes</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="MODE_ASC" id="MODE_ASC">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#22" title="Go to source code"><b>MODE_ASC</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_ASC" class="anchor">#</a>
+				<code><span class="php-quote">'asc'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MODE_DESC" id="MODE_DESC">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#23" title="Go to source code"><b>MODE_DESC</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_DESC" class="anchor">#</a>
+				<code><span class="php-quote">'desc'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MODE_RANDOM" id="MODE_RANDOM">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#24" title="Go to source code"><b>MODE_RANDOM</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_RANDOM" class="anchor">#</a>
+				<code><span class="php-quote">'rand'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MODE_VALUES" id="MODE_VALUES">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#25" title="Go to source code"><b>MODE_VALUES</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_VALUES" class="anchor">#</a>
+				<code><span class="php-quote">'values'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MODE_CUSTOM" id="MODE_CUSTOM">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Charcoal.Source.Order.html#26" title="Go to source code"><b>MODE_CUSTOM</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#MODE_CUSTOM" class="anchor">#</a>
+				<code><span class="php-quote">'custom'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="property" id="$property">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#28-33" title="Go to source code"><var>$property</var></a>
+
+			<div class="description short">
+				<p>The model property (SQL column).</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The model property (SQL column).</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$property" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="mode" id="$mode">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#35-40" title="Go to source code"><var>$mode</var></a>
+
+			<div class="description short">
+				<p>The sort mode.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The sort mode.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$mode" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="values" id="$values">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#42-47" title="Go to source code"><var>$values</var></a>
+
+			<div class="description short">
+				<p>The values when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_VALUES">self::MODE_VALUES</a>.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The values when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_VALUES">self::MODE_VALUES</a>.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$values" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="string" id="$string">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#49-54" title="Go to source code"><var>$string</var></a>
+
+			<div class="description short">
+				<p>Raw SQL clause when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_CUSTOM">self::MODE_CUSTOM</a>.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Raw SQL clause when <a href="self::$mode">self::$mode</a> is <a href="self::MODE_CUSTOM">self::MODE_CUSTOM</a>.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$string" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="active" id="$active">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Charcoal.Source.Order.html#56-61" title="Go to source code"><var>$active</var></a>
+
+			<div class="description short">
+				<p>Whether the order is active.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Whether the order is active.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$active" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
