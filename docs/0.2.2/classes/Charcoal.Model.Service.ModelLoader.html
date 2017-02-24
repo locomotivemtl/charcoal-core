@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">309</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">9</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-889816768"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-889816768" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1236207843"></a>
+                                <a href="../namespaces/Charcoal.html" style="margin-left: 30px; padding-left: 0">Charcoal</a>
+            </div>
+            <div id="namespace-1236207843" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1896094657"></a>
+                                <a href="../namespaces/Charcoal.Loader.html" style="margin-left: 30px; padding-left: 0">Loader</a>
+            </div>
+            <div id="namespace-1896094657" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Loader.CollectionLoader.html">CollectionLoader</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Loader.FileLoader.html">FileLoader</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1605408097"></a>
+                                <a href="../namespaces/Charcoal.Model.html" style="margin-left: 30px; padding-left: 0">Model</a>
+            </div>
+            <div id="namespace-1605408097" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-714047274"></a>
+                                <a href="../namespaces/Charcoal.Model.Service.html" style="margin-left: 30px; padding-left: 0">Service</a>
+            </div>
+            <div id="namespace-714047274" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Model.Service.MetadataLoader.html">MetadataLoader</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.Service.ModelBuilder.html">ModelBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.Service.ModelLoader.html">ModelLoader</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.Service.ModelLoaderBuilder.html">ModelLoaderBuilder</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1806086525"></a>
+                                <a href="../namespaces/Charcoal.Model.ServiceProvider.html" style="margin-left: 30px; padding-left: 0">ServiceProvider</a>
+            </div>
+            <div id="namespace-1806086525" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Model.ServiceProvider.ModelServiceProvider.html">ModelServiceProvider</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.Model.html">Model</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-300269739"></a>
+                                <a href="../namespaces/Charcoal.Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-300269739" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1270655596"></a>
+                                <a href="../namespaces/Charcoal.Source.Database.html" style="margin-left: 30px; padding-left: 0">Database</a>
+            </div>
+            <div id="namespace-1270655596" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Source.Database.DatabaseFilter.html">DatabaseFilter</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.Database.DatabaseOrder.html">DatabaseOrder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.Database.DatabasePagination.html">DatabasePagination</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.DatabaseSourceInterface.html">DatabaseSourceInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.FilterInterface.html">FilterInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.OrderInterface.html">OrderInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.PaginationInterface.html">PaginationInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.SourceInterface.html">SourceInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Source.StorableInterface.html">StorableInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Source.StorableTrait.html">StorableTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Source.AbstractSource.html">AbstractSource</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.DatabaseSource.html">DatabaseSource</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.DatabaseSourceConfig.html">DatabaseSourceConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.Filter.html">Filter</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.Order.html">Order</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.Pagination.html">Pagination</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Source.SourceConfig.html">SourceConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1198038503"></a>
+                                <a href="../namespaces/Charcoal.Validator.html" style="margin-left: 30px; padding-left: 0">Validator</a>
+            </div>
+            <div id="namespace-1198038503" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Validator.ValidatableInterface.html">ValidatableInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Validator.ValidatorInterface.html">ValidatorInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Validator.ValidatableTrait.html">ValidatableTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Validator.AbstractValidator.html">AbstractValidator</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Validator.ValidatorResult.html">ValidatorResult</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Charcoal.Model.Service.html">\Charcoal\Model\Service</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Charcoal\Model\Service</small>ModelLoader</h1>
+                    <p><em>Load a single model from its source, of from cache.</em></p>
+                    <p>Use the magic methods to load automatically from <strong>call and </strong>get; this allows
+for easy integration in templating engines like Mustache.</p>
+<blockquote>
+<p>This object is immutable.</p>
+</blockquote>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method___call" class="">__call()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method___get" class="">__get()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method___isset" class="">__isset()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method___unset" class="">__unset()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_offsetExists" class="">offsetExists()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_offsetGet" class="">offsetGet()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_offsetSet" class="">offsetSet()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_offsetUnset" class="">offsetUnset()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_load" class="">load()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_loadFromSource" class="">loadFromSource()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_setObjType" class="">setObjType()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_setObjKey" class="">setObjKey()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_setFactory" class="">setFactory()</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#method_setCachePool" class="">setCachePool()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#property_objType" class="">$objType</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#property_objKey" class="">$objKey</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#property_factory" class="">$factory</a><br />
+                                                                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html#property_cachePool" class="">$cachePool</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                                                <span class="label label-info">final</span>
+                    
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Model.Service.ModelLoader.html"><div class="path-wrapper">Model/Service/ModelLoader.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Charcoal\Model\Service\ModelLoader</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href=""><div class="namespace-wrapper"></div></a></dd>
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_objType" name="property_objType" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$objType</h3>
+                <pre class="signature">$objType : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_objKey" name="property_objKey" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$objKey</h3>
+                <pre class="signature">$objKey : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_factory" name="property_factory" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$factory</h3>
+                <pre class="signature">$factory : \Charcoal\Factory\FactoryInterface</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Factory\FactoryInterface
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_cachePool" name="property_cachePool" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$cachePool</h3>
+                <pre class="signature">$cachePool : \Psr\Cache\CacheItemPoolInterface</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Psr\Cache\CacheItemPoolInterface
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$data</span>) </pre>
+                <p><em>Construct a Model Loader with the dependencies</em></p>
+                <h1>Required dependencies</h1>
+<ul>
+<li><code>obj_type</code></li>
+<li><code>factory</code></li>
+<li><code>cache</code></li>
+</ul>
+<h1>Optional dependencies</h1>
+<ul>
+<li><code>obj_key</code></li>
+</ul>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td><p>Class dependencies.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___call" name="method___call" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__call()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__call(string  <span class="argument">$ident</span>, mixed  <span class="argument">$args = null</span>) : \Charcoal\Model\ModelInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$args </td>
+                                <td><p>Unused, method arguments.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.ModelInterface.html">\Charcoal\Model\ModelInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___get" name="method___get" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__get()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__get(string  <span class="argument">$ident</span>) : \Charcoal\Model\ModelInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.ModelInterface.html">\Charcoal\Model\ModelInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___isset" name="method___isset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__isset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__isset(string  <span class="argument">$ident</span>) : boolean</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___unset" name="method___unset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__unset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__unset(string  <span class="argument">$ident</span>) : void</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to unset.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>This method should never be called.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_offsetExists" name="method_offsetExists" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">offsetExists()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">offsetExists(string  <span class="argument">$ident</span>) : boolean</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to verify.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_offsetGet" name="method_offsetGet" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">offsetGet()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">offsetGet(string  <span class="argument">$ident</span>) : \Charcoal\Model\ModelInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.ModelInterface.html">\Charcoal\Model\ModelInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_offsetSet" name="method_offsetSet" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">offsetSet()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">offsetSet(string  <span class="argument">$ident</span>, mixed  <span class="argument">$val</span>) : void</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to set.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$val </td>
+                                <td><p>The value to set.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>This method should never be called.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_offsetUnset" name="method_offsetUnset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">offsetUnset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">offsetUnset(string  <span class="argument">$ident</span>) : void</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to unset.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>This method should never be called.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_load" name="method_load" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">load()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">load(string  <span class="argument">$ident</span>, boolean  <span class="argument">$useCache = true</span>) : \Charcoal\Model\ModelInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$useCache </td>
+                                <td><p>Optional (default to true). Set to false to force a reload (skip cache).</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.ModelInterface.html">\Charcoal\Model\ModelInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadFromSource" name="method_loadFromSource" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">loadFromSource()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadFromSource(mixed  <span class="argument">$ident</span>) : \Charcoal\Model\ModelInterface</pre>
+                <p><em>Load an objet from soure</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$ident </td>
+                                <td><p>The object ident to load.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.ModelInterface.html">\Charcoal\Model\ModelInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setObjType" name="method_setObjType" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setObjType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setObjType(string  <span class="argument">$objType</span>) : \Charcoal\Model\Service\ModelLoader</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$objType </td>
+                                <td><p>The object type to load with this loader.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the obj type is not a string.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html">\Charcoal\Model\Service\ModelLoader</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setObjKey" name="method_setObjKey" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setObjKey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setObjKey(string  <span class="argument">$objKey</span>) : \Charcoal\Model\Service\ModelLoader</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$objKey </td>
+                                <td><p>The object key to use for laoding.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the obj key is not a string.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html">\Charcoal\Model\Service\ModelLoader</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setFactory" name="method_setFactory" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setFactory()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setFactory(\Charcoal\Factory\FactoryInterface  <span class="argument">$factory</span>) : \Charcoal\Model\Service\ModelLoader</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Charcoal\Factory\FactoryInterface</td>
+                                <td>$factory </td>
+                                <td><p>The factory to use to create models.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html">\Charcoal\Model\Service\ModelLoader</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCachePool" name="method_setCachePool" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setCachePool()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCachePool(\Psr\Cache\CacheItemPoolInterface  <span class="argument">$cachePool</span>) : \Charcoal\Model\Service\ModelLoader</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Psr\Cache\CacheItemPoolInterface</td>
+                                <td>$cachePool </td>
+                                <td><p>The PSR-6 compliant cache pool.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Model.Service.ModelLoader.html">\Charcoal\Model\Service\ModelLoader</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ModelLoader.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Model/Service/ModelLoader.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on February 24th, 2017 at 18:01.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
