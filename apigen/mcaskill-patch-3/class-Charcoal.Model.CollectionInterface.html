@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface Charcoal\Model\CollectionInterface</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
+				<li><a href="class-Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
+				<li><a href="class-Charcoal.Model.Collection.html">Collection</a></li>
+				<li><a href="class-Charcoal.Model.Model.html">Model</a></li>
+				<li><a href="class-Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
+				<li><a href="class-Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
+				<li><a href="class-Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
+				<li><a href="class-Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
+				<li><a href="class-Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.html" title="Summary of Charcoal\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface CollectionInterface</h1>
+
+
+	<div class="description">
+	<p>Defines a model collection.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Charcoal\Model\CollectionInterface</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>Countable</span>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Charcoal.Model.Collection.html">Charcoal\Model\Collection</a>
+	</div>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.CollectionInterface.html#5-77" title="Go to source code">Charcoal/Model/CollectionInterface.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="merge" id="_merge">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#10-16" title="Go to source code">merge</a>( <span>array|Traversable <var>$objs</var></span> )</code>
+
+		<div class="description short">
+			<p>Merge the collection with the given objects.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Merge the collection with the given objects.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$objs</var></dt>
+					<dd>Array of objects to append to this collection.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add" id="_add">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#18-24" title="Go to source code">add</a>( <span>object <var>$obj</var></span> )</code>
+
+		<div class="description short">
+			<p>Add an object to the collection.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add an object to the collection.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$obj</var></dt>
+					<dd>An acceptable object.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			object|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#26-32" title="Go to source code">get</a>( <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Retrieve the object by primary key.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the object by primary key.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>The primary key.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					object|null<br>The object or NULL if not in the collection.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#34-40" title="Go to source code">has</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Determine if an object exists in the collection by key.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Determine if an object exists in the collection by key.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>The primary key to lookup.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="remove" id="_remove">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_remove">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#42-48" title="Go to source code">remove</a>( <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Remove object from collection by primary key.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Remove object from collection by primary key.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>The object primary key to remove.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#50-55" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>Remove all objects from collection.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Remove all objects from collection.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Model.CollectionInterface.html">Charcoal\Model\CollectionInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="all" id="_all">
+
+		<td class="attributes"><code>
+			 public 
+
+			object[]
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_all">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#57-62" title="Go to source code">all</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve all objects in collection indexed by primary keys.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve all objects in collection indexed by primary keys.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					object[]<br>An associative array of objects.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="values" id="_values">
+
+		<td class="attributes"><code>
+			 public 
+
+			object[]
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_values">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#64-69" title="Go to source code">values</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve all objects in the collection indexed numerically.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve all objects in the collection indexed numerically.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					object[]<br>A sequential array of objects.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="keys" id="_keys">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keys">#</a>
+		<code><a href="source-class-Charcoal.Model.CollectionInterface.html#71-76" title="Go to source code">keys</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the primary keys of the objects in the collection.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the primary keys of the objects in the collection.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>A sequential array of keys.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from ArrayAccess</caption>
+	<tr>
+		<td><code>
+offsetExists(), 
+offsetGet(), 
+offsetSet(), 
+offsetUnset()
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from Countable</caption>
+	<tr>
+		<td><code>
+count()
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from IteratorAggregate</caption>
+	<tr>
+		<td><code>
+getIterator()
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
