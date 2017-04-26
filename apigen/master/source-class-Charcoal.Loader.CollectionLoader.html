@@ -758,45 +758,45 @@
 </span><span id="600" class="l"><a href="#600">600: </a>            <span class="php-var">$sth</span>-&gt;execute();
 </span><span id="601" class="l"><a href="#601">601: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$query</span>)) {
 </span><span id="602" class="l"><a href="#602">602: </a>            <span class="php-keyword1">list</span>(<span class="php-var">$query</span>, <span class="php-var">$binds</span>, <span class="php-var">$types</span>) = <span class="php-keyword2">array_pad</span>(<span class="php-var">$query</span>, <span class="php-num">3</span>, []);
-</span><span id="603" class="l"><a href="#603">603: </a>            <span class="php-var">$this</span>-&gt;logger-&gt;debug(<span class="php-var">$query</span>);
-</span><span id="604" class="l"><a href="#604">604: </a>            <span class="php-var">$sth</span> = <span class="php-var">$this</span>-&gt;source()-&gt;dbQuery(<span class="php-var">$query</span>, <span class="php-var">$binds</span>, <span class="php-var">$types</span>);
-</span><span id="605" class="l"><a href="#605">605: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="606" class="l"><a href="#606">606: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(<span class="php-keyword2">sprintf</span>(
-</span><span id="607" class="l"><a href="#607">607: </a>                <span class="php-quote">'The SQL query must be a string or an array: '</span>.
-</span><span id="608" class="l"><a href="#608">608: </a>                <span class="php-quote">'[ string $query, array $binds, array $dataTypes ]; '</span>.
-</span><span id="609" class="l"><a href="#609">609: </a>                <span class="php-quote">'received %s'</span>,
-</span><span id="610" class="l"><a href="#610">610: </a>                <span class="php-keyword2">is_object</span>(<span class="php-var">$query</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$query</span>) : <span class="php-var">$query</span>
-</span><span id="611" class="l"><a href="#611">611: </a>            ));
-</span><span id="612" class="l"><a href="#612">612: </a>        }
-</span><span id="613" class="l"><a href="#613">613: </a>
-</span><span id="614" class="l"><a href="#614">614: </a>        <span class="php-var">$sth</span>-&gt;setFetchMode(PDO::FETCH_ASSOC);
-</span><span id="615" class="l"><a href="#615">615: </a>
-</span><span id="616" class="l"><a href="#616">616: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;processCollection(<span class="php-var">$sth</span>, <span class="php-var">$callback</span>);
-</span><span id="617" class="l"><a href="#617">617: </a>    }
-</span><span id="618" class="l"><a href="#618">618: </a>
-</span><span id="619" class="l"><a href="#619">619: </a>    <span class="php-comment">/**
-</span></span><span id="620" class="l"><a href="#620">620: </a><span class="php-comment">     * Process the collection of raw data.
-</span></span><span id="621" class="l"><a href="#621">621: </a><span class="php-comment">     *
-</span></span><span id="622" class="l"><a href="#622">622: </a><span class="php-comment">     * @param  array|Traversable $results  The raw result set.
-</span></span><span id="623" class="l"><a href="#623">623: </a><span class="php-comment">     * @param  callable          $callback Optional. Apply a callback to every entity of the collection.
-</span></span><span id="624" class="l"><a href="#624">624: </a><span class="php-comment">     *    Leave blank to use {@see CollectionLoader::callback()}.
-</span></span><span id="625" class="l"><a href="#625">625: </a><span class="php-comment">     * @throws InvalidArgumentException If the SQL string/set is invalid.
-</span></span><span id="626" class="l"><a href="#626">626: </a><span class="php-comment">     * @return array|ArrayAccess
-</span></span><span id="627" class="l"><a href="#627">627: </a><span class="php-comment">     */</span>
-</span><span id="628" class="l"><a href="#628">628: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> processCollection(<span class="php-var">$results</span>, <span class="php-keyword1">callable</span> <span class="php-var">$callback</span> = <span class="php-keyword1">null</span>)
-</span><span id="629" class="l"><a href="#629">629: </a>    {
-</span><span id="630" class="l"><a href="#630">630: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$callback</span> === <span class="php-keyword1">null</span>) {
-</span><span id="631" class="l"><a href="#631">631: </a>            <span class="php-var">$callback</span> = <span class="php-var">$this</span>-&gt;callback();
-</span><span id="632" class="l"><a href="#632">632: </a>        }
-</span><span id="633" class="l"><a href="#633">633: </a>
-</span><span id="634" class="l"><a href="#634">634: </a>        <span class="php-var">$modelObjType</span> = <span class="php-var">$this</span>-&gt;model()-&gt;objType();
-</span><span id="635" class="l"><a href="#635">635: </a>        <span class="php-var">$collection</span>   = <span class="php-var">$this</span>-&gt;createCollection();
-</span><span id="636" class="l"><a href="#636">636: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$results</span> <span class="php-keyword1">as</span> <span class="php-var">$objData</span>) {
-</span><span id="637" class="l"><a href="#637">637: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;dynamicTypeField &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$objData</span>[<span class="php-var">$this</span>-&gt;dynamicTypeField])) {
-</span><span id="638" class="l"><a href="#638">638: </a>                <span class="php-var">$objType</span> = <span class="php-var">$objData</span>[<span class="php-var">$this</span>-&gt;dynamicTypeField];
-</span><span id="639" class="l"><a href="#639">639: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="640" class="l"><a href="#640">640: </a>                <span class="php-var">$objType</span> = <span class="php-var">$modelObjType</span>;
-</span><span id="641" class="l"><a href="#641">641: </a>            }
+</span><span id="603" class="l"><a href="#603">603: </a>            <span class="php-var">$sth</span> = <span class="php-var">$this</span>-&gt;source()-&gt;dbQuery(<span class="php-var">$query</span>, <span class="php-var">$binds</span>, <span class="php-var">$types</span>);
+</span><span id="604" class="l"><a href="#604">604: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="605" class="l"><a href="#605">605: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(<span class="php-keyword2">sprintf</span>(
+</span><span id="606" class="l"><a href="#606">606: </a>                <span class="php-quote">'The SQL query must be a string or an array: '</span>.
+</span><span id="607" class="l"><a href="#607">607: </a>                <span class="php-quote">'[ string $query, array $binds, array $dataTypes ]; '</span>.
+</span><span id="608" class="l"><a href="#608">608: </a>                <span class="php-quote">'received %s'</span>,
+</span><span id="609" class="l"><a href="#609">609: </a>                <span class="php-keyword2">is_object</span>(<span class="php-var">$query</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$query</span>) : <span class="php-var">$query</span>
+</span><span id="610" class="l"><a href="#610">610: </a>            ));
+</span><span id="611" class="l"><a href="#611">611: </a>        }
+</span><span id="612" class="l"><a href="#612">612: </a>
+</span><span id="613" class="l"><a href="#613">613: </a>        <span class="php-var">$sth</span>-&gt;setFetchMode(PDO::FETCH_ASSOC);
+</span><span id="614" class="l"><a href="#614">614: </a>
+</span><span id="615" class="l"><a href="#615">615: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;processCollection(<span class="php-var">$sth</span>, <span class="php-var">$callback</span>);
+</span><span id="616" class="l"><a href="#616">616: </a>    }
+</span><span id="617" class="l"><a href="#617">617: </a>
+</span><span id="618" class="l"><a href="#618">618: </a>    <span class="php-comment">/**
+</span></span><span id="619" class="l"><a href="#619">619: </a><span class="php-comment">     * Process the collection of raw data.
+</span></span><span id="620" class="l"><a href="#620">620: </a><span class="php-comment">     *
+</span></span><span id="621" class="l"><a href="#621">621: </a><span class="php-comment">     * @param  array|Traversable $results  The raw result set.
+</span></span><span id="622" class="l"><a href="#622">622: </a><span class="php-comment">     * @param  callable          $callback Optional. Apply a callback to every entity of the collection.
+</span></span><span id="623" class="l"><a href="#623">623: </a><span class="php-comment">     *    Leave blank to use {@see CollectionLoader::callback()}.
+</span></span><span id="624" class="l"><a href="#624">624: </a><span class="php-comment">     * @throws InvalidArgumentException If the SQL string/set is invalid.
+</span></span><span id="625" class="l"><a href="#625">625: </a><span class="php-comment">     * @return array|ArrayAccess
+</span></span><span id="626" class="l"><a href="#626">626: </a><span class="php-comment">     */</span>
+</span><span id="627" class="l"><a href="#627">627: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> processCollection(<span class="php-var">$results</span>, <span class="php-keyword1">callable</span> <span class="php-var">$callback</span> = <span class="php-keyword1">null</span>)
+</span><span id="628" class="l"><a href="#628">628: </a>    {
+</span><span id="629" class="l"><a href="#629">629: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$callback</span> === <span class="php-keyword1">null</span>) {
+</span><span id="630" class="l"><a href="#630">630: </a>            <span class="php-var">$callback</span> = <span class="php-var">$this</span>-&gt;callback();
+</span><span id="631" class="l"><a href="#631">631: </a>        }
+</span><span id="632" class="l"><a href="#632">632: </a>
+</span><span id="633" class="l"><a href="#633">633: </a>        <span class="php-var">$modelObjType</span> = <span class="php-var">$this</span>-&gt;model()-&gt;objType();
+</span><span id="634" class="l"><a href="#634">634: </a>        <span class="php-var">$collection</span>   = <span class="php-var">$this</span>-&gt;createCollection();
+</span><span id="635" class="l"><a href="#635">635: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$results</span> <span class="php-keyword1">as</span> <span class="php-var">$objData</span>) {
+</span><span id="636" class="l"><a href="#636">636: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;dynamicTypeField &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$objData</span>[<span class="php-var">$this</span>-&gt;dynamicTypeField])) {
+</span><span id="637" class="l"><a href="#637">637: </a>                <span class="php-var">$objType</span> = <span class="php-var">$objData</span>[<span class="php-var">$this</span>-&gt;dynamicTypeField];
+</span><span id="638" class="l"><a href="#638">638: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="639" class="l"><a href="#639">639: </a>                <span class="php-var">$objType</span> = <span class="php-var">$modelObjType</span>;
+</span><span id="640" class="l"><a href="#640">640: </a>            }
+</span><span id="641" class="l"><a href="#641">641: </a>
 </span><span id="642" class="l"><a href="#642">642: </a>
 </span><span id="643" class="l"><a href="#643">643: </a>            <span class="php-var">$obj</span> = <span class="php-var">$this</span>-&gt;factory()-&gt;create(<span class="php-var">$objType</span>);
 </span><span id="644" class="l"><a href="#644">644: </a>            <span class="php-var">$obj</span>-&gt;setFlatData(<span class="php-var">$objData</span>);
