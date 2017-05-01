@@ -2,28 +2,32 @@
 
 namespace Charcoal\Source;
 
-use Exception;
 use InvalidArgumentException;
 
 // From PSR-3
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 
-// From 'charcoal-config'
+// From `charcoal-config`
 use Charcoal\Config\ConfigurableInterface;
 use Charcoal\Config\ConfigurableTrait;
 
-// From 'charcoal-core'
-use Charcoal\Model\ModelInterface;
-
+// From `charcoal-core`
 use Charcoal\Source\SourceConfig;
 use Charcoal\Source\SourceInterface;
+
 use Charcoal\Source\Filter;
 use Charcoal\Source\FilterInterface;
+use Charcoal\Source\FilterGroup;
+use Charcoal\Source\FilterGroupInterface;
+
 use Charcoal\Source\Order;
 use Charcoal\Source\OrderInterface;
 use Charcoal\Source\Pagination;
 use Charcoal\Source\PaginationInterface;
+use Charcoal\Source\FilterAwareTrait;
+
+use Charcoal\Source\ModelAwareTrait;
 
 /**
  * Full implementation, as abstract class, of the SourceInterface.
@@ -35,22 +39,13 @@ abstract class AbstractSource implements
 {
     use ConfigurableTrait;
     use LoggerAwareTrait;
-
-    /**
-     * @var ModelInterface $model
-     */
-    private $model = null;
+    use FilterAwareTrait;
+    use ModelAwareTrait;
 
     /**
      * @var array $properties
      */
     private $properties = [];
-
-    /**
-     * Array of `Filter` objects
-     * @var array $filters
-     */
-    protected $filters = [];
 
     /**
      * Array of `Order` object
@@ -107,41 +102,6 @@ abstract class AbstractSource implements
         return $this;
     }
 
-    /**
-     * Set the source's Model.
-     *
-     * @param ModelInterface $model The source's model.
-     * @return AbstractSource Chainable
-     */
-    public function setModel(ModelInterface $model)
-    {
-        $this->model = $model;
-        return $this;
-    }
-
-    /**
-     * Return the source's Model.
-     *
-     * @throws Exception If not model was previously set.
-     * @return ModelInterface
-     */
-    public function model()
-    {
-        if ($this->model === null) {
-            throw new Exception(
-                'No model set.'
-            );
-        }
-        return $this->model;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function hasModel()
-    {
-        return ($this->model !== null);
-    }
 
     /**
      * Set the properties of the source to fetch.
@@ -193,91 +153,22 @@ abstract class AbstractSource implements
     }
 
     /**
-     * @param array $filters The filters to set.
-     * @return Collection Chainable
-     */
-    public function setFilters(array $filters)
-    {
-        $this->filters = [];
-        foreach ($filters as $f) {
-            $this->addFilter($f);
-        }
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function filters()
-    {
-        return $this->filters;
-    }
-
-    /**
-     * Add a collection filter to the loader.
-     *
-     * There are 3 different ways of adding a filter:
-     * - as a `Filter` object, in which case it will be added directly.
-     *   - `addFilter($obj);`
-     * - as an array of options, which will be used to build the `Filter` object
-     *   - `addFilter(['property' => 'foo', 'val' => 42, 'operator' => '<=']);`
-     * - as 3 parameters: `property`, `val` and `options`
-     *   - `addFilter('foo', 42, ['operator' => '<=']);`
-     *
-     * @param string|array|Filter $param   The filter property, or a Filter object / array.
-     * @param mixed               $val     Optional: Only used if the first argument is a string.
-     * @param array               $options Optional: Only used if the first argument is a string.
-     * @throws InvalidArgumentException If property is not a string or empty.
-     * @return CollectionLoader (Chainable)
-     */
-    public function addFilter($param, $val = null, array $options = null)
-    {
-        if ($param instanceof FilterInterface) {
-            $filter = $param;
-        } elseif (is_array($param)) {
-            $filter = $this->createFilter();
-            $filter->setData($param);
-        } elseif (is_string($param) && $val !== null) {
-            $filter = $this->createFilter();
-            $filter->setProperty($param);
-            $filter->setVal($val);
-            if (is_array($options)) {
-                $filter->setData($options);
-            }
-        } else {
-            throw new InvalidArgumentException(
-                'Parameter must be an array or a property ident.'
-            );
-        }
-
-        if ($this->hasModel()) {
-            $property = $filter->property();
-            if ($property) {
-                $p = $this->model()->p($property);
-                if ($p) {
-                    if ($p->l10n()) {
-                        $filter->setProperty($p->l10nIdent());
-                    }
-
-                    if ($p->multiple()) {
-                        $filter->setOperator('FIND_IN_SET');
-                    }
-                }
-            }
-        }
-
-        $this->filters[] = $filter;
-
-        return $this;
-    }
-
-    /**
      * @return FilterInterface
      */
     protected function createFilter()
     {
         $filter = new Filter();
         return $filter;
+    }
+
+
+    /**
+     * @return FilterGroupInterface
+     */
+    protected function createFilterGroup()
+    {
+        $filterGroup = new FilterGroup();
+        return $filterGroup;
     }
 
     /**

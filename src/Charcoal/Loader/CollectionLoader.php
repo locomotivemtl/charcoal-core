@@ -386,6 +386,19 @@ class CollectionLoader implements LoggerAwareInterface
     }
 
     /**
+     * Allows the creation of a group of collection filters.
+     *
+     * @param array      $filters Array of `Filter` or array filters.
+     * @param array|null $options FilterGroup options (operand, active).
+     */
+    public function addFilterGroup(array $param, array $options = null)
+    {
+        $this->source()->addFilterGroup($param, $options);
+
+        return $this;
+    }
+
+    /**
      * Alias of {@see SourceInterface::orders()}
      *
      * @return array
