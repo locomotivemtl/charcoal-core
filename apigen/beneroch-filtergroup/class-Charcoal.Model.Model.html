@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Charcoal\Model\Model</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Loader.html">
+						Loader					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Charcoal.Model.html">
+						Model<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Model.Service.html">
+						Service					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Model.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Source.html">
+						Source<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Source.Database.html">
+						Database					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Charcoal.Validator.html">
+						Validator					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.AbstractMetadata.html">AbstractMetadata</a></li>
+				<li><a href="class-Charcoal.Model.AbstractModel.html">AbstractModel</a></li>
+				<li><a href="class-Charcoal.Model.Collection.html">Collection</a></li>
+				<li class="active"><a href="class-Charcoal.Model.Model.html">Model</a></li>
+				<li><a href="class-Charcoal.Model.ModelMetadata.html">ModelMetadata</a></li>
+				<li><a href="class-Charcoal.Model.ModelValidator.html">ModelValidator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.CollectionInterface.html">CollectionInterface</a></li>
+				<li><a href="class-Charcoal.Model.DescribableInterface.html">DescribableInterface</a></li>
+				<li><a href="class-Charcoal.Model.MetadataInterface.html">MetadataInterface</a></li>
+				<li><a href="class-Charcoal.Model.ModelInterface.html">ModelInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Model.DescribableTrait.html">DescribableTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Model.html" title="Summary of Charcoal\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Model</h1>
+
+
+	<div class="description">
+	<p>Charcoal Model class</p>
+
+<h1>The Charcoal Model</h1>
+
+<figure> <img src="http:// charcoal.locomotive.ca/doc/assets/images/uml/charcoal.model.svg" alt="The Charcoal Model UML" /> <figcaption>The Charcoal Model Class Diagram</figcaption>
+</figure>
+
+<h1>Custom Object Type</h1>
+
+<p>It is possible to attach a custom object type (<code>$_obj_type</code>) to a Model. This will allow the
+various loaders (metadata and source data)</p>
+
+<h1>Metadata</h1>
+
+<p>In Charcoal, all models are held in an instance of <code>\Charcoal\Model\Model</code>
+and its configuration meta-data structure is defined in a <code>\Charcoal\Model\Metadata</code> object.</p>
+
+<h2>Loading metadata</h2>
+
+<p>To access the metadata, use <code>$this-&gt;metadata()</code>. To set metadata, use either</p>
+
+<h1>Properties</h1>
+
+<p>The Model Attributes are stored in \Charcoal\Property\PropertyInterface objects. The properties are defined
+in the Model's <code>metadata</code> and can be accessed either with <code>p($ident)</code> to retrieve a property or with
+<code>properties()</code> to get all properties.</p>
+
+<h1>Data Source</h1>
+
+<p>The Model data (which is stored internally in the class) can be stored in a storage <code>Source</code> object.
+There is only one source type currently implemented: <code>\Charcoal\Source\Database</code>.</p>
+
+<h2>Loading from source</h2>
+
+<p>...</p>
+
+<h2>Loading into Collection</h2>
+
+<p>...</p>
+
+<h1>Data validation</h1>
+
+<p>Once an object has had its data filled (from a form, database, or other source), it is possible to check
+wether the data is conform to the object definition, as defined by it's properties and meta-properties.
+This check is done with the <code>validate()</code> function.</p>
+
+<p>The <code>validate()</code> method always return a boolean (<code>true</code> for success and <code>false</code> if there was any
+validation error(s)). The validation details are held in a <code>Validator</code> object which can then be
+accessed with the <code>validator()</code> method.</p>
+
+<h1>Rendering a model</h1>
+
+<p>Every Charcoal Model can be rendered with the help of a <code>View</code> and a <code>ViewController</code>.
+Or, more precisely, a <code>\Charcoal\View\ModelView</code> and a <code>\Charcoal\View\ModelViewController</code>.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Charcoal\Config\AbstractEntity
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-Charcoal.Model.AbstractModel.html"><span>Charcoal\Model\AbstractModel</span></a>
+			
+			 implements 
+				<a href="class-Charcoal.Model.ModelInterface.html"><span>Charcoal\Model\ModelInterface</span></a>, 
+			
+				<a href="class-Charcoal.Model.DescribableInterface.html"><span>Charcoal\Model\DescribableInterface</span></a>, 
+			
+<span>Charcoal\Property\DescribablePropertyInterface</span>, 
+			
+<span>Psr\Log\LoggerAwareInterface</span>, 
+			
+				<a href="class-Charcoal.Source.StorableInterface.html"><span>Charcoal\Source\StorableInterface</span></a>, 
+			
+				<a href="class-Charcoal.Validator.ValidatableInterface.html"><span>Charcoal\Validator\ValidatableInterface</span></a>, 
+			
+<span>Charcoal\View\ViewableInterface</span>
+			
+			 uses 
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+					<a href="class-Charcoal.Model.DescribableTrait.html"><span>Charcoal\Model\DescribableTrait</span></a>, 
+			
+					Charcoal\Property\DescribablePropertyTrait (not available)
+
+			
+					<a href="class-Charcoal.Source.StorableTrait.html"><span>Charcoal\Source\StorableTrait</span></a>, 
+			
+					<a href="class-Charcoal.Validator.ValidatableTrait.html"><span>Charcoal\Validator\ValidatableTrait</span></a>, 
+			
+					Charcoal\View\ViewableTrait (not available)
+
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Charcoal\Model\Model</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Model.html">Model</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Model.Model.html#14-64" title="Go to source code">Charcoal/Model/Model.php</a>
+		<br>
+	</div>
+
+
+
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Model.AbstractModel.html#methods">Charcoal\Model\AbstractModel</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.AbstractModel.html#___construct">__construct()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_createMetadata">createMetadata()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_createSource">createSource()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_createValidator">createValidator()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_createView">createView()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_data">data()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_defaultData">defaultData()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_flatData">flatData()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_loadFromL10n">loadFromL10n()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_mergeData">mergeData()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_objType">objType()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_preSave">preSave()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_preUpdate">preUpdate()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_propertyValue">propertyValue()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_save">save()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_saveProperties">saveProperties()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_setData">setData()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_setDependencies">setDependencies()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_setFlatData">setFlatData()</a>, 
+			<a href="class-Charcoal.Model.AbstractModel.html#_setIdFromData">setIdFromData()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Validator.ValidatableInterface.html#methods">Charcoal\Validator\ValidatableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_setValidator">setValidator()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_validate">validate()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableInterface.html#_validator">validator()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Source.StorableInterface.html#methods">Charcoal\Source\StorableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableInterface.html#_delete">delete()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_id">id()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_key">key()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_load">load()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_loadFrom">loadFrom()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_loadFromQuery">loadFromQuery()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setId">setId()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_setKey">setKey()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_source">source()</a>, 
+			<a href="class-Charcoal.Source.StorableInterface.html#_update">update()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Model.DescribableInterface.html#methods">Charcoal\Model\DescribableInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableInterface.html#_loadMetadata">loadMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_metadata">metadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_metadataIdent">metadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadata">setMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadataIdent">setMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableInterface.html#_setMetadataLoader">setMetadataLoader()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Charcoal.Model.ModelInterface.html#methods">Charcoal\Model\ModelInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.ModelInterface.html#_p">p()</a>, 
+			<a href="class-Charcoal.Model.ModelInterface.html#_properties">properties()</a>, 
+			<a href="class-Charcoal.Model.ModelInterface.html#_property">property()</a>
+		</code></td>
+	</tr>
+	</table>
+
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Model.DescribableTrait.html#methods">Charcoal\Model\DescribableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableTrait.html#_generateMetadataIdent">generateMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_loadMetadata">loadMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadata">metadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadataIdent">metadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_metadataLoader">metadataLoader()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadata">setMetadata()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadataIdent">setMetadataIdent()</a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#_setMetadataLoader">setMetadataLoader()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Source.StorableTrait.html#methods">Charcoal\Source\StorableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableTrait.html#_delete">delete()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_id">id()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_key">key()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_load">load()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_loadFrom">loadFrom()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_loadFromQuery">loadFromQuery()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_postDelete">postDelete()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_postSave">postSave()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_postUpdate">postUpdate()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_preDelete">preDelete()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setId">setId()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setKey">setKey()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setSource">setSource()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_setSourceFactory">setSourceFactory()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_source">source()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_sourceFactory">sourceFactory()</a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#_update">update()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Validator.ValidatableTrait.html#methods">Charcoal\Validator\ValidatableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_setValidator">setValidator()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_validate">validate()</a>, 
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#_validator">validator()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-Charcoal.Model.AbstractModel.html#constants">Charcoal\Model\AbstractModel</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.AbstractModel.html#DEFAULT_SOURCE_TYPE"><b>DEFAULT_SOURCE_TYPE</b></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Model.DescribableTrait.html#properties">Charcoal\Model\DescribableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadata"><var>$metadata</var></a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadataIdent"><var>$metadataIdent</var></a>, 
+			<a href="class-Charcoal.Model.DescribableTrait.html#$metadataLoader"><var>$metadataLoader</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Source.StorableTrait.html#properties">Charcoal\Source\StorableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Source.StorableTrait.html#$id"><var>$id</var></a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#$key"><var>$key</var></a>, 
+			<a href="class-Charcoal.Source.StorableTrait.html#$sourceFactory"><var>$sourceFactory</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Validator.ValidatableTrait.html#properties">Charcoal\Validator\ValidatableTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Validator.ValidatableTrait.html#$validator"><var>$validator</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
