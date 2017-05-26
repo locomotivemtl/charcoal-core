@@ -17,6 +17,8 @@ use \Charcoal\Source\AbstractSource;
 use \Charcoal\Source\DatabaseSourceConfig;
 use \Charcoal\Source\DatabaseSourceInterface;
 use \Charcoal\Source\Database\DatabaseFilter;
+use \Charcoal\Source\Database\DatabaseFilterGroup;
+use \Charcoal\Source\Database\DatabaseFilterGroupInterface;
 use \Charcoal\Source\Database\DatabaseOrder;
 use \Charcoal\Source\Database\DatabasePagination;
 
@@ -792,6 +794,15 @@ class DatabaseSource extends AbstractSource implements DatabaseSourceInterface
     protected function createFilter()
     {
         $filter = new DatabaseFilter();
+        return $filter;
+    }
+
+    /**
+     * @return FilterGroupInterface
+     */
+    protected function createFilterGroup()
+    {
+        $filter = new DatabaseFilterGroup();
         return $filter;
     }
 

@@ -139,6 +139,21 @@ class CollectionLoaderTest extends \PHPUnit_Framework_TestCase
                ->setProperties(['id', 'test'])
                ->addFilter('test', 10, [ 'operator' => '<' ])
                ->addFilter('allo', 1, [ 'operator' => '>=' ])
+               ->addFilterGroup(
+                [
+                    [
+                        'property' => 'test',
+                        'val' => 10
+                    ],
+                    [
+                        'property' => 'allo',
+                        'val' => 10,
+                        'operand' => 'OR'
+                    ]
+                ],
+                [
+                    'operand' => 'OR'
+                ])
                ->addOrder('test', 'asc')
                ->setPage(1)
                ->setNumPerPage(10);
