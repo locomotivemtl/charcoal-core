@@ -30,7 +30,7 @@ class ValidatorResult
     /**
      * @var DateTimeInterface $ts
      */
-    private $ts;
+    protected $ts;
 
     /**
      * @param array|\ArrayAccess $data Optional data.
