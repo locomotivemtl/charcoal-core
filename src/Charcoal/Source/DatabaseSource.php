@@ -273,18 +273,18 @@ class DatabaseSource extends AbstractSource implements
             return $dbh->tableExists[$table];
         }
 
-        $exists = $this->performTableExists();
+        $exists = $this->queryTableExists();
         $this->setTableExists($exists);
 
         return $exists;
     }
 
     /**
-     * Perform a source table exists operation.
+     * Query the data source to determine if the source table exists.
      *
      * @return boolean TRUE if the table exists, otherwise FALSE.
      */
-    protected function performTableExists()
+    protected function queryTableExists()
     {
         $dbh    = $this->db();
         $table  = $this->table();
