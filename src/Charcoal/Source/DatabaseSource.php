@@ -141,6 +141,8 @@ class DatabaseSource extends AbstractSource implements
     /**
      * Create a table from a model's metadata.
      *
+     * @todo {@see self::setTableStructure() Save a copy} of the table structure.
+     *
      * @return boolean TRUE if the table was created, otherwise FALSE.
      */
     public function createTable()
@@ -196,6 +198,8 @@ class DatabaseSource extends AbstractSource implements
     /**
      * Alter an existing table to match the model's metadata.
      *
+     * @todo {@see self::setTableStructure() Save a copy} of the table structure.
+     *
      * @return boolean TRUE if the table was altered, otherwise FALSE.
      */
     public function alterTable()
@@ -208,12 +212,14 @@ class DatabaseSource extends AbstractSource implements
         $table  = $this->table();
         $fields = $this->getModelFields($this->model());
         $cols   = $this->tableStructure();
+        $alter  = false;
         foreach ($fields as $field) {
             $ident = $field->ident();
 
             if (!array_key_exists($ident, $cols)) {
                 $fieldSql = $field->sql();
                 if ($fieldSql) {
+                    $alter = true;
                     // The key does not exist at all.
                     $query = 'ALTER TABLE `'.$table.'` ADD '.$fieldSql;
                     $this->logger->debug($query);
@@ -228,6 +234,7 @@ class DatabaseSource extends AbstractSource implements
                 // The key exists. Validate.
                 $col   = $cols[$ident];
                 $alter = true;
+
                 if (strtolower($col['Type']) !== strtolower($field->sqlType())) {
                     $alter = true;
                 }
@@ -256,6 +263,10 @@ class DatabaseSource extends AbstractSource implements
             }
         }
 
+        if ($alter === true) {
+            $this->setTableStructure(null);
+        }
+
         return true;
     }
 
@@ -269,22 +280,22 @@ class DatabaseSource extends AbstractSource implements
         $dbh    = $this->db();
         $table  = $this->table();
 
-        if (isset($dbh->tableExists, $dbh->tableExists[$table])) {
+        if (isset($dbh->tableExists[$table])) {
             return $dbh->tableExists[$table];
         }
 
-        $exists = $this->performTableExists();
+        $exists = $this->queryTableExists();
         $this->setTableExists($exists);
 
         return $exists;
     }
 
     /**
-     * Perform a source table exists operation.
+     * Query the data source to determine if the source table exists.
      *
      * @return boolean TRUE if the table exists, otherwise FALSE.
      */
-    protected function performTableExists()
+    protected function queryTableExists()
     {
         $dbh    = $this->db();
         $table  = $this->table();
@@ -322,14 +333,37 @@ class DatabaseSource extends AbstractSource implements
     }
 
     /**
-     * Get the table columns information.
+     * Retrieve the table columns structure.
      *
-     * @return array An associative array.
+     * @return array|null An associative array of the table schema,
+     *     or an empty array if no table was found or if an error occurred.
      */
     public function tableStructure()
     {
         $dbh    = $this->db();
         $table  = $this->table();
+
+        if (isset($dbh->tableStructure[$table])) {
+            return $dbh->tableStructure[$table];
+        }
+
+        $struct = $this->queryTableStructure();
+        $this->setTableStructure($struct);
+
+        return $struct;
+    }
+
+    /**
+     * Query the data source to retrieve the table columns structure.
+     *
+     * @return array|null An associative array of the table schema,
+     *     or an empty array if no table was found or if an error occurred.
+     */
+    protected function queryTableStructure()
+    {
+        $dbh    = $this->db();
+        $table  = $this->table();
+
         $driver = $dbh->getAttribute(PDO::ATTR_DRIVER_NAME);
         if ($driver === self::SQLITE_DRIVER_NAME) {
             $query = sprintf('PRAGMA table_info("%s") ', $table);
@@ -353,10 +387,29 @@ class DatabaseSource extends AbstractSource implements
                     'Extra'     => '',
                 ];
             }
+
             return $struct;
-        } else {
-            return $cols;
         }
+
+        return $cols;
+    }
+
+    /**
+     * Store a copy of the table columns information.
+     *
+     * @param  array|null $struct An associative array.
+     * @return void
+     */
+    protected function setTableStructure(array $struct = null)
+    {
+        $dbh   = $this->db();
+        $table = $this->table();
+
+        if (!isset($dbh->tableStructure)) {
+            $dbh->tableStructure = [];
+        }
+
+        $dbh->tableStructure[$table] = $struct;
     }
 
     /**
