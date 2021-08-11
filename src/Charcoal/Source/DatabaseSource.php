@@ -451,14 +451,20 @@ class DatabaseSource extends AbstractSource implements
         }
 
         $table = $this->table();
+
+        $fields = $this->getModelFields($this->model());
+        $selectExpressions = array_reduce($fields, function ($expressions, $field) {
+            return implode(', ', array_filter([$expressions, $field->selectExpressions()]));
+        });
+
         $query = sprintf(
-            'SELECT * FROM `%s` WHERE `%s` = :ident LIMIT 1',
+            'SELECT '.$selectExpressions.' FROM `%s` WHERE `%s` = :ident LIMIT 1',
             $table,
             $key
         );
 
         $binds = [
-            'ident' => $ident
+            'ident' => $ident,
         ];
 
         return $this->loadItemFromQuery($query, $binds, $item);
@@ -643,7 +649,8 @@ class DatabaseSource extends AbstractSource implements
             $key = $field->ident();
             if (in_array($key, $struct)) {
                 if ($key !== $model->key()) {
-                    $param = ':'.$key;
+                    $parseBindingCallback = $field->parseBinding();
+                    $param = $parseBindingCallback(':'.$key);
                     $updates[] = '`'.$key.'` = '.$param;
                 }
                 $binds[$key] = $field->val();
