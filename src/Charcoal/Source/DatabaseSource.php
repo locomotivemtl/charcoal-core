@@ -454,7 +454,7 @@ class DatabaseSource extends AbstractSource implements
 
         $fields = $this->getModelFields($this->model());
         $selectExpressions = array_reduce($fields, function ($expressions, $field) {
-            return implode(', ', array_filter([$expressions, $field->selectExpressions()]));
+            return implode(', ', array_filter([$expressions, $field->sqlSelectExpression()]));
         });
 
         $query = sprintf(
@@ -595,7 +595,10 @@ class DatabaseSource extends AbstractSource implements
             $key = $field->ident();
             if (in_array($key, $struct)) {
                 $keys[]      = '`'.$key.'`';
-                $values[]    = ':'.$key.'';
+                $parseBindingCallback = $field->sqlPdoBindParamExpression();
+                $param = $parseBindingCallback(':'.$key);
+                $values[] = '`'.$key.'` = '.$param;
+
                 $binds[$key] = $field->val();
                 $types[$key] = $field->sqlPdoType();
             }
@@ -649,7 +652,7 @@ class DatabaseSource extends AbstractSource implements
             $key = $field->ident();
             if (in_array($key, $struct)) {
                 if ($key !== $model->key()) {
-                    $parseBindingCallback = $field->parseBinding();
+                    $parseBindingCallback = $field->sqlPdoBindParamExpression();
                     $param = $parseBindingCallback(':'.$key);
                     $updates[] = '`'.$key.'` = '.$param;
                 }
@@ -666,7 +669,7 @@ class DatabaseSource extends AbstractSource implements
                 'Could not update items. No valid fields were set / available in database table.',
                 [
                     'properties' => $properties,
-                    'structure'  => $struct
+                    'structure'  => $struct,
                 ]
             );
             return false;
