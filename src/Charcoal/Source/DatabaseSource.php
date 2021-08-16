@@ -450,15 +450,11 @@ class DatabaseSource extends AbstractSource implements
             return $item;
         }
 
-        $table = $this->table();
-
-        $fields = $this->getModelFields($this->model());
-        $selectExpressions = array_reduce($fields, function ($expressions, $field) {
-            return implode(', ', array_filter([$expressions, $field->sqlSelectExpression()]));
-        });
+        $table = $this->sqlFrom();
+        $select = $this->sqlSelect();
 
         $query = sprintf(
-            'SELECT '.$selectExpressions.' FROM `%s` WHERE `%s` = :ident LIMIT 1',
+            'SELECT '.$select.' FROM %s WHERE `%s` = :ident LIMIT 1',
             $table,
             $key
         );
@@ -872,24 +868,30 @@ class DatabaseSource extends AbstractSource implements
      */
     public function sqlSelect()
     {
-        $properties = $this->properties();
-        if (empty($properties)) {
+        $fields = $this->getModelFields($this->model());
+        if (empty($fields)) {
             return self::DEFAULT_TABLE_ALIAS.'.*';
         }
 
-        $parts = [];
-        foreach ($properties as $key) {
-            $parts[] = Expression::quoteIdentifier($key, self::DEFAULT_TABLE_ALIAS);
-        }
+        $clause = array_reduce($fields, function ($expressions, $field) {
+            $selectExpressionCallback = $field->sqlSelectExpression();
+            $quotedIdentifier = Expression::quoteIdentifier($field->ident(), self::DEFAULT_TABLE_ALIAS);
+            $selectStatement = $selectExpressionCallback($quotedIdentifier);
 
-        if (empty($parts)) {
+            $selectStatement !== $quotedIdentifier && $selectStatement.=' as '.$field->ident();
+
+            return implode(', ', array_filter([
+                $expressions,
+                $selectStatement,
+            ]));
+        });
+
+        if (empty($clause)) {
             throw new UnexpectedValueException(sprintf(
                 '[%s] Can not get SQL SELECT clause; no valid properties',
                 $this->getModelClassForException()
             ));
         }
-
-        $clause = implode(', ', $parts);
 
         return $clause;
     }
