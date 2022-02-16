@@ -227,6 +227,7 @@ class DatabaseFilter extends Filter implements
                     break;
 
                 case 'BETWEEN':
+                case 'NOT BETWEEN':
                     if (!is_array($value) || (is_array($value) && count($value) < 2)) {
                         throw new UnexpectedValueException(sprintf(
                             'Array is required as value on field "%s" for "%s"',
