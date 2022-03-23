@@ -170,7 +170,7 @@ trait FilterCollectionTrait
 
     /**
      * Determine if the object has any active subfilters (recursive)
-
+     *
      * @return boolean
      */
     public function hasActiveFilters()
