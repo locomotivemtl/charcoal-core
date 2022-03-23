@@ -243,11 +243,6 @@ class DatabaseFilter extends Filter implements
                     try {
                         new \DateTime($fromValue);
                         new \DateTime($toValue);
-
-                        // Fallback to today's date if not set
-                        $fromValue = !empty($fromValue) ? $fromValue : date('Y-m-d');
-                        $toValue = !empty($toValue) ? $toValue : date('Y-m-d');
-
                         $isDate = true;
                     } catch (\Exception $e) {
                         $isDate = false;
