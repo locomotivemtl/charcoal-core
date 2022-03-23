@@ -226,6 +226,37 @@ class DatabaseFilter extends Filter implements
                     $conditions[] = sprintf('%1$s %2$s (\'%3$s\')', $target, $operator, $value);
                     break;
 
+                case 'BETWEEN':
+                case 'NOT BETWEEN':
+                    if (!is_array($value) || (is_array($value) && count($value) < 2)) {
+                        throw new UnexpectedValueException(sprintf(
+                            'Array is required as value on field "%s" for "%s"',
+                            $target,
+                            $operator,
+                        ));
+                    }
+
+                    $fromValue = $value[0];
+                    $toValue   = end($value);
+
+                    // Check if querying dates
+                    try {
+                        new \DateTime($fromValue);
+                        new \DateTime($toValue);
+                        $isDate = true;
+                    } catch (\Exception $e) {
+                        $isDate = false;
+                    }
+
+                    $conditions[] = sprintf(
+                        '%1$s %2$s %3$s AND %4$s',
+                        $target,
+                        $operator,
+                        $isDate ? 'CAST(\''.$fromValue.'\' AS DATE)' : '\''.$fromValue.'\'',
+                        $isDate ? 'CAST(\''.$toValue.'\' AS DATE)' : '\''.$toValue.'\'',
+                    );
+                    break;
+
                 default:
                     if ($value === null) {
                         throw new UnexpectedValueException(sprintf(

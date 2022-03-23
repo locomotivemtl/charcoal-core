@@ -368,6 +368,7 @@ class Filter extends Expression implements
             'IS NOT TRUE', 'IS NOT FALSE', 'IS NOT UNKNOWN',
             '%', 'MOD',
             'IN', 'NOT IN',
+            'BETWEEN', 'NOT BETWEEN',
             'REGEXP', 'NOT REGEXP'
         ];
     }
