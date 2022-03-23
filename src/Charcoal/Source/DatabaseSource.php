@@ -925,7 +925,13 @@ class DatabaseSource extends AbstractSource implements
         }
 
         $criteria = $this->createFilter([
-            'filters' => $this->filters()
+            'filters' => array_filter($this->filters(), function ($filter) {
+                // Check for active subfilters
+                if ($filter->hasFilters()) {
+                    return $filter->hasActiveFilters();
+                }
+                return true;
+            })
         ]);
 
         $sql = $criteria->sql();

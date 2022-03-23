@@ -128,6 +128,30 @@ trait FilterCollectionTrait
     }
 
     /**
+     * Determine recursively if the object has any active subfilters.
+     *
+     * @return boolean
+     */
+    public function hasActiveFilters()
+    {
+        $endFilters = [];
+
+        // Recusively find filters with no subfilters
+        $this->traverseFilters(function ($filter) use (&$endFilters) {
+            if (!$filter->hasFilters()) {
+                $endFilters[] = $filter;
+            }
+        });
+
+        // Exclude filters that aren't active
+        $endFilters = array_filter($endFilters, function ($filter) {
+            return $filter->active();
+        });
+
+        return !empty($endFilters);
+    }
+
+    /**
      * Retrieve the query filters stored in this object.
      *
      * @return array
