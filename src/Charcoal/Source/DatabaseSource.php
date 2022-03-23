@@ -451,15 +451,17 @@ class DatabaseSource extends AbstractSource implements
             return $item;
         }
 
-        $table = $this->table();
+        $table = $this->sqlFrom();
+        $select = $this->sqlSelect();
+
         $query = sprintf(
-            'SELECT * FROM `%s` WHERE `%s` = :ident LIMIT 1',
+            'SELECT '.$select.' FROM %s WHERE `%s` = :ident LIMIT 1',
             $table,
             $key
         );
 
         $binds = [
-            'ident' => $ident
+            'ident' => $ident,
         ];
 
         return $this->loadItemFromQuery($query, $binds, $item);
@@ -590,7 +592,10 @@ class DatabaseSource extends AbstractSource implements
             $key = $field->ident();
             if (in_array($key, $struct)) {
                 $keys[]      = '`'.$key.'`';
-                $values[]    = ':'.$key.'';
+                $parseBindingCallback = $field->sqlPdoBindParamExpression();
+                $param = $parseBindingCallback(':'.$key);
+                $values[] = '`'.$key.'` = '.$param;
+
                 $binds[$key] = $field->val();
                 $types[$key] = $field->sqlPdoType();
             }
@@ -644,7 +649,8 @@ class DatabaseSource extends AbstractSource implements
             $key = $field->ident();
             if (in_array($key, $struct)) {
                 if ($key !== $model->key()) {
-                    $param = ':'.$key;
+                    $parseBindingCallback = $field->sqlPdoBindParamExpression();
+                    $param = $parseBindingCallback(':'.$key);
                     $updates[] = '`'.$key.'` = '.$param;
                 }
                 $binds[$key] = $field->val();
@@ -668,7 +674,7 @@ class DatabaseSource extends AbstractSource implements
                     'model'      => get_class($model),
                     'table'      => $table,
                     'properties' => $properties,
-                    'structure'  => $struct
+                    'structure'  => $struct,
                 ]
             );
             return false;
@@ -871,24 +877,30 @@ class DatabaseSource extends AbstractSource implements
      */
     public function sqlSelect()
     {
-        $properties = $this->properties();
-        if (empty($properties)) {
+        $fields = $this->getModelFields($this->model());
+        if (empty($fields)) {
             return self::DEFAULT_TABLE_ALIAS.'.*';
         }
 
-        $parts = [];
-        foreach ($properties as $key) {
-            $parts[] = Expression::quoteIdentifier($key, self::DEFAULT_TABLE_ALIAS);
-        }
+        $clause = array_reduce($fields, function ($expressions, $field) {
+            $selectExpressionCallback = $field->sqlSelectExpression();
+            $quotedIdentifier = Expression::quoteIdentifier($field->ident(), self::DEFAULT_TABLE_ALIAS);
+            $selectStatement = $selectExpressionCallback($quotedIdentifier);
 
-        if (empty($parts)) {
+            $selectStatement !== $quotedIdentifier && $selectStatement.=' as '.$field->ident();
+
+            return implode(', ', array_filter([
+                $expressions,
+                $selectStatement,
+            ]));
+        });
+
+        if (empty($clause)) {
             throw new UnexpectedValueException(sprintf(
                 '[%s] Can not get SQL SELECT clause; no valid properties',
                 $this->getModelClassForException()
             ));
         }
-
-        $clause = implode(', ', $parts);
 
         return $clause;
     }

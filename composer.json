@@ -32,7 +32,7 @@
         "locomotivemtl/charcoal-cache": "~0.1",
         "locomotivemtl/charcoal-config": "~0.9",
         "locomotivemtl/charcoal-factory": "~0.4",
-        "locomotivemtl/charcoal-property": "~0.10",
+        "locomotivemtl/charcoal-property": "~0.11",
         "locomotivemtl/charcoal-view": "~0.3"
     },
     "require-dev": {
