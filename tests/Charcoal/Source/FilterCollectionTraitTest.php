@@ -120,6 +120,47 @@ class FilterCollectionTraitTest extends AbstractTestCase
     }
 
     /**
+     * Test collection for active filters.
+     *
+     * Assertions:
+     * 1. Empty; Default state
+     * 2. Populated; Mutated state
+     * 3. Populated; Added a inactive subfilter
+     *
+     * @covers \Charcoal\Source\FilterCollectionTrait::hasActiveFilters
+     *
+     * @return void
+     */
+    public function testHasActiveExpressions()
+    {
+        $obj = $this->createCollector();
+
+        /** 1. Default state */
+        $this->assertFalse($obj->hasActiveFilters());
+
+        /** 2. Mutated state */
+        $obj->addFilter([
+            'condition' => '( 1 + 1 = 2 )',
+            'filters' => $this->dummyItems,
+        ]);
+
+        $this->assertTrue($obj->hasActiveFilters());
+
+        /** 3. Added a inactive subfilter */
+        $obj->setFilters([[
+            'condition' => '( 1 + 1 = 2 )',
+            'filters' => [
+                [
+                    'condition' => '( 1 + 1 = 2 )',
+                    'active' => false,
+                ]
+            ]
+        ]]);
+
+        $this->assertFalse($obj->hasActiveFilters());
+    }
+
+    /**
      * Test the mass assignment of expressions.
      *
      * Assertions:
