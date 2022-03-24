@@ -239,6 +239,14 @@ class DatabaseFilter extends Filter implements
                     $fromValue = $value[0];
                     $toValue   = end($value);
 
+                    if (empty($fromValue) || empty($toValue)) {
+                        throw new UnexpectedValueException(sprintf(
+                            'Two values are required on field "%s" for "%s"',
+                            $target,
+                            $operator,
+                        ));
+                    }
+
                     // Check if querying dates
                     try {
                         new \DateTime($fromValue);
