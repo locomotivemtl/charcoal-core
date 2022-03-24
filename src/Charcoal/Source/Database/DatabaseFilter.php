@@ -239,15 +239,18 @@ class DatabaseFilter extends Filter implements
                     $fromValue = $value[0];
                     $toValue   = end($value);
 
+                    if (empty($fromValue) || empty($toValue)) {
+                        throw new UnexpectedValueException(sprintf(
+                            'Two values are required on field "%s" for "%s"',
+                            $target,
+                            $operator,
+                        ));
+                    }
+
                     // Check if querying dates
                     try {
                         new \DateTime($fromValue);
                         new \DateTime($toValue);
-
-                        // Fallback to today's date if not set
-                        $fromValue = !empty($fromValue) ? $fromValue : date('Y-m-d');
-                        $toValue = !empty($toValue) ? $toValue : date('Y-m-d');
-
                         $isDate = true;
                     } catch (\Exception $e) {
                         $isDate = false;
