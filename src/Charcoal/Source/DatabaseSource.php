@@ -49,6 +49,20 @@ class DatabaseSource extends AbstractSource implements
     private $table;
 
     /**
+     * Store the source query joins.
+     *
+     * @var array
+     */
+    private array $joins = [];
+
+    /**
+     * Store the source GROUP BY statement
+     *
+     * @var string
+     */
+    private string $groupBy = '';
+
+    /**
      * Create a new database handler.
      *
      * @param array $data Class dependencies.
@@ -752,7 +766,7 @@ class DatabaseSource extends AbstractSource implements
      *
      * If the query fails, this method will return false.
      *
-     * @param  string $query The SQL query to executed.
+     * @param  string $query The SQL query to execute.
      * @param  array  $binds Optional. Query parameter binds.
      * @param  array  $types Optional. Types of parameter bindings.
      * @throws PDOException If the SQL query fails.
@@ -788,7 +802,7 @@ class DatabaseSource extends AbstractSource implements
      *
      * If the preparation fails, this method will return false.
      *
-     * @param  string $query The SQL query to executed.
+     * @param  string $query The SQL query to execute.
      * @param  array  $binds Optional. Query parameter binds.
      * @param  array  $types Optional. Types of parameter bindings.
      * @return \PDOStatement|false The PDOStatement, otherwise FALSE.
@@ -826,18 +840,20 @@ class DatabaseSource extends AbstractSource implements
     {
         if (!$this->hasTable()) {
             throw new UnexpectedValueException(sprintf(
-                '[%s] Can not get SQL SELECT clause; no databse table name defined',
+                '[%s] Can not get SQL SELECT clause; no database table name defined',
                 $this->getModelClassForException()
             ));
         }
 
         $selects = $this->sqlSelect();
         $tables  = $this->sqlFrom();
+        $joins   = $this->sqlJoins();
         $filters = $this->sqlFilters();
+        $groupBy = $this->sqlGroupBy();
         $orders  = $this->sqlOrders();
         $limits  = $this->sqlPagination();
 
-        $query = 'SELECT '.$selects.' FROM '.$tables.$filters.$orders.$limits;
+        $query = 'SELECT '.$selects.' FROM '.$tables.$joins.$filters.$groupBy.$orders.$limits;
         return $query;
     }
 
@@ -851,7 +867,7 @@ class DatabaseSource extends AbstractSource implements
     {
         if (!$this->hasTable()) {
             throw new UnexpectedValueException(sprintf(
-                '[%s] Can not get SQL count; no databse table name defined',
+                '[%s] Can not get SQL count; no database table name defined',
                 $this->getModelClassForException()
             ));
         }
@@ -913,6 +929,86 @@ class DatabaseSource extends AbstractSource implements
     }
 
     /**
+     * Compile the Joins.
+     *
+     * @return string
+     */
+    public function sqlJoins(): string
+    {
+        $joins = '';
+
+        if ($this->hasJoins()) {
+            $joins = implode(' ', $this->joins());
+        }
+
+        return $joins;
+    }
+
+    /**
+     * Get all join statements.
+     *
+     * @return array
+     */
+    public function joins(): array
+    {
+        return ($this->joins ?? []);
+    }
+
+    /**
+     * Append a Join statement.
+     *
+     * @param string $join Join statement.
+     * @return DatabaseSource
+     */
+    public function addJoin($join): self
+    {
+        if (!empty($join)) {
+            $this->joins[] = $join;
+        }
+        return $this;
+    }
+
+    /**
+     * Append multiple Join statements.
+     *
+     * @param array $joins Array of join statements.
+     * @return DatabaseSource
+     */
+    public function addJoins(array $joins): self
+    {
+        if (!empty($joins)) {
+            foreach ($joins as $join) {
+                $this->addJoin($join);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Determine if source contains join statements.
+     *
+     * @return boolean
+     */
+    public function hasJoins(): bool
+    {
+        return !empty($this->joins);
+    }
+
+    /**
+     * Remove a join statement by index.
+     *
+     * @param mixed $index Index of the join statement.
+     * @return DatabaseSource
+     */
+    public function removeJoin($index): self
+    {
+        if (isset($this->joins[$index])) {
+            array_splice($this->joins, $index, 1);
+        }
+        return $this;
+    }
+
+    /**
      * Compile the WHERE clause.
      *
      * @todo   [2016-02-19] Use bindings for filters value
@@ -940,6 +1036,31 @@ class DatabaseSource extends AbstractSource implements
         }
 
         return $sql;
+    }
+
+    /**
+     * Set Group By
+     *
+     * @param string $groupBy Group by statement.
+     * @return DatabaseSource
+     */
+    public function setGroupBy($groupBy): self
+    {
+        $this->groupBy = sprintf(
+            ' GROUP BY %s',
+            $groupBy
+        );
+        return $this;
+    }
+
+    /**
+     * Get SQL Group By
+     *
+     * @return string
+     */
+    public function sqlGroupBy()
+    {
+        return ($this->groupBy ?? '');
     }
 
     /**
