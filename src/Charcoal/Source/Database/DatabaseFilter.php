@@ -236,10 +236,12 @@ class DatabaseFilter extends Filter implements
                         ));
                     }
 
-                    $fromValue = $value[0];
+                    $fromValue = reset($value);
                     $toValue   = end($value);
 
-                    if (empty($fromValue) || empty($toValue)) {
+                    if ((empty($fromValue) && !is_numeric($fromValue)) ||
+                        (empty($toValue) && !is_numeric($toValue))
+                    ) {
                         throw new UnexpectedValueException(sprintf(
                             'Two values are required on field "%s" for "%s"',
                             $target,
@@ -249,20 +251,29 @@ class DatabaseFilter extends Filter implements
 
                     // Check if querying dates
                     try {
-                        new \DateTime($fromValue);
-                        new \DateTime($toValue);
+                        new \DateTimeImmutable($fromValue);
+                        new \DateTimeImmutable($toValue);
                         $isDate = true;
                     } catch (\Exception $e) {
                         $isDate = false;
+                    }
+
+                    if ($isDate) {
+                        $fromExpr = 'CAST(\''.$fromValue.'\' AS DATE)';
+                        $toExpr   = 'CAST(\''.$toValue.'\' AS DATE)';
+                    } else {
+                        $fromExpr = '\''.$fromValue.'\'';
+                        $toExpr   = '\''.$toValue.'\'';
                     }
 
                     $conditions[] = sprintf(
                         '%1$s %2$s %3$s AND %4$s',
                         $target,
                         $operator,
-                        $isDate ? 'CAST(\''.$fromValue.'\' AS DATE)' : '\''.$fromValue.'\'',
-                        $isDate ? 'CAST(\''.$toValue.'\' AS DATE)' : '\''.$toValue.'\''
+                        $fromExpr,
+                        $toExpr
                     );
+
                     break;
 
                 default:
