@@ -232,7 +232,7 @@ class DatabaseFilter extends Filter implements
                         throw new UnexpectedValueException(sprintf(
                             'Array is required as value on field "%s" for "%s"',
                             $target,
-                            $operator,
+                            $operator
                         ));
                     }
 
@@ -243,7 +243,7 @@ class DatabaseFilter extends Filter implements
                         throw new UnexpectedValueException(sprintf(
                             'Two values are required on field "%s" for "%s"',
                             $target,
-                            $operator,
+                            $operator
                         ));
                     }
 
@@ -261,7 +261,7 @@ class DatabaseFilter extends Filter implements
                         $target,
                         $operator,
                         $isDate ? 'CAST(\''.$fromValue.'\' AS DATE)' : '\''.$fromValue.'\'',
-                        $isDate ? 'CAST(\''.$toValue.'\' AS DATE)' : '\''.$toValue.'\'',
+                        $isDate ? 'CAST(\''.$toValue.'\' AS DATE)' : '\''.$toValue.'\''
                     );
                     break;
 

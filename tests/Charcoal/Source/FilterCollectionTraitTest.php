@@ -141,7 +141,7 @@ class FilterCollectionTraitTest extends AbstractTestCase
         /** 2. Mutated state */
         $obj->addFilter([
             'condition' => '( 1 + 1 = 2 )',
-            'filters' => $this->dummyItems,
+            'filters'   => $this->dummyItems
         ]);
 
         $this->assertTrue($obj->hasActiveFilters());
@@ -149,10 +149,10 @@ class FilterCollectionTraitTest extends AbstractTestCase
         /** 3. Added a inactive subfilter */
         $obj->setFilters([[
             'condition' => '( 1 + 1 = 2 )',
-            'filters' => [
+            'filters'   => [
                 [
                     'condition' => '( 1 + 1 = 2 )',
-                    'active' => false,
+                    'active' => false
                 ]
             ]
         ]]);
