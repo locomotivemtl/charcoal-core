@@ -873,9 +873,10 @@ class DatabaseSource extends AbstractSource implements
         }
 
         $tables  = $this->sqlFrom();
+        $joins   = $this->sqlJoins();
         $filters = $this->sqlFilters();
 
-        $query = 'SELECT COUNT(*) FROM '.$tables.$filters;
+        $query = 'SELECT COUNT(*) FROM '.$tables.$joins.$filters;
         return $query;
     }
 
