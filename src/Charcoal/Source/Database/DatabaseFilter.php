@@ -226,6 +226,56 @@ class DatabaseFilter extends Filter implements
                     $conditions[] = sprintf('%1$s %2$s (\'%3$s\')', $target, $operator, $value);
                     break;
 
+                case 'BETWEEN':
+                case 'NOT BETWEEN':
+                    if (!is_array($value) || (is_array($value) && count($value) < 2)) {
+                        throw new UnexpectedValueException(sprintf(
+                            'Array is required as value on field "%s" for "%s"',
+                            $target,
+                            $operator
+                        ));
+                    }
+
+                    $fromValue = reset($value);
+                    $toValue   = end($value);
+
+                    if ((empty($fromValue) && !is_numeric($fromValue)) ||
+                        (empty($toValue) && !is_numeric($toValue))
+                    ) {
+                        throw new UnexpectedValueException(sprintf(
+                            'Two values are required on field "%s" for "%s"',
+                            $target,
+                            $operator
+                        ));
+                    }
+
+                    // Check if querying dates
+                    try {
+                        new \DateTimeImmutable($fromValue);
+                        new \DateTimeImmutable($toValue);
+                        $isDate = true;
+                    } catch (\Exception $e) {
+                        $isDate = false;
+                    }
+
+                    if ($isDate) {
+                        $fromExpr = 'CAST(\''.$fromValue.'\' AS DATE)';
+                        $toExpr   = 'CAST(\''.$toValue.'\' AS DATE)';
+                    } else {
+                        $fromExpr = '\''.$fromValue.'\'';
+                        $toExpr   = '\''.$toValue.'\'';
+                    }
+
+                    $conditions[] = sprintf(
+                        '%1$s %2$s %3$s AND %4$s',
+                        $target,
+                        $operator,
+                        $fromExpr,
+                        $toExpr
+                    );
+
+                    break;
+
                 default:
                     if ($value === null) {
                         throw new UnexpectedValueException(sprintf(
